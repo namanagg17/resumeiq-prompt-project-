@@ -1,0 +1,16 @@
+digraph G {
+  rankdir=LR; fontname="Helvetica"; label="Diagram 4: System architecture"; labelloc=t; fontsize=18; compound=true;
+  node [fontname="Helvetica", fontsize=11, style="rounded,filled", shape=box];
+  user [label="Student / evaluator\n(browser)", shape=oval, fillcolor="#eef2f7"];
+  subgraph cluster_app { label="Streamlit Community Cloud (code/ from GitHub)"; style="rounded,dashed"; fontsize=12;
+    ui [label="app.py\nStreamlit UI: Analyze tab,\nPrompt Lab tab, samples", fillcolor="#dcfce7"];
+    core [label="resumeiq.py\nworkflow, guard, scorer,\nretry + fallback model", fillcolor="#dbeafe"];
+    pr [label="prompts/final/*.md\nP1, P2, P3 text files", shape=folder, fillcolor="#fff4d6"];
+    sec [label="Streamlit secret\nGEMINI_API_KEY", shape=cylinder, fillcolor="#fee2e2"];
+  }
+  lc [label="LangChain\nChatOpenAI client", fillcolor="#ede9fe"];
+  gem [label="Google Gemini API\n(OpenAI-compatible endpoint)\ngemini-3.5-flash-lite\nfallback: gemini-3.1-flash-lite", fillcolor="#c7d2fe"];
+  tests [label="run_tests.py / compare_versions.py\n-> test-data/outputs/*.json", shape=component, fillcolor="#f1f5f9"];
+  user -> ui [label="resume + JD"]; ui -> core; core -> pr [label="loads"]; core -> sec [style=dashed];
+  core -> lc -> gem [label="HTTPS"]; gem -> lc [style=dashed, label="JSON"]; tests -> core [style=dashed];
+}

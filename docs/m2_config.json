@@ -1,0 +1,38 @@
+{
+ "team_id": "PE-B01-06",
+ "team_name": "Naman square",
+ "project_title": "ResumeIQ: AI-Powered Resume Analysis and Job Matching Assistant",
+ "project_short": "ResumeIQ",
+ "problem_id": "C9 (Problem Pool)",
+ "batch": "B01 - B12",
+ "faculty": "[FACULTY NAME]",
+ "prototype_link": "[PROTOTYPE LINK]",
+ "repo_link": "https://github.com/namanagg17/resumeiq-prompt-project-",
+ "reel_link": "[REEL LINK]",
+ "reel_seconds": "[N]",
+ "m2_pdf_name": "M2_PE-B01-06_ResumeIQ.pdf",
+ "supporting_pdf_name": "NamanSquare_TechnicalReport.pdf",
+ "counts": {
+  "prompts": 3,
+  "tests": 14,
+  "versions": 5
+ },
+ "members": [
+  {
+   "name": "Naman Aggarwal",
+   "enrollment": "S24CSEU0607",
+   "role": "Prompt design and evaluation",
+   "tasks": "Wrote prompts P1, P2, P3 and versions v1-v5; designed the scoring rubric; ran the version comparison and wrote the iteration log",
+   "evidence": "prompts/final/P1-P3, prompts/v1-v4, code/compare_versions.py, PDF Sections 2(c) and 3",
+   "percent": 50
+  },
+  {
+   "name": "Naman Agarwal",
+   "enrollment": "S24CSEU0605",
+   "role": "Development and testing",
+   "tasks": "Built the Streamlit app and LangChain workflow code; wrote the 14 test cases and test runner; made the diagrams and reel",
+   "evidence": "code/app.py, code/resumeiq.py, test-data/, code/run_tests.py, docs/diagrams/, PDF Section 4",
+   "percent": 50
+  }
+ ]
+}

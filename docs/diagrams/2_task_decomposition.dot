@@ -1,0 +1,15 @@
+digraph G {
+  rankdir=LR; fontname="Helvetica"; label="Diagram 2: Task decomposition"; labelloc=t; fontsize=18;
+  node [fontname="Helvetica", fontsize=11, style="rounded,filled", shape=box, fillcolor="#eef2f7"];
+  root [label="Resume vs job description analysis", fillcolor="#c7d2fe"];
+  a [label="1. Understand the inputs\n(P1)", fillcolor="#dbeafe"];
+  b [label="2. Compare\n(P2 + code)", fillcolor="#dbeafe"];
+  c [label="3. Advise\n(P3 + code)", fillcolor="#dbeafe"];
+  a1 [label="Is it a resume / a JD?"]; a2 [label="Detect injected instructions"];
+  a3 [label="Extract skills with\nexact evidence quotes"]; a4 [label="Split JD into must / nice\nrequirements"];
+  a5 [label="Verify quotes exist\n(code guard)", fillcolor="#fff4d6"];
+  b1 [label="Status per requirement:\nmatch / partial / missing"]; b2 [label="Calculate score\n(code)", fillcolor="#fff4d6"]; b3 [label="Two-sentence summary"];
+  c1 [label="3-5 honest suggestions\n(add_if_true / learn / rewrite)"]; c2 [label="Rewrite up to 3 lines\nwith the same facts"];
+  c3 [label="Flag invented skills\n(code)", fillcolor="#fff4d6"];
+  root -> {a b c}; a -> {a1 a2 a3 a4 a5}; b -> {b1 b2 b3}; c -> {c1 c2 c3};
+}

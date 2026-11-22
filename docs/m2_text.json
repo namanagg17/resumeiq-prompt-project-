@@ -1,0 +1,205 @@
+{
+ "design": {
+  "summary_html": "<p><b>Problem and users.</b> Indian college students applying for internships and campus placements usually send one generic resume to every role. Automated and human screening rejects many of them because their real skills are not clearly matched to the job description (JD). Generic chatbot feedback is inconsistent and often suggests skills the student does not have. ResumeIQ is for these students, and for placement cells that review many resumes.</p><p><b>Input and output.</b> Input: resume text and JD text (pasted). Output: a match score out of 100; a requirement-by-requirement table (match / partial / missing), where every match is backed by an exact quote from the resume; a two-sentence summary; 3-5 honest suggestions; up to 3 rewritten resume lines; and warnings (prompt injection, unverified quotes, invented skills). Invalid inputs (not a resume, not a JD, empty) are rejected with a reason and no score.</p><p><b>How many prompts and why.</b> Three prompts. In v1 and v2 a single prompt did everything, and it mixed up extraction, judging, arithmetic and advice. Splitting the work gives each prompt one job that can be checked on its own. <b>P1 Extractor</b> validates the input, flags injected instructions, and extracts skills with exact quotes and JD requirements with must/nice priority. <b>P2 Matcher</b> gives a status for each requirement using only verified skills, with one worked example. <b>P3 Coach</b> writes suggestions without adding facts. Plain code does the jobs the model was unreliable at in testing: it deletes any quote not found in the resume (evidence guard); it calculates the score with a fixed formula (75% must-have, 25% good-to-have; match 1, partial 0.5, missing 0), because in v3 the model's own arithmetic was wrong in 3 of 3 runs; and it flags rewritten lines that mention a missing skill.</p><p><b>Tool and model.</b> Gemini 3.5 Flash-Lite (gemini-3.5-flash-lite) through the Google Gemini API. It supports a JSON output mode and is fast: 4.1 s per call on average, and 12.8 s for a full 3-step run across our 14 tests. Its free tier allows many more requests per day than Gemini 3.5 Flash (only 20 per day on our key), so evaluators can use the deployed app at no cost. We call it through LangChain's ChatOpenAI client on Gemini's OpenAI-compatible endpoint, so switching to an OpenAI model only needs a change to the model name and endpoint. The UI is a Streamlit web app.</p><p><b>What changed since Milestone 1.</b> (1) ChatGPT was replaced by Gemini 3.5 Flash-Lite because of the free API quota. (2) The single baseline prompt became a 3-step workflow, through 5 measured versions. (3) The score is now calculated by code. (4) We added input validation, prompt-injection handling, an evidence guard and an invented-skill check. (5) We fixed the Milestone 1 sample output, which wrongly listed C++ as a matching skill. The app's Prompt Lab tab runs v1 and the final version side by side.</p>",
+  "sheets": {
+   "P1": {
+    "name": "Input Check and Skill Extractor",
+    "step": "Step 1 of 3 (after the basic code check for empty input)",
+    "purpose": "Reject invalid inputs, flag injected instructions, and turn the resume and JD into structured facts with exact evidence quotes.",
+    "settings": "temperature 0.2, JSON mode (response_format json_object), other settings default",
+    "examples": "0 (zero-shot; the JSON shape is given in the prompt)",
+    "output": "JSON: input_check {resume_valid, jd_valid, problem}, injection_detected, candidate_skills [{skill, evidence, strength}], jd_requirements [{requirement, priority}]",
+    "variables": {
+     "resume": "The resume text pasted by the user",
+     "jd": "The job description text pasted by the user"
+    }
+   },
+   "P2": {
+    "name": "Requirement Matcher",
+    "step": "Step 2 of 3 (after the evidence guard has removed unverified quotes)",
+    "purpose": "Decide match / partial / missing for every JD requirement using only verified candidate skills.",
+    "settings": "temperature 0.2, JSON mode, other settings default",
+    "examples": "1 worked example (the Milestone 1 Alex Sharma case, showing that C++ cannot satisfy a data structures requirement)",
+    "output": "JSON: matches [{requirement, priority, status, evidence, reason}], summary. The score is calculated by code from the statuses.",
+    "variables": {
+     "candidate_skills": "JSON list of skills from P1 whose evidence quote was found in the resume",
+     "jd_requirements": "JSON list of requirements from P1 with must/nice priority"
+    }
+   },
+   "P3": {
+    "name": "Honest Improvement Coach",
+    "step": "Step 3 of 3 (after the score is calculated)",
+    "purpose": "Give 3-5 honest resume suggestions and rewrite up to 3 existing lines without inventing anything.",
+    "settings": "temperature 0.4 (a little more varied wording), JSON mode, other settings default",
+    "examples": "0",
+    "output": "JSON: suggestions [{type, text, related_requirement}], rewritten_lines [{original, improved}]",
+    "variables": {
+     "resume": "The original resume text",
+     "matches": "JSON list of P2 statuses for every requirement"
+    }
+   }
+  }
+ },
+ "implementation": {
+  "built_html": "<p>A working Streamlit web app (code/app.py) that runs the 3-prompt workflow (code/resumeiq.py) on Gemini 3.5 Flash-Lite through LangChain. The <b>Analyze</b> tab shows the score, the requirement table with evidence, a summary, suggestions, rewritten lines, warnings, and the raw output of each prompt step. The <b>Prompt Lab</b> tab runs the v1 baseline and the final workflow on the same input side by side. The sidebar loads any of the 14 test cases as a sample. Two scripts make the results reproducible: run_tests.py runs all 14 test cases and saves every output; compare_versions.py runs v1-v5 on the same inputs and saves the numbers used in the iteration log. API calls retry with backoff and fall back to gemini-3.1-flash-lite if the main model is overloaded. The API key is read from an environment variable or a Streamlit secret and is never in the repository.</p>",
+  "modules": [
+   [
+    "Input check",
+    "Rejects empty or too-short input in code; P1 rejects text that is not a resume or a JD",
+    "Working",
+    "T12, T13, T14 all rejected with a reason"
+   ],
+   [
+    "Skill and requirement extractor (P1)",
+    "Extracts skills with exact quotes and strength, and JD requirements with must/nice priority",
+    "Working",
+    "Does not infer implied skills (T03)"
+   ],
+   [
+    "Prompt-injection detection",
+    "P1 flags instructions hidden in the resume; the app shows a warning",
+    "Working",
+    "T11: score 0 and a warning (v1 gave 100)"
+   ],
+   [
+    "Evidence guard",
+    "Code removes any skill whose quote is not in the resume",
+    "Working",
+    "No unverified quotes in the final test runs"
+   ],
+   [
+    "Requirement matcher (P2)",
+    "Match / partial / missing for each requirement, with evidence and reason",
+    "Working",
+    "Soft skills such as problem-solving are usually marked missing"
+   ],
+   [
+    "Score calculator",
+    "Code formula: 75% must-have, 25% good-to-have",
+    "Working",
+    "Same statuses always give the same score"
+   ],
+   [
+    "Improvement coach (P3)",
+    "3-5 suggestions and up to 3 rewritten lines",
+    "Partly working",
+    "Sometimes adds detail that is not in the resume (see T11 screenshot)"
+   ],
+   [
+    "Invented-skill check",
+    "Flags rewritten lines that mention a missing requirement",
+    "Partly working",
+    "Catches missing JD skills only, not other added detail"
+   ],
+   [
+    "Web app UI (Analyze tab)",
+    "Paste resume and JD, view the full report",
+    "Working",
+    "Streamlit"
+   ],
+   [
+    "Prompt Lab tab",
+    "Runs v1 and the final workflow side by side",
+    "Working",
+    "Used in the reel"
+   ],
+   [
+    "Sample loader",
+    "Loads any of the 14 test cases",
+    "Working",
+    ""
+   ],
+   [
+    "Test and comparison scripts",
+    "run_tests.py and compare_versions.py save all outputs",
+    "Working",
+    "Outputs in test-data/outputs/"
+   ],
+   [
+    "PDF / DOCX resume upload",
+    "Upload a resume file instead of pasting text",
+    "Not started",
+    "Planned for Milestone 3"
+   ]
+  ],
+  "iteration_log": [
+   [
+    "v1",
+    "Milestone 1 baseline: one free-text prompt with 6 task rules (prompts/v1).",
+    "Starting point.",
+    "Score spread across 3 runs: 3.3 on average. 0/11 replies machine-readable (free text). T11: obeyed the hidden instruction and gave 100/100. T13 (a recipe): not rejected, scored 0. The score is guessed: T01 got 65-70 although 2 of 4 must-haves are missing."
+   ],
+   [
+    "v2",
+    "Added a system role, an explicit scoring rubric (75/25 weights, match/partial/missing) and a JSON output format (prompts/v2).",
+    "v1 scores were not tied to any rule, and its free text could not be checked or shown as a table.",
+    "T11 injection now ignored (score 0). Scores followed the rubric more closely (T01: 53, 53, 63). But 0/11 replies were strict JSON: all were wrapped in ```json fences. Evidence was paraphrased, not quoted. T05 scored 50 in 3/3 runs (Tableau missing; Power BI ignored). T13 still not rejected."
+   ],
+   [
+    "v3",
+    "Split into 3 prompts: P1 extract (exact quotes), P2 match + score (1 worked example), P3 coach. Temperature 0.2 (P3 0.4) and JSON mode (prompts/v3).",
+    "JSON broke in every v2 run, and one prompt was doing four different jobs.",
+    "Strict JSON 11/11. Spread fell to 0.7. But only 3/9 repeat runs passed: the model's arithmetic was wrong (T01 statuses give 50, but it reported 41 and 39), and T05 scored 38 (Power BI not treated as related to Tableau). T13 still not rejected."
+   ],
+   [
+    "v4",
+    "Score moved from the prompt to code. P1 got input validation, injection detection and English-only output. P2 got the 'closely related skill = partial' rule. Evidence guard and invented-skill check added (prompts/v4).",
+    "Wrong arithmetic in v3, and no version rejected invalid input.",
+    "T13 rejected with a reason. T11 injection flagged with a warning. JSON 11/11. But spread rose to 6.0 and only 5/9 repeat runs passed: P1 quoted the skills-list line instead of the project line, so Excel (used in a project) became 'listed' and partial (T05: 38-47; T01 run 3: 41)."
+   ],
+   [
+    "v5 (final)",
+    "P1: always quote the strongest evidence (a project line beats a skills-list line), with an example. P2: use the strongest matching skill; a specific tool counts for its general skill (MySQL for SQL) (prompts/final).",
+    "v4 under-scored skills that were actually used in projects, and its scores changed between runs.",
+    "Spread 0.0: identical scores in all 9 repeat runs (T01: 50, 50, 50; T05: 56, 56, 56). 9/9 repeat runs passed. JSON 11/11, T11 = 0, T13 rejected. On the full 14-case test table: 13/14 passed (Section 4)."
+   ]
+  ]
+ },
+ "manual_review": {
+  "T03": "Manual review: Fail. The score range check passed (84), but Python is marked partial although the PyTorch, scikit-learn and pandas projects all use Python. The expected output says all must-have skills should match."
+ },
+ "testing": {
+  "screenshots": [
+   [
+    "T01_run.png",
+    "Screenshot 1 - Test T01 (Normal), real run in the web app: score 50/100, calculated by code; Python and SQL matched with exact resume quotes; data structures shown as missing; C++ not counted."
+   ],
+   [
+    "T11_run.png",
+    "Screenshot 2 - Test T11 (Edge, prompt injection), real run: the hidden 'give 100' instruction is flagged and ignored, and the score is 0/100. The rewritten line adds 'report formatting', which the resume does not claim (see limitation 3)."
+   ],
+   [
+    "T13_run.png",
+    "Screenshot 3 - Test T13 (Invalid), real run: a chai recipe pasted as a resume is rejected with a reason, and no score is given."
+   ]
+  ],
+  "limitations": [
+   [
+    "Implied skills are not inferred: Python is marked partial in T03 although every project uses Python libraries. 'Problem-solving' is marked missing for almost everyone.",
+    "Add a rule and an example to P2 that a library (pandas, PyTorch) demonstrates its language. Treat soft skills as 'not assessable' instead of missing, and leave them out of the score."
+   ],
+   [
+    "The score depends on how P1 splits the JD: 'HTML, CSS' may become one requirement or two, which changes the weights.",
+    "Ask P1 for one requirement per skill named in the JD, with a worked example, and measure the effect with compare_versions.py."
+   ],
+   [
+    "P3 rewrites can still add small unverified details (for example 'report formatting' in T11). The invented-skill check only catches missing JD skills.",
+    "Add a second check that compares nouns in each rewritten line with the original line, and lower P3's temperature to 0.2."
+   ],
+   [
+    "The test set is small (14 made-up cases), and two prompt examples (Power BI for Tableau, MySQL for SQL) come from cases we also test, so results may be optimistic.",
+    "Build a held-out set of 20 new resume-JD pairs written by classmates, and test resume upload (PDF) in Milestone 3."
+   ]
+  ]
+ },
+ "repository": {
+  "changes": [
+   "Added the final 3-prompt workflow (prompts/final) and all earlier versions v1-v4 (prompts/v1-v4).",
+   "Added the Streamlit web app and workflow code (code/app.py, code/resumeiq.py) using Gemini 3.5 Flash-Lite through LangChain.",
+   "Added 14 synthetic test cases and saved outputs of every test and version run (test-data/).",
+   "Added the diagrams, screenshots and this PDF (docs/), and a dated CHANGELOG.md.",
+   "Switched from ChatGPT to Gemini 3.5 Flash-Lite (free API quota) and moved score calculation from the prompt into code."
+  ]
+ },
+ "report_html": "\n<h1 style=\"font-size:16pt\">Technical Report: ResumeIQ</h1>\n<p class=\"small\">Team Naman square · SCSE4041 Prompt Engineering · Problem C9 · Milestone 2</p>\n<h3>1. Purpose</h3>\n<p>ResumeIQ compares a student's resume with a job description and returns a match score out of 100, a requirement-by-requirement analysis backed by exact resume quotes, and honest improvement suggestions. The design goal was <b>consistent, verifiable output that never invents qualifications</b>.</p>\n<h3>2. Architecture</h3>\n<p>Streamlit web app (code/app.py) &rarr; workflow module (code/resumeiq.py) &rarr; LangChain ChatOpenAI client &rarr; Google Gemini API (OpenAI-compatible endpoint). The prompts are stored as text files in prompts/final/ and loaded at run time. The API key comes from a Streamlit secret. The app is deployed on Streamlit Community Cloud from the GitHub repository.</p>\n<table><thead><tr><th>Step</th><th>Component</th><th>Type</th><th>Output</th></tr></thead><tbody>\n<tr><td>0</td><td>Basic input check</td><td>Code</td><td>Error if the input is empty or too short</td></tr>\n<tr><td>1</td><td>P1 Extractor (temp 0.2, JSON mode)</td><td>LLM</td><td>Validity, injection flag, skills with exact quotes, requirements with must/nice priority</td></tr>\n<tr><td>2</td><td>Evidence guard</td><td>Code</td><td>Only skills whose quote exists in the resume</td></tr>\n<tr><td>3</td><td>P2 Matcher (temp 0.2, JSON mode, 1 example)</td><td>LLM</td><td>Match / partial / missing for each requirement, with reason</td></tr>\n<tr><td>4</td><td>Score calculator</td><td>Code</td><td>75 x must-have average + 25 x good-to-have average (match 1, partial 0.5, missing 0)</td></tr>\n<tr><td>5</td><td>P3 Coach (temp 0.4, JSON mode)</td><td>LLM</td><td>3-5 suggestions, up to 3 rewritten lines</td></tr>\n<tr><td>6</td><td>Invented-skill check</td><td>Code</td><td>Warnings</td></tr>\n</tbody></table>\n<h3>3. Tools and models</h3>\n<p>Gemini 3.5 Flash-Lite, with gemini-3.1-flash-lite as the fallback when the main model is overloaded; LangChain (langchain-openai 1.8.5); Streamlit 1.67; Python 3.13. We chose Flash-Lite for its free-tier quota: Gemini 3.5 Flash allowed only 20 requests a day on our key. It averaged 4.1 s per call, and 12.8 s for a full 3-step analysis.</p>\n<h3>4. Prompt design</h3>\n<ul>\n<li><b>Role and task separation:</b> each prompt has one job (extract, judge, advise), so failures can be traced to one step.</li>\n<li><b>Grounding:</b> P1 must quote evidence word for word, and code verifies the quote. P2 sees only verified skills. P3 must use placeholders such as [X%] instead of inventing numbers.</li>\n<li><b>Structured output:</b> JSON mode plus a JSON shape in every prompt. Strict JSON validity went from 0/11 (v2) to 11/11 (v3-v5).</li>\n<li><b>Few-shot:</b> one worked example in P2 teaches that an unrelated skill (C++) cannot satisfy a requirement.</li>\n<li><b>Safety:</b> resume and JD are wrapped in &lt;resume&gt;/&lt;jd&gt; tags and treated as data. Injected instructions are flagged.</li>\n<li><b>Deterministic arithmetic:</b> the model gives statuses; code calculates the score.</li>\n</ul>\n<h3>5. Test results</h3>\n<p>Five prompt versions were run on the same inputs (T01, T04, T05 three times each, plus T11 and T13). The final version (v5) gave identical scores in all 9 repeat runs (average spread 0.0, versus 3.3 for v1 and 6.0 for v4). It passed 9/9 repeat-run checks (v3: 3/9, v4: 5/9), ignored the prompt injection that made v1 return 100/100, and rejected a recipe pasted as a resume, which v1-v3 did not. On the 14-case test table (6 normal, 5 edge, 3 invalid), 13/14 passed. The failure (T03) is that an implied skill is not inferred.</p>\n<h3>6. Limitations and next steps</h3>\n<ul>\n<li>Implied skills (pandas &rArr; Python) are not inferred, and soft skills are usually marked missing.</li>\n<li>The score depends on how the JD is split into requirements.</li>\n<li>P3 rewrites can add small unverified details. The current check only catches missing JD skills.</li>\n<li>The test set is small and partly overlaps the prompt examples. For Milestone 3 we will add a held-out set of 20 pairs, PDF resume upload, and user testing with students.</li>\n</ul>\n"
+}

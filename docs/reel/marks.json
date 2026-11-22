@@ -1,0 +1,15 @@
+{
+ "lab_start": 2.354,
+ "lab_wait_start": 4.612,
+ "lab_wait_end": 24.441,
+ "lab_v1_score": 29.818,
+ "lab_end": 38.455,
+ "demo_start": 39.06,
+ "demo_wait_start": 42.077,
+ "demo_wait_end": 51.585,
+ "demo_t11_end": 73.204,
+ "t13_start": 73.811,
+ "t13_wait_start": 77.011,
+ "t13_wait_end": 87.496,
+ "end": 93.021
+}

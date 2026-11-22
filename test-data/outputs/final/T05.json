@@ -1,0 +1,142 @@
+{
+ "input": {
+  "id": "T05",
+  "type": "Normal",
+  "title": "Data analyst with related (not exact) BI tool",
+  "resume": "Sneha Iyer\nB.Sc Statistics, final year\nSkills: SQL, Excel (pivot tables, VLOOKUP), Power BI\nProjects:\n- Sales dashboard in Power BI for a sample retail dataset (50k rows), with monthly trend and region filters.\n- Hypothesis testing project on exam scores using Excel.\n",
+  "jd": "Data Analyst Intern. Must have: SQL, Excel, Tableau, statistics. Good to have: Python.",
+  "expected": "Score 55-85. SQL, Excel, statistics matched. Tableau partial (Power BI is related). Python missing.",
+  "checks": {
+   "score_range": [
+    55,
+    85
+   ],
+   "must_be_missing": [
+    "python"
+   ],
+   "must_not_match": [
+    "python"
+   ]
+  }
+ },
+ "output": {
+  "version": "v5-final",
+  "steps": [
+   {
+    "prompt": "P1",
+    "text": "{\n  \"input_check\": {\n    \"resume_valid\": true,\n    \"jd_valid\": true,\n    \"problem\": null\n  },\n  \"injection_detected\": false,\n  \"candidate_skills\": [\n    {\n      \"skill\": \"SQL\",\n      \"evidence\": \"Skills: SQL, Excel (pivot tables, VLOOKUP), Power BI\",\n      \"strength\": \"listed\"\n    },\n    {\n      \"skill\": \"Excel\",\n      \"evidence\": \"Hypothesis testing project on exam scores using Excel.\",\n      \"strength\": \"demonstrated\"\n    },\n    {\n      \"skill\": \"Power BI\",\n      \"evidence\": \"- Sales dashboard in Power BI for a sample retail dataset (50k rows), with monthly trend and region filters.\",\n      \"strength\": \"demonstrated\"\n    },\n    {\n      \"skill\": \"Statistics\",\n      \"evidence\": \"B.Sc Statistics, final year\",\n      \"strength\": \"demonstrated\"\n    }\n  ],\n  \"jd_requirements\": [\n    {\n      \"requirement\": \"SQL\",\n      \"priority\": \"must\"\n    },\n    {\n      \"requirement\": \"Excel\",\n      \"priority\": \"must\"\n    },\n    {\n      \"requirement\": \"Tableau\",\n      \"priority\": \"must\"\n    },\n    {\n      \"requirement\": \"statistics\",\n      \"priority\": \"must\"\n    },\n    {\n      \"requirement\": \"Python\",\n      \"priority\": \"nice\"\n    }\n  ]\n}",
+    "model": "gemini-3.5-flash-lite",
+    "seconds": 5.7
+   },
+   {
+    "prompt": "P2",
+    "text": "{\n  \"matches\": [\n    {\n      \"requirement\": \"SQL\",\n      \"priority\": \"must\",\n      \"status\": \"partial\",\n      \"evidence\": \"Skills: SQL, Excel (pivot tables, VLOOKUP), Power BI\",\n      \"reason\": \"Listed in skills with no project or job backing it up.\"\n    },\n    {\n      \"requirement\": \"Excel\",\n      \"priority\": \"must\",\n      \"status\": \"match\",\n      \"evidence\": \"Hypothesis testing project on exam scores using Excel.\",\n      \"reason\": \"Demonstrated in a project.\"\n    },\n    {\n      \"requirement\": \"Tableau\",\n      \"priority\": \"must\",\n      \"status\": \"partial\",\n      \"evidence\": \"- Sales dashboard in Power BI for a sample retail dataset (50k rows), with monthly trend and region filters.\",\n      \"reason\": \"Candidate has Power BI instead of Tableau as a closely related alternative.\"\n    },\n    {\n      \"requirement\": \"statistics\",\n      \"priority\": \"must\",\n      \"status\": \"match\",\n      \"evidence\": \"B.Sc Statistics, final year\",\n      \"reason\": \"Demonstrated through education.\"\n    },\n    {\n      \"requirement\": \"Python\",\n      \"priority\": \"nice\",\n      \"status\": \"missing\",\n      \"evidence\": null,\n      \"reason\": \"No Python skills or experience are present.\"\n    }\n  ],\n  \"summary\": \"Solid background in statistics, Excel, and Power BI with partial SQL knowledge. The most important gap is the lack of Python experience.\"\n}",
+    "model": "gemini-3.5-flash-lite",
+    "seconds": 5.0
+   },
+   {
+    "prompt": "P3",
+    "text": "{\n  \"suggestions\": [\n    {\n      \"type\": \"clarify\",\n      \"text\": \"Add how SQL was used in your projects or coursework to show practical knowledge, since it is currently only listed as a skill.\",\n      \"related_requirement\": \"SQL\"\n    },\n    {\n      \"type\": \"add_if_true\",\n      \"text\": \"If you have used Tableau, add it to your skills section alongside Power BI.\",\n      \"related_requirement\": \"Tableau\"\n    },\n    {\n      \"type\": \"learn\",\n      \"text\": \"Python is missing from your resume. Learn basic Python for data analysis and build a small script to clean a CSV file and calculate summary statistics.\",\n      \"related_requirement\": \"Python\"\n    }\n  ],\n  \"rewritten_lines\": [\n    {\n      \"original\": \"- Sales dashboard in Power BI for a sample retail dataset (50k rows), with monthly trend and region filters.\",\n      \"improved\": \"- Built a Power BI sales dashboard using a sample retail dataset of [50k] rows, incorporating monthly trends and region filters.\"\n    },\n    {\n      \"original\": \"- Hypothesis testing project on exam scores using Excel.\",\n      \"improved\": \"- Performed hypothesis testing on student exam scores using Excel to analyze performance differences.\"\n    }\n  ]\n}",
+    "model": "gemini-3.5-flash-lite",
+    "seconds": 5.3
+   }
+  ],
+  "warnings": [],
+  "valid": true,
+  "score": 56,
+  "matches": [
+   {
+    "requirement": "SQL",
+    "priority": "must",
+    "status": "partial",
+    "evidence": "Skills: SQL, Excel (pivot tables, VLOOKUP), Power BI",
+    "reason": "Listed in skills with no project or job backing it up."
+   },
+   {
+    "requirement": "Excel",
+    "priority": "must",
+    "status": "match",
+    "evidence": "Hypothesis testing project on exam scores using Excel.",
+    "reason": "Demonstrated in a project."
+   },
+   {
+    "requirement": "Tableau",
+    "priority": "must",
+    "status": "partial",
+    "evidence": "- Sales dashboard in Power BI for a sample retail dataset (50k rows), with monthly trend and region filters.",
+    "reason": "Candidate has Power BI instead of Tableau as a closely related alternative."
+   },
+   {
+    "requirement": "statistics",
+    "priority": "must",
+    "status": "match",
+    "evidence": "B.Sc Statistics, final year",
+    "reason": "Demonstrated through education."
+   },
+   {
+    "requirement": "Python",
+    "priority": "nice",
+    "status": "missing",
+    "evidence": null,
+    "reason": "No Python skills or experience are present."
+   }
+  ],
+  "summary": "Solid background in statistics, Excel, and Power BI with partial SQL knowledge. The most important gap is the lack of Python experience.",
+  "candidate_skills": [
+   {
+    "skill": "SQL",
+    "evidence": "Skills: SQL, Excel (pivot tables, VLOOKUP), Power BI",
+    "strength": "listed"
+   },
+   {
+    "skill": "Excel",
+    "evidence": "Hypothesis testing project on exam scores using Excel.",
+    "strength": "demonstrated"
+   },
+   {
+    "skill": "Power BI",
+    "evidence": "- Sales dashboard in Power BI for a sample retail dataset (50k rows), with monthly trend and region filters.",
+    "strength": "demonstrated"
+   },
+   {
+    "skill": "Statistics",
+    "evidence": "B.Sc Statistics, final year",
+    "strength": "demonstrated"
+   }
+  ],
+  "suggestions": [
+   {
+    "type": "clarify",
+    "text": "Add how SQL was used in your projects or coursework to show practical knowledge, since it is currently only listed as a skill.",
+    "related_requirement": "SQL"
+   },
+   {
+    "type": "add_if_true",
+    "text": "If you have used Tableau, add it to your skills section alongside Power BI.",
+    "related_requirement": "Tableau"
+   },
+   {
+    "type": "learn",
+    "text": "Python is missing from your resume. Learn basic Python for data analysis and build a small script to clean a CSV file and calculate summary statistics.",
+    "related_requirement": "Python"
+   }
+  ],
+  "rewritten_lines": [
+   {
+    "original": "- Sales dashboard in Power BI for a sample retail dataset (50k rows), with monthly trend and region filters.",
+    "improved": "- Built a Power BI sales dashboard using a sample retail dataset of [50k] rows, incorporating monthly trends and region filters."
+   },
+   {
+    "original": "- Hypothesis testing project on exam scores using Excel.",
+    "improved": "- Performed hypothesis testing on student exam scores using Excel to analyze performance differences."
+   }
+  ],
+  "json_ok": true
+ },
+ "check": {
+  "passed": true,
+  "notes": [
+   "all checks met"
+  ]
+ }
+}

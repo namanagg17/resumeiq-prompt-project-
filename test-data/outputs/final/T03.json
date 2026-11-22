@@ -1,0 +1,154 @@
+{
+ "input": {
+  "id": "T03",
+  "type": "Normal",
+  "title": "Strong match: ML student vs ML intern",
+  "resume": "Rohan Gupta\nB.Tech CSE (AI & ML), final year\nSkills: Python, PyTorch, scikit-learn, pandas, Git\nExperience:\n- ML Intern, a fintech startup (Jun-Aug 2025): trained a gradient-boosting fraud model in scikit-learn, improved recall from 0.71 to 0.83.\nProjects:\n- Plant disease classifier: CNN in PyTorch, 94% test accuracy on 38 classes.\n- Kaggle Titanic: top 15% leaderboard using pandas feature engineering.\n",
+  "jd": "Machine Learning Intern. Must have: Python, PyTorch or TensorFlow, scikit-learn, data preprocessing with pandas. Good to have: Git, experience with model evaluation metrics.",
+  "expected": "Score 80-100. All must-have skills matched with evidence. No important gaps.",
+  "checks": {
+   "score_range": [
+    80,
+    100
+   ],
+   "must_be_missing": [],
+   "must_not_match": []
+  }
+ },
+ "output": {
+  "version": "v5-final",
+  "steps": [
+   {
+    "prompt": "P1",
+    "text": "{\n  \"input_check\": {\n    \"resume_valid\": true,\n    \"jd_valid\": true,\n    \"problem\": null\n  },\n  \"injection_detected\": false,\n  \"candidate_skills\": [\n    {\n      \"skill\": \"Python\",\n      \"evidence\": \"Skills: Python, PyTorch, scikit-learn, pandas, Git\",\n      \"strength\": \"listed\"\n    },\n    {\n      \"skill\": \"PyTorch\",\n      \"evidence\": \"Plant disease classifier: CNN in PyTorch, 94% test accuracy on 38 classes.\",\n      \"strength\": \"demonstrated\"\n    },\n    {\n      \"skill\": \"scikit-learn\",\n      \"evidence\": \"ML Intern, a fintech startup (Jun-Aug 2025): trained a gradient-boosting fraud model in scikit-learn, improved recall from 0.71 to 0.83.\",\n      \"strength\": \"demonstrated\"\n    },\n    {\n      \"skill\": \"pandas\",\n      \"evidence\": \"Kaggle Titanic: top 15% leaderboard using pandas feature engineering.\",\n      \"strength\": \"demonstrated\"\n    },\n    {\n      \"skill\": \"Git\",\n      \"evidence\": \"Skills: Python, PyTorch, scikit-learn, pandas, Git\",\n      \"strength\": \"listed\"\n    }\n  ],\n  \"jd_requirements\": [\n    {\n      \"requirement\": \"Python\",\n      \"priority\": \"must\"\n    },\n    {\n      \"requirement\": \"PyTorch or TensorFlow\",\n      \"priority\": \"must\"\n    },\n    {\n      \"requirement\": \"scikit-learn\",\n      \"priority\": \"must\"\n    },\n    {\n      \"requirement\": \"data preprocessing with pandas\",\n      \"priority\": \"must\"\n    },\n    {\n      \"requirement\": \"Git\",\n      \"priority\": \"nice\"\n    },\n    {\n      \"requirement\": \"experience with model evaluation metrics\",\n      \"priority\": \"nice\"\n    }\n  ]\n}",
+    "model": "gemini-3.5-flash-lite",
+    "seconds": 1.9
+   },
+   {
+    "prompt": "P2",
+    "text": "{\n  \"matches\": [\n    {\n      \"requirement\": \"Python\",\n      \"priority\": \"must\",\n      \"status\": \"partial\",\n      \"evidence\": \"Skills: Python, PyTorch, scikit-learn, pandas, Git\",\n      \"reason\": \"Listed in skills with no project context.\"\n    },\n    {\n      \"requirement\": \"PyTorch or TensorFlow\",\n      \"priority\": \"must\",\n      \"status\": \"match\",\n      \"evidence\": \"Plant disease classifier: CNN in PyTorch, 94% test accuracy on 38 classes.\",\n      \"reason\": \"Demonstrated via a plant disease classifier project using PyTorch.\"\n    },\n    {\n      \"requirement\": \"scikit-learn\",\n      \"priority\": \"must\",\n      \"status\": \"match\",\n      \"evidence\": \"ML Intern, a fintech startup (Jun-Aug 2025): trained a gradient-boosting fraud model in scikit-learn, improved recall from 0.71 to 0.83.\",\n      \"reason\": \"Demonstrated through an ML internship experience.\"\n    },\n    {\n      \"requirement\": \"data preprocessing with pandas\",\n      \"priority\": \"must\",\n      \"status\": \"match\",\n      \"evidence\": \"Kaggle Titanic: top 15% leaderboard using pandas feature engineering.\",\n      \"reason\": \"Demonstrated via feature engineering work on Kaggle using pandas.\"\n    },\n    {\n      \"requirement\": \"Git\",\n      \"priority\": \"nice\",\n      \"status\": \"partial\",\n      \"evidence\": \"Skills: Python, PyTorch, scikit-learn, pandas, Git\",\n      \"reason\": \"Listed in skills without a specific project context.\"\n    },\n    {\n      \"requirement\": \"experience with model evaluation metrics\",\n      \"priority\": \"nice\",\n      \"status\": \"match\",\n      \"evidence\": \"ML Intern, a fintech startup (Jun-Aug 2025): trained a gradient-boosting fraud model in scikit-learn, improved recall from 0.71 to 0.83.\",\n      \"reason\": \"Demonstrated by improving recall metrics in an internship project.\"\n    }\n  ],\n  \"summary\": \"The candidate has strong demonstrated experience in PyTorch, scikit-learn, pandas, and evaluation metrics, matching all core machine learning requirements. The only minor gap is that Python and Git are currently only listed in the skills section rather than demonstrated through projects.\"\n}",
+    "model": "gemini-3.5-flash-lite",
+    "seconds": 6.0
+   },
+   {
+    "prompt": "P3",
+    "text": "{\n  \"suggestions\": [\n    {\n      \"type\": \"rewrite\",\n      \"text\": \"Make sure your internship bullet explicitly mentions evaluating the model using precision and F1-score if you tracked those metrics, to better match model evaluation requirements.\",\n      \"related_requirement\": \"experience with model evaluation metrics\"\n    },\n    {\n      \"type\": \"clarify\",\n      \"text\": \"Add a short phrase to your Plant disease classifier project showing how you used Python alongside PyTorch, since Python is a core required skill.\",\n      \"related_requirement\": \"Python\"\n    },\n    {\n      \"type\": \"add_if_true\",\n      \"text\": \"Add a small mention of using Git for version control in your Plant disease classifier project if you actually used it there.\",\n      \"related_requirement\": \"Git\"\n    }\n  ],\n  \"rewritten_lines\": [\n    {\n      \"original\": \"- trained a gradient-boosting fraud model in scikit-learn, improved recall from 0.71 to 0.83.\",\n      \"improved\": \"- Trained a gradient-boosting fraud detection model using scikit-learn, improving recall from 0.71 to 0.83.\"\n    },\n    {\n      \"original\": \"- Plant disease classifier: CNN in PyTorch, 94% test accuracy on 38 classes.\",\n      \"improved\": \"- Plant disease classifier: Developed a CNN in PyTorch achieving 94% test accuracy across 38 classes.\"\n    },\n    {\n      \"original\": \"- Kaggle Titanic: top 15% leaderboard using pandas feature engineering.\",\n      \"improved\": \"- Kaggle Titanic: Reached the top 15% on the leaderboard by applying pandas for feature engineering.\"\n    }\n  ]\n}",
+    "model": "gemini-3.5-flash-lite",
+    "seconds": 5.7
+   }
+  ],
+  "warnings": [],
+  "valid": true,
+  "score": 84,
+  "matches": [
+   {
+    "requirement": "Python",
+    "priority": "must",
+    "status": "partial",
+    "evidence": "Skills: Python, PyTorch, scikit-learn, pandas, Git",
+    "reason": "Listed in skills with no project context."
+   },
+   {
+    "requirement": "PyTorch or TensorFlow",
+    "priority": "must",
+    "status": "match",
+    "evidence": "Plant disease classifier: CNN in PyTorch, 94% test accuracy on 38 classes.",
+    "reason": "Demonstrated via a plant disease classifier project using PyTorch."
+   },
+   {
+    "requirement": "scikit-learn",
+    "priority": "must",
+    "status": "match",
+    "evidence": "ML Intern, a fintech startup (Jun-Aug 2025): trained a gradient-boosting fraud model in scikit-learn, improved recall from 0.71 to 0.83.",
+    "reason": "Demonstrated through an ML internship experience."
+   },
+   {
+    "requirement": "data preprocessing with pandas",
+    "priority": "must",
+    "status": "match",
+    "evidence": "Kaggle Titanic: top 15% leaderboard using pandas feature engineering.",
+    "reason": "Demonstrated via feature engineering work on Kaggle using pandas."
+   },
+   {
+    "requirement": "Git",
+    "priority": "nice",
+    "status": "partial",
+    "evidence": "Skills: Python, PyTorch, scikit-learn, pandas, Git",
+    "reason": "Listed in skills without a specific project context."
+   },
+   {
+    "requirement": "experience with model evaluation metrics",
+    "priority": "nice",
+    "status": "match",
+    "evidence": "ML Intern, a fintech startup (Jun-Aug 2025): trained a gradient-boosting fraud model in scikit-learn, improved recall from 0.71 to 0.83.",
+    "reason": "Demonstrated by improving recall metrics in an internship project."
+   }
+  ],
+  "summary": "The candidate has strong demonstrated experience in PyTorch, scikit-learn, pandas, and evaluation metrics, matching all core machine learning requirements. The only minor gap is that Python and Git are currently only listed in the skills section rather than demonstrated through projects.",
+  "candidate_skills": [
+   {
+    "skill": "Python",
+    "evidence": "Skills: Python, PyTorch, scikit-learn, pandas, Git",
+    "strength": "listed"
+   },
+   {
+    "skill": "PyTorch",
+    "evidence": "Plant disease classifier: CNN in PyTorch, 94% test accuracy on 38 classes.",
+    "strength": "demonstrated"
+   },
+   {
+    "skill": "scikit-learn",
+    "evidence": "ML Intern, a fintech startup (Jun-Aug 2025): trained a gradient-boosting fraud model in scikit-learn, improved recall from 0.71 to 0.83.",
+    "strength": "demonstrated"
+   },
+   {
+    "skill": "pandas",
+    "evidence": "Kaggle Titanic: top 15% leaderboard using pandas feature engineering.",
+    "strength": "demonstrated"
+   },
+   {
+    "skill": "Git",
+    "evidence": "Skills: Python, PyTorch, scikit-learn, pandas, Git",
+    "strength": "listed"
+   }
+  ],
+  "suggestions": [
+   {
+    "type": "rewrite",
+    "text": "Make sure your internship bullet explicitly mentions evaluating the model using precision and F1-score if you tracked those metrics, to better match model evaluation requirements.",
+    "related_requirement": "experience with model evaluation metrics"
+   },
+   {
+    "type": "clarify",
+    "text": "Add a short phrase to your Plant disease classifier project showing how you used Python alongside PyTorch, since Python is a core required skill.",
+    "related_requirement": "Python"
+   },
+   {
+    "type": "add_if_true",
+    "text": "Add a small mention of using Git for version control in your Plant disease classifier project if you actually used it there.",
+    "related_requirement": "Git"
+   }
+  ],
+  "rewritten_lines": [
+   {
+    "original": "- trained a gradient-boosting fraud model in scikit-learn, improved recall from 0.71 to 0.83.",
+    "improved": "- Trained a gradient-boosting fraud detection model using scikit-learn, improving recall from 0.71 to 0.83."
+   },
+   {
+    "original": "- Plant disease classifier: CNN in PyTorch, 94% test accuracy on 38 classes.",
+    "improved": "- Plant disease classifier: Developed a CNN in PyTorch achieving 94% test accuracy across 38 classes."
+   },
+   {
+    "original": "- Kaggle Titanic: top 15% leaderboard using pandas feature engineering.",
+    "improved": "- Kaggle Titanic: Reached the top 15% on the leaderboard by applying pandas for feature engineering."
+   }
+  ],
+  "json_ok": true
+ },
+ "check": {
+  "passed": true,
+  "notes": [
+   "all checks met"
+  ]
+ }
+}

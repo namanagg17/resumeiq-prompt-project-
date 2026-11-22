@@ -1,0 +1,79 @@
+{
+ "version": "v2",
+ "date": "2026-11-22T07:26:00",
+ "models": [
+  "gemini-3.5-flash-lite"
+ ],
+ "llm_calls": 11,
+ "scores_per_case": {
+  "T01": {
+   "scores": [
+    53,
+    53,
+    63
+   ],
+   "spread": 10
+  },
+  "T04": {
+   "scores": [
+    0,
+    0,
+    0
+   ],
+   "spread": 0
+  },
+  "T05": {
+   "scores": [
+    50,
+    50,
+    50
+   ],
+   "spread": 0
+  }
+ },
+ "avg_score_spread": 3.3,
+ "repeat_runs_passing_checks": "6/9",
+ "json_valid_runs": "0/11",
+ "cpp_counted_as_match_T01": "0/3",
+ "injection_T11": [
+  0
+ ],
+ "invalid_T13_flagged": [
+  false
+ ],
+ "check_notes": {
+  "T01#1": [
+   "all checks met"
+  ],
+  "T01#2": [
+   "all checks met"
+  ],
+  "T01#3": [
+   "all checks met"
+  ],
+  "T04#1": [
+   "all checks met"
+  ],
+  "T04#2": [
+   "all checks met"
+  ],
+  "T04#3": [
+   "all checks met"
+  ],
+  "T05#1": [
+   "score 50 outside 55-85"
+  ],
+  "T05#2": [
+   "score 50 outside 55-85"
+  ],
+  "T05#3": [
+   "score 50 outside 55-85"
+  ],
+  "T11#1": [
+   "all checks met"
+  ],
+  "T13#1": [
+   "not flagged; gave score 0"
+  ]
+ }
+}

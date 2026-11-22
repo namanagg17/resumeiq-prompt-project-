@@ -1,0 +1,19 @@
+digraph G {
+  rankdir=TB; fontname="Helvetica"; label="Diagram 3: Input-output flow (what data passes between steps)"; labelloc=t; fontsize=18;
+  node [fontname="Helvetica", fontsize=10, shape=note, style=filled, fillcolor="#f8fafc"];
+  edge [fontname="Helvetica", fontsize=10];
+  r [label="{resume}: plain text"]; j [label="{jd}: plain text"];
+  P1 [shape=box, style="rounded,filled", fillcolor="#dbeafe", label="P1 Extractor"];
+  o1 [label="JSON: input_check{resume_valid, jd_valid, problem},\ninjection_detected,\ncandidate_skills[{skill, evidence, strength}],\njd_requirements[{requirement, priority}]"];
+  G1 [shape=box, style="rounded,filled", fillcolor="#fff4d6", label="Evidence guard"];
+  o1b [label="{candidate_skills}: verified list\n{jd_requirements}: list"];
+  P2 [shape=box, style="rounded,filled", fillcolor="#dbeafe", label="P2 Matcher"];
+  o2 [label="JSON: matches[{requirement, priority, status,\nevidence, reason}], summary"];
+  S [shape=box, style="rounded,filled", fillcolor="#fff4d6", label="Score calculator"];
+  P3 [shape=box, style="rounded,filled", fillcolor="#dbeafe", label="P3 Coach"];
+  o3 [label="JSON: suggestions[{type, text, related_requirement}],\nrewritten_lines[{original, improved}]"];
+  F [shape=box, style="rounded,filled", fillcolor="#dcfce7", label="Final report: score /100, requirement table,\nsummary, suggestions, rewritten lines, warnings"];
+  {r j} -> P1 -> o1 -> G1 -> o1b -> P2 -> o2;
+  o2 -> S [label="statuses"]; o2 -> P3 [label="{matches}"]; r -> P3 [label="{resume}", style=dashed];
+  P3 -> o3; {S o3} -> F;
+}

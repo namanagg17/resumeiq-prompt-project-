@@ -1,0 +1,147 @@
+{
+ "input": {
+  "id": "T04",
+  "type": "Normal",
+  "title": "Weak match: mechanical student vs frontend intern",
+  "resume": "Karan Mehta\nB.Tech Mechanical Engineering, 3rd year\nSkills: AutoCAD, SolidWorks, MATLAB\nProjects:\n- Designed a go-kart chassis in SolidWorks and tested it with FEA.\n",
+  "jd": "Frontend Developer Intern. Must have: JavaScript, React, HTML and CSS. Good to have: Git, Figma.",
+  "expected": "Score 0-25. JavaScript, React, HTML/CSS all missing. No skills invented.",
+  "checks": {
+   "score_range": [
+    0,
+    25
+   ],
+   "must_be_missing": [
+    "react",
+    "javascript"
+   ],
+   "must_not_match": [
+    "react",
+    "javascript"
+   ]
+  }
+ },
+ "output": {
+  "version": "v5-final",
+  "steps": [
+   {
+    "prompt": "P1",
+    "text": "{\n  \"input_check\": {\n    \"resume_valid\": true,\n    \"jd_valid\": true,\n    \"problem\": null\n  },\n  \"injection_detected\": false,\n  \"candidate_skills\": [\n    {\n      \"skill\": \"AutoCAD\",\n      \"evidence\": \"AutoCAD, SolidWorks, MATLAB\",\n      \"strength\": \"listed\"\n    },\n    {\n      \"skill\": \"SolidWorks\",\n      \"evidence\": \"Designed a go-kart chassis in SolidWorks and tested it with FEA.\",\n      \"strength\": \"demonstrated\"\n    },\n    {\n      \"skill\": \"MATLAB\",\n      \"evidence\": \"AutoCAD, SolidWorks, MATLAB\",\n      \"strength\": \"listed\"\n    }\n  ],\n  \"jd_requirements\": [\n    {\n      \"requirement\": \"JavaScript\",\n      \"priority\": \"must\"\n    },\n    {\n      \"requirement\": \"React\",\n      \"priority\": \"must\"\n    },\n    {\n      \"requirement\": \"HTML\",\n      \"priority\": \"must\"\n    },\n    {\n      \"requirement\": \"CSS\",\n      \"priority\": \"must\"\n    },\n    {\n      \"requirement\": \"Git\",\n      \"priority\": \"nice\"\n    },\n    {\n      \"requirement\": \"Figma\",\n      \"priority\": \"nice\"\n    }\n  ]\n}",
+    "model": "gemini-3.5-flash-lite",
+    "seconds": 5.9
+   },
+   {
+    "prompt": "P2",
+    "text": "{\n  \"matches\": [\n    {\n      \"requirement\": \"JavaScript\",\n      \"priority\": \"must\",\n      \"status\": \"missing\",\n      \"evidence\": null,\n      \"reason\": \"No JavaScript skills or experience are present.\"\n    },\n    {\n      \"requirement\": \"React\",\n      \"priority\": \"must\",\n      \"status\": \"missing\",\n      \"evidence\": null,\n      \"reason\": \"No React skills or experience are present.\"\n    },\n    {\n      \"requirement\": \"HTML\",\n      \"priority\": \"must\",\n      \"status\": \"missing\",\n      \"evidence\": null,\n      \"reason\": \"No HTML skills or experience are present.\"\n    },\n    {\n      \"requirement\": \"CSS\",\n      \"priority\": \"must\",\n      \"status\": \"missing\",\n      \"evidence\": null,\n      \"reason\": \"No CSS skills or experience are present.\"\n    },\n    {\n      \"requirement\": \"Git\",\n      \"priority\": \"nice\",\n      \"status\": \"missing\",\n      \"evidence\": null,\n      \"reason\": \"No Git skills or experience are present.\"\n    },\n    {\n      \"requirement\": \"Figma\",\n      \"priority\": \"nice\",\n      \"status\": \"missing\",\n      \"evidence\": null,\n      \"reason\": \"No Figma skills or experience are present.\"\n    }\n  ],\n  \"summary\": \"The candidate has a background in engineering software like SolidWorks and AutoCAD, but completely lacks web development skills. The most important gap is the absence of core must-have requirements like JavaScript, React, HTML, and CSS.\"\n}",
+    "model": "gemini-3.5-flash-lite",
+    "seconds": 4.8
+   },
+   {
+    "prompt": "P3",
+    "text": "{\n  \"suggestions\": [\n    {\n      \"type\": \"learn\",\n      \"text\": \"Build a personal portfolio website using HTML, CSS, and JavaScript, and host it on GitHub to cover the core web development requirements.\",\n      \"related_requirement\": \"JavaScript\"\n    },\n    {\n      \"type\": \"add_if_true\",\n      \"text\": \"Add Git to your skills section if you have used version control for any academic or personal projects.\",\n      \"related_requirement\": \"Git\"\n    },\n    {\n      \"type\": \"add_if_true\",\n      \"text\": \"Add Figma to your skills section if you have used it for designing any user interfaces.\",\n      \"related_requirement\": \"Figma\"\n    },\n    {\n      \"type\": \"learn\",\n      \"text\": \"Learn React by building a simple task tracker application to fulfill the React framework requirement.\",\n      \"related_requirement\": \"React\"\n    }\n  ],\n  \"rewritten_lines\": [\n    {\n      \"original\": \"- Designed a go-kart chassis in SolidWorks and tested it with FEA.\",\n      \"improved\": \"- Designed a go-kart chassis using SolidWorks and evaluated its structural integrity using FEA simulations [X% stress reduction].\"\n    }\n  ]\n}",
+    "model": "gemini-3.5-flash-lite",
+    "seconds": 4.6
+   }
+  ],
+  "warnings": [],
+  "valid": true,
+  "score": 0,
+  "matches": [
+   {
+    "requirement": "JavaScript",
+    "priority": "must",
+    "status": "missing",
+    "evidence": null,
+    "reason": "No JavaScript skills or experience are present."
+   },
+   {
+    "requirement": "React",
+    "priority": "must",
+    "status": "missing",
+    "evidence": null,
+    "reason": "No React skills or experience are present."
+   },
+   {
+    "requirement": "HTML",
+    "priority": "must",
+    "status": "missing",
+    "evidence": null,
+    "reason": "No HTML skills or experience are present."
+   },
+   {
+    "requirement": "CSS",
+    "priority": "must",
+    "status": "missing",
+    "evidence": null,
+    "reason": "No CSS skills or experience are present."
+   },
+   {
+    "requirement": "Git",
+    "priority": "nice",
+    "status": "missing",
+    "evidence": null,
+    "reason": "No Git skills or experience are present."
+   },
+   {
+    "requirement": "Figma",
+    "priority": "nice",
+    "status": "missing",
+    "evidence": null,
+    "reason": "No Figma skills or experience are present."
+   }
+  ],
+  "summary": "The candidate has a background in engineering software like SolidWorks and AutoCAD, but completely lacks web development skills. The most important gap is the absence of core must-have requirements like JavaScript, React, HTML, and CSS.",
+  "candidate_skills": [
+   {
+    "skill": "AutoCAD",
+    "evidence": "AutoCAD, SolidWorks, MATLAB",
+    "strength": "listed"
+   },
+   {
+    "skill": "SolidWorks",
+    "evidence": "Designed a go-kart chassis in SolidWorks and tested it with FEA.",
+    "strength": "demonstrated"
+   },
+   {
+    "skill": "MATLAB",
+    "evidence": "AutoCAD, SolidWorks, MATLAB",
+    "strength": "listed"
+   }
+  ],
+  "suggestions": [
+   {
+    "type": "learn",
+    "text": "Build a personal portfolio website using HTML, CSS, and JavaScript, and host it on GitHub to cover the core web development requirements.",
+    "related_requirement": "JavaScript"
+   },
+   {
+    "type": "add_if_true",
+    "text": "Add Git to your skills section if you have used version control for any academic or personal projects.",
+    "related_requirement": "Git"
+   },
+   {
+    "type": "add_if_true",
+    "text": "Add Figma to your skills section if you have used it for designing any user interfaces.",
+    "related_requirement": "Figma"
+   },
+   {
+    "type": "learn",
+    "text": "Learn React by building a simple task tracker application to fulfill the React framework requirement.",
+    "related_requirement": "React"
+   }
+  ],
+  "rewritten_lines": [
+   {
+    "original": "- Designed a go-kart chassis in SolidWorks and tested it with FEA.",
+    "improved": "- Designed a go-kart chassis using SolidWorks and evaluated its structural integrity using FEA simulations [X% stress reduction]."
+   }
+  ],
+  "json_ok": true
+ },
+ "check": {
+  "passed": true,
+  "notes": [
+   "all checks met"
+  ]
+ }
+}

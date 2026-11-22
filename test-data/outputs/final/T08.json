@@ -1,0 +1,124 @@
+{
+ "input": {
+  "id": "T08",
+  "type": "Edge",
+  "title": "Very short resume (one line of skills)",
+  "resume": "Dev Patel. Skills: Java.",
+  "jd": "Java Developer Intern. Must have: Java, OOP concepts, Spring Boot, SQL. Good to have: Git.",
+  "expected": "Low score 0-40. Java listed but not demonstrated (partial). Spring Boot, SQL missing. No projects invented in suggestions.",
+  "checks": {
+   "score_range": [
+    0,
+    40
+   ],
+   "must_be_missing": [
+    "spring"
+   ],
+   "must_not_match": [
+    "spring",
+    "sql"
+   ]
+  }
+ },
+ "output": {
+  "version": "v5-final",
+  "steps": [
+   {
+    "prompt": "P1",
+    "text": "{\"input_check\": {\"resume_valid\": true, \"jd_valid\": true, \"problem\": null}, \"injection_detected\": false, \"candidate_skills\": [{\"skill\": \"Java\", \"evidence\": \"Java\", \"strength\": \"listed\"}], \"jd_requirements\": [{\"requirement\": \"Java\", \"priority\": \"must\"}, {\"requirement\": \"OOP concepts\", \"priority\": \"must\"}, {\"requirement\": \"Spring Boot\", \"priority\": \"must\"}, {\"requirement\": \"SQL\", \"priority\": \"must\"}, {\"requirement\": \"Git\", \"priority\": \"nice\"}]}",
+    "model": "gemini-3.5-flash-lite",
+    "seconds": 5.6
+   },
+   {
+    "prompt": "P2",
+    "text": "{\n  \"matches\": [\n    {\n      \"requirement\": \"Java\",\n      \"priority\": \"must\",\n      \"status\": \"partial\",\n      \"evidence\": \"Java\",\n      \"reason\": \"Java is listed as a skill without project evidence.\"\n    },\n    {\n      \"requirement\": \"OOP concepts\",\n      \"priority\": \"must\",\n      \"status\": \"missing\",\n      \"evidence\": null,\n      \"reason\": \"No OOP concepts are mentioned in the resume.\"\n    },\n    {\n      \"requirement\": \"Spring Boot\",\n      \"priority\": \"must\",\n      \"status\": \"missing\",\n      \"evidence\": null,\n      \"reason\": \"Spring Boot is not present in the candidate skills.\"\n    },\n    {\n      \"requirement\": \"SQL\",\n      \"priority\": \"must\",\n      \"status\": \"missing\",\n      \"evidence\": null,\n      \"reason\": \"SQL is not present in the candidate skills.\"\n    },\n    {\n      \"requirement\": \"Git\",\n      \"priority\": \"nice\",\n      \"status\": \"missing\",\n      \"evidence\": null,\n      \"reason\": \"Git is not present in the candidate skills.\"\n    }\n  ],\n  \"summary\": \"The candidate has a listed background in Java, leading to a partial match for basic Java knowledge. The most important gap is the lack of demonstrated experience in Java, OOP concepts, Spring Boot, and SQL.\"\n}",
+    "model": "gemini-3.5-flash-lite",
+    "seconds": 5.2
+   },
+   {
+    "prompt": "P3",
+    "text": "{\"suggestions\": [{\"type\": \"add_if_true\", \"text\": \"If you know basic OOP concepts like inheritance and polymorphism, add them under your skills section.\", \"related_requirement\": \"OOP concepts\"}, {\"type\": \"learn\", \"text\": \"Learn the basics of Spring Boot and build a simple REST API project using your Java skills.\", \"related_requirement\": \"Spring Boot\"}, {\"type\": \"add_if_true\", \"text\": \"If you have used SQL in any college assignment, add it to your skills.\", \"related_requirement\": \"SQL\"}, {\"type\": \"add_if_true\", \"text\": \"If you have used Git for version control, add it to your skills.\", \"related_requirement\": \"Git\"}], \"rewritten_lines\": []}",
+    "model": "gemini-3.5-flash-lite",
+    "seconds": 4.6
+   }
+  ],
+  "warnings": [],
+  "valid": true,
+  "score": 9,
+  "matches": [
+   {
+    "requirement": "Java",
+    "priority": "must",
+    "status": "partial",
+    "evidence": "Java",
+    "reason": "Java is listed as a skill without project evidence."
+   },
+   {
+    "requirement": "OOP concepts",
+    "priority": "must",
+    "status": "missing",
+    "evidence": null,
+    "reason": "No OOP concepts are mentioned in the resume."
+   },
+   {
+    "requirement": "Spring Boot",
+    "priority": "must",
+    "status": "missing",
+    "evidence": null,
+    "reason": "Spring Boot is not present in the candidate skills."
+   },
+   {
+    "requirement": "SQL",
+    "priority": "must",
+    "status": "missing",
+    "evidence": null,
+    "reason": "SQL is not present in the candidate skills."
+   },
+   {
+    "requirement": "Git",
+    "priority": "nice",
+    "status": "missing",
+    "evidence": null,
+    "reason": "Git is not present in the candidate skills."
+   }
+  ],
+  "summary": "The candidate has a listed background in Java, leading to a partial match for basic Java knowledge. The most important gap is the lack of demonstrated experience in Java, OOP concepts, Spring Boot, and SQL.",
+  "candidate_skills": [
+   {
+    "skill": "Java",
+    "evidence": "Java",
+    "strength": "listed"
+   }
+  ],
+  "suggestions": [
+   {
+    "type": "add_if_true",
+    "text": "If you know basic OOP concepts like inheritance and polymorphism, add them under your skills section.",
+    "related_requirement": "OOP concepts"
+   },
+   {
+    "type": "learn",
+    "text": "Learn the basics of Spring Boot and build a simple REST API project using your Java skills.",
+    "related_requirement": "Spring Boot"
+   },
+   {
+    "type": "add_if_true",
+    "text": "If you have used SQL in any college assignment, add it to your skills.",
+    "related_requirement": "SQL"
+   },
+   {
+    "type": "add_if_true",
+    "text": "If you have used Git for version control, add it to your skills.",
+    "related_requirement": "Git"
+   }
+  ],
+  "rewritten_lines": [],
+  "json_ok": true
+ },
+ "check": {
+  "passed": true,
+  "notes": [
+   "all checks met"
+  ]
+ }
+}

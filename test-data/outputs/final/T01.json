@@ -1,0 +1,147 @@
+{
+ "input": {
+  "id": "T01",
+  "type": "Normal",
+  "title": "CS student vs entry-level software developer (Milestone 1 case)",
+  "resume": "Alex Sharma\nB.Tech Computer Science, 3rd year\nSkills: Python, C++, SQL, basic HTML/CSS\nProjects:\n- Library Management System: built with Python and SQLite; supports issue/return and fine calculation.\n- Student Marks Analyzer: Python script that reads CSV files and stores results in a MySQL database.\n",
+  "jd": "Entry-level Software Developer. Must have: Python, SQL, data structures and algorithms, problem-solving skills. Good to have: experience building web applications (HTML, CSS, JavaScript).",
+  "expected": "Score 45-75. Python and SQL matched with project evidence. Data structures shown as missing. C++ not counted as a JD match. Web development partial at most.",
+  "checks": {
+   "score_range": [
+    45,
+    75
+   ],
+   "must_be_missing": [
+    "data structures"
+   ],
+   "must_not_match": [
+    "c++"
+   ]
+  }
+ },
+ "output": {
+  "version": "v5-final",
+  "steps": [
+   {
+    "prompt": "P1",
+    "text": "{\"input_check\": {\"resume_valid\": true, \"jd_valid\": true, \"problem\": null}, \"injection_detected\": false, \"candidate_skills\": [{\"skill\": \"Python\", \"evidence\": \"Library Management System: built with Python and SQLite\", \"strength\": \"demonstrated\"}, {\"skill\": \"C++\", \"evidence\": \"C++\", \"strength\": \"listed\"}, {\"skill\": \"SQL\", \"evidence\": \"Student Marks Analyzer: Python script that reads CSV files and stores results in a MySQL database\", \"strength\": \"demonstrated\"}, {\"skill\": \"HTML/CSS\", \"evidence\": \"basic HTML/CSS\", \"strength\": \"listed\"}], \"jd_requirements\": [{\"requirement\": \"Python\", \"priority\": \"must\"}, {\"requirement\": \"SQL\", \"priority\": \"must\"}, {\"requirement\": \"data structures and algorithms\", \"priority\": \"must\"}, {\"requirement\": \"problem-solving skills\", \"priority\": \"must\"}, {\"requirement\": \"experience building web applications (HTML, CSS, JavaScript)\", \"priority\": \"nice\"}]}",
+    "model": "gemini-3.5-flash-lite",
+    "seconds": 4.8
+   },
+   {
+    "prompt": "P2",
+    "text": "{\"matches\": [{\"requirement\": \"Python\", \"priority\": \"must\", \"status\": \"match\", \"evidence\": \"Library Management System: built with Python and SQLite\", \"reason\": \"Demonstrated through project work.\"}, {\"requirement\": \"SQL\", \"priority\": \"must\", \"status\": \"match\", \"evidence\": \"Student Marks Analyzer: Python script that reads CSV files and stores results in a MySQL database\", \"reason\": \"Demonstrated through database usage in a project.\"}, {\"requirement\": \"data structures and algorithms\", \"priority\": \"must\", \"status\": \"missing\", \"evidence\": null, \"reason\": \"No data structures or algorithms work is shown.\"}, {\"requirement\": \"problem-solving skills\", \"priority\": \"must\", \"status\": \"missing\", \"evidence\": null, \"reason\": \"No problem-solving experience or context is provided.\"}, {\"requirement\": \"experience building web applications (HTML, CSS, JavaScript)\", \"priority\": \"nice\", \"status\": \"partial\", \"evidence\": \"basic HTML/CSS\", \"reason\": \"HTML/CSS is listed without a web application project, and JavaScript is missing.\"}], \"summary\": \"The candidate has a solid foundation in Python and SQL through demonstrated projects. The most important gaps are the lack of data structures, problem-solving evidence, and web application experience.\"}",
+    "model": "gemini-3.5-flash-lite",
+    "seconds": 9.1
+   },
+   {
+    "prompt": "P3",
+    "text": "{\n  \"suggestions\": [\n    {\n      \"type\": \"learn\",\n      \"text\": \"Since data structures and algorithms is a missing must-have requirement, learn it and build a small project idea: a terminal-based contact book using hash maps for fast searching.\",\n      \"related_requirement\": \"data structures and algorithms\"\n    },\n    {\n      \"type\": \"add_if_true\",\n      \"text\": \"Add a problem-solving platform handle like LeetCode or HackerRank only if you actively solve coding problems there.\",\n      \"related_requirement\": \"problem-solving skills\"\n    },\n    {\n      \"type\": \"clarify\",\n      \"text\": \"Quantify the scale of your projects, for example by adding the number of database records handled like [N records], but only if that number is true.\",\n      \"related_requirement\": \"SQL\"\n    },\n    {\n      \"type\": \"learn\",\n      \"text\": \"To improve on the web application requirement, learn basic JavaScript and build a small static portfolio site using your HTML, CSS, and JS skills.\",\n      \"related_requirement\": \"experience building web applications (HTML, CSS, JavaScript)\"\n    }\n  ],\n  \"rewritten_lines\": [\n    {\n      \"original\": \"Library Management System: built with Python and SQLite; supports issue/return and fine calculation.\",\n      \"improved\": \"Built a Library Management System using Python and SQLite that supports book issue, return, and fine calculation for [N users].\"\n    },\n    {\n      \"original\": \"Student Marks Analyzer: Python script that reads CSV files and stores results in a MySQL database.\",\n      \"improved\": \"Developed a Student Marks Analyzer Python script that reads CSV files and stores processed results in a MySQL database for [N students].\"\n    }\n  ]\n}",
+    "model": "gemini-3.5-flash-lite",
+    "seconds": 1.6
+   }
+  ],
+  "warnings": [],
+  "valid": true,
+  "score": 50,
+  "matches": [
+   {
+    "requirement": "Python",
+    "priority": "must",
+    "status": "match",
+    "evidence": "Library Management System: built with Python and SQLite",
+    "reason": "Demonstrated through project work."
+   },
+   {
+    "requirement": "SQL",
+    "priority": "must",
+    "status": "match",
+    "evidence": "Student Marks Analyzer: Python script that reads CSV files and stores results in a MySQL database",
+    "reason": "Demonstrated through database usage in a project."
+   },
+   {
+    "requirement": "data structures and algorithms",
+    "priority": "must",
+    "status": "missing",
+    "evidence": null,
+    "reason": "No data structures or algorithms work is shown."
+   },
+   {
+    "requirement": "problem-solving skills",
+    "priority": "must",
+    "status": "missing",
+    "evidence": null,
+    "reason": "No problem-solving experience or context is provided."
+   },
+   {
+    "requirement": "experience building web applications (HTML, CSS, JavaScript)",
+    "priority": "nice",
+    "status": "partial",
+    "evidence": "basic HTML/CSS",
+    "reason": "HTML/CSS is listed without a web application project, and JavaScript is missing."
+   }
+  ],
+  "summary": "The candidate has a solid foundation in Python and SQL through demonstrated projects. The most important gaps are the lack of data structures, problem-solving evidence, and web application experience.",
+  "candidate_skills": [
+   {
+    "skill": "Python",
+    "evidence": "Library Management System: built with Python and SQLite",
+    "strength": "demonstrated"
+   },
+   {
+    "skill": "C++",
+    "evidence": "C++",
+    "strength": "listed"
+   },
+   {
+    "skill": "SQL",
+    "evidence": "Student Marks Analyzer: Python script that reads CSV files and stores results in a MySQL database",
+    "strength": "demonstrated"
+   },
+   {
+    "skill": "HTML/CSS",
+    "evidence": "basic HTML/CSS",
+    "strength": "listed"
+   }
+  ],
+  "suggestions": [
+   {
+    "type": "learn",
+    "text": "Since data structures and algorithms is a missing must-have requirement, learn it and build a small project idea: a terminal-based contact book using hash maps for fast searching.",
+    "related_requirement": "data structures and algorithms"
+   },
+   {
+    "type": "add_if_true",
+    "text": "Add a problem-solving platform handle like LeetCode or HackerRank only if you actively solve coding problems there.",
+    "related_requirement": "problem-solving skills"
+   },
+   {
+    "type": "clarify",
+    "text": "Quantify the scale of your projects, for example by adding the number of database records handled like [N records], but only if that number is true.",
+    "related_requirement": "SQL"
+   },
+   {
+    "type": "learn",
+    "text": "To improve on the web application requirement, learn basic JavaScript and build a small static portfolio site using your HTML, CSS, and JS skills.",
+    "related_requirement": "experience building web applications (HTML, CSS, JavaScript)"
+   }
+  ],
+  "rewritten_lines": [
+   {
+    "original": "Library Management System: built with Python and SQLite; supports issue/return and fine calculation.",
+    "improved": "Built a Library Management System using Python and SQLite that supports book issue, return, and fine calculation for [N users]."
+   },
+   {
+    "original": "Student Marks Analyzer: Python script that reads CSV files and stores results in a MySQL database.",
+    "improved": "Developed a Student Marks Analyzer Python script that reads CSV files and stores processed results in a MySQL database for [N students]."
+   }
+  ],
+  "json_ok": true
+ },
+ "check": {
+  "passed": true,
+  "notes": [
+   "all checks met"
+  ]
+ }
+}

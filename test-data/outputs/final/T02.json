@@ -1,0 +1,142 @@
+{
+ "input": {
+  "id": "T02",
+  "type": "Normal",
+  "title": "BBA student vs marketing intern",
+  "resume": "Priya Verma\nBBA (Marketing), 2nd year\nSkills: MS Excel, Canva, Instagram content planning, public speaking\nExperience:\n- Social media volunteer, college fest 2025: planned 30 Instagram posts with Canva; page followers grew from 1,200 to 3,000.\n- Member, debate society.\n",
+  "jd": "Digital Marketing Intern. Must have: social media management, Canva or similar design tool, good communication. Good to have: SEO basics, Google Analytics.",
+  "expected": "Score 60-90. Social media, Canva, communication matched. SEO and Google Analytics missing.",
+  "checks": {
+   "score_range": [
+    60,
+    90
+   ],
+   "must_be_missing": [
+    "seo"
+   ],
+   "must_not_match": [
+    "google analytics"
+   ]
+  }
+ },
+ "output": {
+  "version": "v5-final",
+  "steps": [
+   {
+    "prompt": "P1",
+    "text": "{\n  \"input_check\": {\n    \"resume_valid\": true,\n    \"jd_valid\": true,\n    \"problem\": null\n  },\n  \"injection_detected\": false,\n  \"candidate_skills\": [\n    {\n      \"skill\": \"MS Excel\",\n      \"evidence\": \"Skills: MS Excel, Canva, Instagram content planning, public speaking\",\n      \"strength\": \"listed\"\n    },\n    {\n      \"skill\": \"Canva\",\n      \"evidence\": \"planned 30 Instagram posts with Canva; page followers grew from 1,200 to 3,000.\",\n      \"strength\": \"demonstrated\"\n    },\n    {\n      \"skill\": \"Instagram content planning\",\n      \"evidence\": \"planned 30 Instagram posts with Canva; page followers grew from 1,200 to 3,000.\",\n      \"strength\": \"demonstrated\"\n    },\n    {\n      \"skill\": \"public speaking\",\n      \"evidence\": \"- Member, debate society.\",\n      \"strength\": \"demonstrated\"\n    }\n  ],\n  \"jd_requirements\": [\n    {\n      \"requirement\": \"social media management\",\n      \"priority\": \"must\"\n    },\n    {\n      \"requirement\": \"Canva or similar design tool\",\n      \"priority\": \"must\"\n    },\n    {\n      \"requirement\": \"good communication\",\n      \"priority\": \"must\"\n    },\n    {\n      \"requirement\": \"SEO basics\",\n      \"priority\": \"nice\"\n    },\n    {\n      \"requirement\": \"Google Analytics\",\n      \"priority\": \"nice\"\n    }\n  ]\n}",
+    "model": "gemini-3.5-flash-lite",
+    "seconds": 3.3
+   },
+   {
+    "prompt": "P2",
+    "text": "{\"matches\": [{\"requirement\": \"social media management\", \"priority\": \"must\", \"status\": \"match\", \"evidence\": \"planned 30 Instagram posts with Canva; page followers grew from 1,200 to 3,000.\", \"reason\": \"Demonstrated through Instagram content planning experience.\"}, {\"requirement\": \"Canva or similar design tool\", \"priority\": \"must\", \"status\": \"match\", \"evidence\": \"planned 30 Instagram posts with Canva; page followers grew from 1,200 to 3,000.\", \"reason\": \"Demonstrated practical use of Canva.\"}, {\"requirement\": \"good communication\", \"priority\": \"must\", \"status\": \"match\", \"evidence\": \"- Member, debate society.\", \"reason\": \"Demonstrated via debate society membership.\"}, {\"requirement\": \"SEO basics\", \"priority\": \"nice\", \"status\": \"missing\", \"evidence\": null, \"reason\": \"No SEO skills are listed or demonstrated.\"}, {\"requirement\": \"Google Analytics\", \"priority\": \"nice\", \"status\": \"missing\", \"evidence\": null, \"reason\": \"No Google Analytics experience is present.\"}], \"summary\": \"The candidate has solid core skills in social media management, design tools, and communication. The most important gaps are technical marketing skills like SEO and Google Analytics.\"}",
+    "model": "gemini-3.5-flash-lite",
+    "seconds": 5.8
+   },
+   {
+    "prompt": "P3",
+    "text": "{\n  \"suggestions\": [\n    {\n      \"type\": \"rewrite\",\n      \"text\": \"Highlight your quantifiable social media growth right at the top of your experience section to immediately show your impact on follower count.\",\n      \"related_requirement\": \"social media management\"\n    },\n    {\n      \"type\": \"add_if_true\",\n      \"text\": \"If you have used Google Analytics during any college project or fest, add it to your skills section.\",\n      \"related_requirement\": \"Google Analytics\"\n    },\n    {\n      \"type\": \"learn\",\n      \"text\": \"Learn basic SEO for social media and create a sample document showing keyword research for 5 Instagram captions as a mini-project.\",\n      \"related_requirement\": \"SEO basics\"\n    }\n  ],\n  \"rewritten_lines\": [\n    {\n      \"original\": \"- Social media volunteer, college fest 2025: planned 30 Instagram posts with Canva; page followers grew from 1,200 to 3,000.\",\n      \"improved\": \"Social Media Volunteer, College Fest 2025: Managed Instagram content planning by designing 30 posts using Canva, growing page followers from 1,200 to 3,000.\"\n    },\n    {\n      \"original\": \"- Member, debate society.\",\n      \"improved\": \"Active Member, Debate Society: Demonstrated strong public speaking and interpersonal communication skills through regular competitive debates.\"\n    }\n  ]\n}",
+    "model": "gemini-3.5-flash-lite",
+    "seconds": 1.2
+   }
+  ],
+  "warnings": [],
+  "valid": true,
+  "score": 75,
+  "matches": [
+   {
+    "requirement": "social media management",
+    "priority": "must",
+    "status": "match",
+    "evidence": "planned 30 Instagram posts with Canva; page followers grew from 1,200 to 3,000.",
+    "reason": "Demonstrated through Instagram content planning experience."
+   },
+   {
+    "requirement": "Canva or similar design tool",
+    "priority": "must",
+    "status": "match",
+    "evidence": "planned 30 Instagram posts with Canva; page followers grew from 1,200 to 3,000.",
+    "reason": "Demonstrated practical use of Canva."
+   },
+   {
+    "requirement": "good communication",
+    "priority": "must",
+    "status": "match",
+    "evidence": "- Member, debate society.",
+    "reason": "Demonstrated via debate society membership."
+   },
+   {
+    "requirement": "SEO basics",
+    "priority": "nice",
+    "status": "missing",
+    "evidence": null,
+    "reason": "No SEO skills are listed or demonstrated."
+   },
+   {
+    "requirement": "Google Analytics",
+    "priority": "nice",
+    "status": "missing",
+    "evidence": null,
+    "reason": "No Google Analytics experience is present."
+   }
+  ],
+  "summary": "The candidate has solid core skills in social media management, design tools, and communication. The most important gaps are technical marketing skills like SEO and Google Analytics.",
+  "candidate_skills": [
+   {
+    "skill": "MS Excel",
+    "evidence": "Skills: MS Excel, Canva, Instagram content planning, public speaking",
+    "strength": "listed"
+   },
+   {
+    "skill": "Canva",
+    "evidence": "planned 30 Instagram posts with Canva; page followers grew from 1,200 to 3,000.",
+    "strength": "demonstrated"
+   },
+   {
+    "skill": "Instagram content planning",
+    "evidence": "planned 30 Instagram posts with Canva; page followers grew from 1,200 to 3,000.",
+    "strength": "demonstrated"
+   },
+   {
+    "skill": "public speaking",
+    "evidence": "- Member, debate society.",
+    "strength": "demonstrated"
+   }
+  ],
+  "suggestions": [
+   {
+    "type": "rewrite",
+    "text": "Highlight your quantifiable social media growth right at the top of your experience section to immediately show your impact on follower count.",
+    "related_requirement": "social media management"
+   },
+   {
+    "type": "add_if_true",
+    "text": "If you have used Google Analytics during any college project or fest, add it to your skills section.",
+    "related_requirement": "Google Analytics"
+   },
+   {
+    "type": "learn",
+    "text": "Learn basic SEO for social media and create a sample document showing keyword research for 5 Instagram captions as a mini-project.",
+    "related_requirement": "SEO basics"
+   }
+  ],
+  "rewritten_lines": [
+   {
+    "original": "- Social media volunteer, college fest 2025: planned 30 Instagram posts with Canva; page followers grew from 1,200 to 3,000.",
+    "improved": "Social Media Volunteer, College Fest 2025: Managed Instagram content planning by designing 30 posts using Canva, growing page followers from 1,200 to 3,000."
+   },
+   {
+    "original": "- Member, debate society.",
+    "improved": "Active Member, Debate Society: Demonstrated strong public speaking and interpersonal communication skills through regular competitive debates."
+   }
+  ],
+  "json_ok": true
+ },
+ "check": {
+  "passed": true,
+  "notes": [
+   "all checks met"
+  ]
+ }
+}

@@ -1,0 +1,635 @@
+[
+ {
+  "case": "T01",
+  "run": 1,
+  "result": {
+   "version": "v2",
+   "steps": [
+    {
+     "prompt": "P0",
+     "text": "```json\n{\n  \"score\": 53,\n  \"matches\": [\n    {\n      \"requirement\": \"Python\",\n      \"priority\": \"must\",\n      \"status\": \"match\",\n      \"evidence\": \"Listed in skills and used in Library Management System and Student Marks Analyzer projects.\"\n    },\n    {\n      \"requirement\": \"SQL\",\n      \"priority\": \"must\",\n      \"status\": \"match\",\n      \"evidence\": \"Listed in skills and applied using SQLite/MySQL in projects.\"\n    },\n    {\n      \"requirement\": \"data structures and algorithms\",\n      \"priority\": \"must\",\n      \"status\": \"missing\",\n      \"evidence\": \"Not mentioned anywhere in the resume.\"\n    },\n    {\n      \"requirement\": \"problem-solving skills\",\n      \"priority\": \"must\",\n      \"status\": \"missing\",\n      \"evidence\": \"Not mentioned in the resume.\"\n    },\n    {\n      \"requirement\": \"experience building web applications (HTML, CSS, JavaScript)\",\n      \"priority\": \"nice\",\n      \"status\": \"partial\",\n      \"evidence\": \"Lists basic HTML/CSS in skills, but no JavaScript or full web application projects are shown.\"\n    }\n  ],\n  \"suggestions\": [\n    \"Add coursework or project experience related to data structures and algorithms.\",\n    \"Highlight problem-solving achievements, such as competitive programming or algorithmic problem-solving platforms.\",\n    \"Add JavaScript to your skills and build a complete web application to cover the good-to-have requirement.\"\n  ]\n}\n```",
+     "model": "gemini-3.5-flash-lite",
+     "seconds": 9.0
+    }
+   ],
+   "valid": true,
+   "raw": "```json\n{\n  \"score\": 53,\n  \"matches\": [\n    {\n      \"requirement\": \"Python\",\n      \"priority\": \"must\",\n      \"status\": \"match\",\n      \"evidence\": \"Listed in skills and used in Library Management System and Student Marks Analyzer projects.\"\n    },\n    {\n      \"requirement\": \"SQL\",\n      \"priority\": \"must\",\n      \"status\": \"match\",\n      \"evidence\": \"Listed in skills and applied using SQLite/MySQL in projects.\"\n    },\n    {\n      \"requirement\": \"data structures and algorithms\",\n      \"priority\": \"must\",\n      \"status\": \"missing\",\n      \"evidence\": \"Not mentioned anywhere in the resume.\"\n    },\n    {\n      \"requirement\": \"problem-solving skills\",\n      \"priority\": \"must\",\n      \"status\": \"missing\",\n      \"evidence\": \"Not mentioned in the resume.\"\n    },\n    {\n      \"requirement\": \"experience building web applications (HTML, CSS, JavaScript)\",\n      \"priority\": \"nice\",\n      \"status\": \"partial\",\n      \"evidence\": \"Lists basic HTML/CSS in skills, but no JavaScript or full web application projects are shown.\"\n    }\n  ],\n  \"suggestions\": [\n    \"Add coursework or project experience related to data structures and algorithms.\",\n    \"Highlight problem-solving achievements, such as competitive programming or algorithmic problem-solving platforms.\",\n    \"Add JavaScript to your skills and build a complete web application to cover the good-to-have requirement.\"\n  ]\n}\n```",
+   "score": 53,
+   "matches": [
+    {
+     "requirement": "Python",
+     "priority": "must",
+     "status": "match",
+     "evidence": "Listed in skills and used in Library Management System and Student Marks Analyzer projects."
+    },
+    {
+     "requirement": "SQL",
+     "priority": "must",
+     "status": "match",
+     "evidence": "Listed in skills and applied using SQLite/MySQL in projects."
+    },
+    {
+     "requirement": "data structures and algorithms",
+     "priority": "must",
+     "status": "missing",
+     "evidence": "Not mentioned anywhere in the resume."
+    },
+    {
+     "requirement": "problem-solving skills",
+     "priority": "must",
+     "status": "missing",
+     "evidence": "Not mentioned in the resume."
+    },
+    {
+     "requirement": "experience building web applications (HTML, CSS, JavaScript)",
+     "priority": "nice",
+     "status": "partial",
+     "evidence": "Lists basic HTML/CSS in skills, but no JavaScript or full web application projects are shown."
+    }
+   ],
+   "json_ok": false
+  },
+  "check": {
+   "passed": true,
+   "notes": [
+    "all checks met"
+   ]
+  }
+ },
+ {
+  "case": "T01",
+  "run": 2,
+  "result": {
+   "version": "v2",
+   "steps": [
+    {
+     "prompt": "P0",
+     "text": "```json\n{\n  \"score\": 53,\n  \"matches\": [\n    {\n      \"requirement\": \"Python\",\n      \"priority\": \"must\",\n      \"status\": \"match\",\n      \"evidence\": \"Listed in Skills and used in Library Management System and Student Marks Analyzer projects.\"\n    },\n    {\n      \"requirement\": \"SQL\",\n      \"priority\": \"must\",\n      \"status\": \"match\",\n      \"evidence\": \"Listed in Skills; used SQLite and MySQL in projects.\"\n    },\n    {\n      \"requirement\": \"data structures and algorithms\",\n      \"priority\": \"must\",\n      \"status\": \"missing\",\n      \"evidence\": \"Not mentioned anywhere in the resume.\"\n    },\n    {\n      \"requirement\": \"problem-solving skills\",\n      \"priority\": \"must\",\n      \"status\": \"missing\",\n      \"evidence\": \"Not mentioned anywhere in the resume.\"\n    },\n    {\n      \"requirement\": \"experience building web applications (HTML, CSS, JavaScript)\",\n      \"priority\": \"nice\",\n      \"status\": \"partial\",\n      \"evidence\": \"Lists basic HTML/CSS in skills, but no JavaScript or web application projects are mentioned.\"\n    }\n  ],\n  \"suggestions\": [\n    \"Add examples or coursework demonstrating data structures and algorithms (DSA).\",\n    \"Include evidence of problem-solving skills, such as competitive programming platforms or relevant achievements.\",\n    \"Add JavaScript to your skills and build a full web application combining HTML, CSS, and JavaScript to satisfy the good-to-have requirement.\"\n  ]\n}\n```",
+     "model": "gemini-3.5-flash-lite",
+     "seconds": 2.6
+    }
+   ],
+   "valid": true,
+   "raw": "```json\n{\n  \"score\": 53,\n  \"matches\": [\n    {\n      \"requirement\": \"Python\",\n      \"priority\": \"must\",\n      \"status\": \"match\",\n      \"evidence\": \"Listed in Skills and used in Library Management System and Student Marks Analyzer projects.\"\n    },\n    {\n      \"requirement\": \"SQL\",\n      \"priority\": \"must\",\n      \"status\": \"match\",\n      \"evidence\": \"Listed in Skills; used SQLite and MySQL in projects.\"\n    },\n    {\n      \"requirement\": \"data structures and algorithms\",\n      \"priority\": \"must\",\n      \"status\": \"missing\",\n      \"evidence\": \"Not mentioned anywhere in the resume.\"\n    },\n    {\n      \"requirement\": \"problem-solving skills\",\n      \"priority\": \"must\",\n      \"status\": \"missing\",\n      \"evidence\": \"Not mentioned anywhere in the resume.\"\n    },\n    {\n      \"requirement\": \"experience building web applications (HTML, CSS, JavaScript)\",\n      \"priority\": \"nice\",\n      \"status\": \"partial\",\n      \"evidence\": \"Lists basic HTML/CSS in skills, but no JavaScript or web application projects are mentioned.\"\n    }\n  ],\n  \"suggestions\": [\n    \"Add examples or coursework demonstrating data structures and algorithms (DSA).\",\n    \"Include evidence of problem-solving skills, such as competitive programming platforms or relevant achievements.\",\n    \"Add JavaScript to your skills and build a full web application combining HTML, CSS, and JavaScript to satisfy the good-to-have requirement.\"\n  ]\n}\n```",
+   "score": 53,
+   "matches": [
+    {
+     "requirement": "Python",
+     "priority": "must",
+     "status": "match",
+     "evidence": "Listed in Skills and used in Library Management System and Student Marks Analyzer projects."
+    },
+    {
+     "requirement": "SQL",
+     "priority": "must",
+     "status": "match",
+     "evidence": "Listed in Skills; used SQLite and MySQL in projects."
+    },
+    {
+     "requirement": "data structures and algorithms",
+     "priority": "must",
+     "status": "missing",
+     "evidence": "Not mentioned anywhere in the resume."
+    },
+    {
+     "requirement": "problem-solving skills",
+     "priority": "must",
+     "status": "missing",
+     "evidence": "Not mentioned anywhere in the resume."
+    },
+    {
+     "requirement": "experience building web applications (HTML, CSS, JavaScript)",
+     "priority": "nice",
+     "status": "partial",
+     "evidence": "Lists basic HTML/CSS in skills, but no JavaScript or web application projects are mentioned."
+    }
+   ],
+   "json_ok": false
+  },
+  "check": {
+   "passed": true,
+   "notes": [
+    "all checks met"
+   ]
+  }
+ },
+ {
+  "case": "T01",
+  "run": 3,
+  "result": {
+   "version": "v2",
+   "steps": [
+    {
+     "prompt": "P0",
+     "text": "```json\n{\n  \"score\": 63,\n  \"matches\": [\n    {\n      \"requirement\": \"Python\",\n      \"priority\": \"must\",\n      \"status\": \"match\",\n      \"evidence\": \"Listed under Skills and used in Library Management System and Student Marks Analyzer projects.\"\n    },\n    {\n      \"requirement\": \"SQL\",\n      \"priority\": \"must\",\n      \"status\": \"match\",\n      \"evidence\": \"Listed under Skills and applied in Library Management System (SQLite) and Student Marks Analyzer (MySQL).\"\n    },\n    {\n      \"requirement\": \"data structures and algorithms\",\n      \"priority\": \"must\",\n      \"status\": \"missing\",\n      \"evidence\": \"Not mentioned anywhere in the resume.\"\n    },\n    {\n      \"requirement\": \"problem-solving skills\",\n      \"priority\": \"must\",\n      \"status\": \"missing\",\n      \"evidence\": \"Not explicitly mentioned in the resume.\"\n    },\n    {\n      \"requirement\": \"experience building web applications (HTML, CSS, JavaScript)\",\n      \"priority\": \"nice\",\n      \"status\": \"partial\",\n      \"evidence\": \"Resume lists basic HTML/CSS under skills, but lacks JavaScript and evidence of a complete web application project.\"\n    }\n  ],\n  \"suggestions\": [\n    \"Add coursework or project experience related to data structures and algorithms.\",\n    \"Highlight problem-solving achievements, such as competitive programming profiles or coding contest rankings.\",\n    \"Include JavaScript and build a complete web application project to cover the nice-to-have requirements.\"\n  ]\n}\n```",
+     "model": "gemini-3.5-flash-lite",
+     "seconds": 10.4
+    }
+   ],
+   "valid": true,
+   "raw": "```json\n{\n  \"score\": 63,\n  \"matches\": [\n    {\n      \"requirement\": \"Python\",\n      \"priority\": \"must\",\n      \"status\": \"match\",\n      \"evidence\": \"Listed under Skills and used in Library Management System and Student Marks Analyzer projects.\"\n    },\n    {\n      \"requirement\": \"SQL\",\n      \"priority\": \"must\",\n      \"status\": \"match\",\n      \"evidence\": \"Listed under Skills and applied in Library Management System (SQLite) and Student Marks Analyzer (MySQL).\"\n    },\n    {\n      \"requirement\": \"data structures and algorithms\",\n      \"priority\": \"must\",\n      \"status\": \"missing\",\n      \"evidence\": \"Not mentioned anywhere in the resume.\"\n    },\n    {\n      \"requirement\": \"problem-solving skills\",\n      \"priority\": \"must\",\n      \"status\": \"missing\",\n      \"evidence\": \"Not explicitly mentioned in the resume.\"\n    },\n    {\n      \"requirement\": \"experience building web applications (HTML, CSS, JavaScript)\",\n      \"priority\": \"nice\",\n      \"status\": \"partial\",\n      \"evidence\": \"Resume lists basic HTML/CSS under skills, but lacks JavaScript and evidence of a complete web application project.\"\n    }\n  ],\n  \"suggestions\": [\n    \"Add coursework or project experience related to data structures and algorithms.\",\n    \"Highlight problem-solving achievements, such as competitive programming profiles or coding contest rankings.\",\n    \"Include JavaScript and build a complete web application project to cover the nice-to-have requirements.\"\n  ]\n}\n```",
+   "score": 63,
+   "matches": [
+    {
+     "requirement": "Python",
+     "priority": "must",
+     "status": "match",
+     "evidence": "Listed under Skills and used in Library Management System and Student Marks Analyzer projects."
+    },
+    {
+     "requirement": "SQL",
+     "priority": "must",
+     "status": "match",
+     "evidence": "Listed under Skills and applied in Library Management System (SQLite) and Student Marks Analyzer (MySQL)."
+    },
+    {
+     "requirement": "data structures and algorithms",
+     "priority": "must",
+     "status": "missing",
+     "evidence": "Not mentioned anywhere in the resume."
+    },
+    {
+     "requirement": "problem-solving skills",
+     "priority": "must",
+     "status": "missing",
+     "evidence": "Not explicitly mentioned in the resume."
+    },
+    {
+     "requirement": "experience building web applications (HTML, CSS, JavaScript)",
+     "priority": "nice",
+     "status": "partial",
+     "evidence": "Resume lists basic HTML/CSS under skills, but lacks JavaScript and evidence of a complete web application project."
+    }
+   ],
+   "json_ok": false
+  },
+  "check": {
+   "passed": true,
+   "notes": [
+    "all checks met"
+   ]
+  }
+ },
+ {
+  "case": "T04",
+  "run": 1,
+  "result": {
+   "version": "v2",
+   "steps": [
+    {
+     "prompt": "P0",
+     "text": "```json\n{\n  \"score\": 0,\n  \"matches\": [\n    {\n      \"requirement\": \"JavaScript\",\n      \"priority\": \"must\",\n      \"status\": \"missing\",\n      \"evidence\": \"Not mentioned in the resume.\"\n    },\n    {\n      \"requirement\": \"React\",\n      \"priority\": \"must\",\n      \"status\": \"missing\",\n      \"evidence\": \"Not mentioned in the resume.\"\n    },\n    {\n      \"requirement\": \"HTML\",\n      \"priority\": \"must\",\n      \"status\": \"missing\",\n      \"evidence\": \"Not mentioned in the resume.\"\n    },\n    {\n      \"requirement\": \"CSS\",\n      \"priority\": \"must\",\n      \"status\": \"missing\",\n      \"evidence\": \"Not mentioned in the resume.\"\n    },\n    {\n      \"requirement\": \"Git\",\n      \"priority\": \"nice\",\n      \"status\": \"missing\",\n      \"evidence\": \"Not mentioned in the resume.\"\n    },\n    {\n      \"requirement\": \"Figma\",\n      \"priority\": \"nice\",\n      \"status\": \"missing\",\n      \"evidence\": \"Not mentioned in the resume.\"\n    }\n  ],\n  \"suggestions\": [\n    \"Learn foundational web development technologies including JavaScript, React, HTML, and CSS.\",\n    \"Add projects showcasing frontend development skills to align with the Frontend Developer Intern role.\",\n    \"Gain experience with version control tools like Git and design tools like Figma to meet good-to-have requirements.\"\n  ]\n}\n```",
+     "model": "gemini-3.5-flash-lite",
+     "seconds": 8.9
+    }
+   ],
+   "valid": true,
+   "raw": "```json\n{\n  \"score\": 0,\n  \"matches\": [\n    {\n      \"requirement\": \"JavaScript\",\n      \"priority\": \"must\",\n      \"status\": \"missing\",\n      \"evidence\": \"Not mentioned in the resume.\"\n    },\n    {\n      \"requirement\": \"React\",\n      \"priority\": \"must\",\n      \"status\": \"missing\",\n      \"evidence\": \"Not mentioned in the resume.\"\n    },\n    {\n      \"requirement\": \"HTML\",\n      \"priority\": \"must\",\n      \"status\": \"missing\",\n      \"evidence\": \"Not mentioned in the resume.\"\n    },\n    {\n      \"requirement\": \"CSS\",\n      \"priority\": \"must\",\n      \"status\": \"missing\",\n      \"evidence\": \"Not mentioned in the resume.\"\n    },\n    {\n      \"requirement\": \"Git\",\n      \"priority\": \"nice\",\n      \"status\": \"missing\",\n      \"evidence\": \"Not mentioned in the resume.\"\n    },\n    {\n      \"requirement\": \"Figma\",\n      \"priority\": \"nice\",\n      \"status\": \"missing\",\n      \"evidence\": \"Not mentioned in the resume.\"\n    }\n  ],\n  \"suggestions\": [\n    \"Learn foundational web development technologies including JavaScript, React, HTML, and CSS.\",\n    \"Add projects showcasing frontend development skills to align with the Frontend Developer Intern role.\",\n    \"Gain experience with version control tools like Git and design tools like Figma to meet good-to-have requirements.\"\n  ]\n}\n```",
+   "score": 0,
+   "matches": [
+    {
+     "requirement": "JavaScript",
+     "priority": "must",
+     "status": "missing",
+     "evidence": "Not mentioned in the resume."
+    },
+    {
+     "requirement": "React",
+     "priority": "must",
+     "status": "missing",
+     "evidence": "Not mentioned in the resume."
+    },
+    {
+     "requirement": "HTML",
+     "priority": "must",
+     "status": "missing",
+     "evidence": "Not mentioned in the resume."
+    },
+    {
+     "requirement": "CSS",
+     "priority": "must",
+     "status": "missing",
+     "evidence": "Not mentioned in the resume."
+    },
+    {
+     "requirement": "Git",
+     "priority": "nice",
+     "status": "missing",
+     "evidence": "Not mentioned in the resume."
+    },
+    {
+     "requirement": "Figma",
+     "priority": "nice",
+     "status": "missing",
+     "evidence": "Not mentioned in the resume."
+    }
+   ],
+   "json_ok": false
+  },
+  "check": {
+   "passed": true,
+   "notes": [
+    "all checks met"
+   ]
+  }
+ },
+ {
+  "case": "T04",
+  "run": 2,
+  "result": {
+   "version": "v2",
+   "steps": [
+    {
+     "prompt": "P0",
+     "text": "```json\n{\n  \"score\": 0,\n  \"matches\": [\n    {\n      \"requirement\": \"JavaScript\",\n      \"priority\": \"must\",\n      \"status\": \"missing\",\n      \"evidence\": \"Not mentioned in the resume.\"\n    },\n    {\n      \"requirement\": \"React\",\n      \"priority\": \"must\",\n      \"status\": \"missing\",\n      \"evidence\": \"Not mentioned in the resume.\"\n    },\n    {\n      \"requirement\": \"HTML\",\n      \"priority\": \"must\",\n      \"status\": \"missing\",\n      \"evidence\": \"Not mentioned in the resume.\"\n    },\n    {\n      \"requirement\": \"CSS\",\n      \"priority\": \"must\",\n      \"status\": \"missing\",\n      \"evidence\": \"Not mentioned in the resume.\"\n    },\n    {\n      \"requirement\": \"Git\",\n      \"priority\": \"nice\",\n      \"status\": \"missing\",\n      \"evidence\": \"Not mentioned in the resume.\"\n    },\n    {\n      \"requirement\": \"Figma\",\n      \"priority\": \"nice\",\n      \"status\": \"missing\",\n      \"evidence\": \"Not mentioned in the resume.\"\n    }\n  ],\n  \"suggestions\": [\n    \"Learn and add core frontend technologies such as JavaScript, React, HTML, and CSS to your skill set.\",\n    \"Gain experience with version control tools like Git and include related projects on your resume.\",\n    \"Familiarize yourself with UI/UX design tools like Figma to meet the nice-to-have requirements.\"\n  ]\n}\n```",
+     "model": "gemini-3.5-flash-lite",
+     "seconds": 8.6
+    }
+   ],
+   "valid": true,
+   "raw": "```json\n{\n  \"score\": 0,\n  \"matches\": [\n    {\n      \"requirement\": \"JavaScript\",\n      \"priority\": \"must\",\n      \"status\": \"missing\",\n      \"evidence\": \"Not mentioned in the resume.\"\n    },\n    {\n      \"requirement\": \"React\",\n      \"priority\": \"must\",\n      \"status\": \"missing\",\n      \"evidence\": \"Not mentioned in the resume.\"\n    },\n    {\n      \"requirement\": \"HTML\",\n      \"priority\": \"must\",\n      \"status\": \"missing\",\n      \"evidence\": \"Not mentioned in the resume.\"\n    },\n    {\n      \"requirement\": \"CSS\",\n      \"priority\": \"must\",\n      \"status\": \"missing\",\n      \"evidence\": \"Not mentioned in the resume.\"\n    },\n    {\n      \"requirement\": \"Git\",\n      \"priority\": \"nice\",\n      \"status\": \"missing\",\n      \"evidence\": \"Not mentioned in the resume.\"\n    },\n    {\n      \"requirement\": \"Figma\",\n      \"priority\": \"nice\",\n      \"status\": \"missing\",\n      \"evidence\": \"Not mentioned in the resume.\"\n    }\n  ],\n  \"suggestions\": [\n    \"Learn and add core frontend technologies such as JavaScript, React, HTML, and CSS to your skill set.\",\n    \"Gain experience with version control tools like Git and include related projects on your resume.\",\n    \"Familiarize yourself with UI/UX design tools like Figma to meet the nice-to-have requirements.\"\n  ]\n}\n```",
+   "score": 0,
+   "matches": [
+    {
+     "requirement": "JavaScript",
+     "priority": "must",
+     "status": "missing",
+     "evidence": "Not mentioned in the resume."
+    },
+    {
+     "requirement": "React",
+     "priority": "must",
+     "status": "missing",
+     "evidence": "Not mentioned in the resume."
+    },
+    {
+     "requirement": "HTML",
+     "priority": "must",
+     "status": "missing",
+     "evidence": "Not mentioned in the resume."
+    },
+    {
+     "requirement": "CSS",
+     "priority": "must",
+     "status": "missing",
+     "evidence": "Not mentioned in the resume."
+    },
+    {
+     "requirement": "Git",
+     "priority": "nice",
+     "status": "missing",
+     "evidence": "Not mentioned in the resume."
+    },
+    {
+     "requirement": "Figma",
+     "priority": "nice",
+     "status": "missing",
+     "evidence": "Not mentioned in the resume."
+    }
+   ],
+   "json_ok": false
+  },
+  "check": {
+   "passed": true,
+   "notes": [
+    "all checks met"
+   ]
+  }
+ },
+ {
+  "case": "T04",
+  "run": 3,
+  "result": {
+   "version": "v2",
+   "steps": [
+    {
+     "prompt": "P0",
+     "text": "```json\n{\n  \"score\": 0,\n  \"matches\": [\n    {\n      \"requirement\": \"JavaScript\",\n      \"priority\": \"must\",\n      \"status\": \"missing\",\n      \"evidence\": \"Not mentioned in the resume.\"\n    },\n    {\n      \"requirement\": \"React\",\n      \"priority\": \"must\",\n      \"status\": \"missing\",\n      \"evidence\": \"Not mentioned in the resume.\"\n    },\n    {\n      \"requirement\": \"HTML\",\n      \"priority\": \"must\",\n      \"status\": \"missing\",\n      \"evidence\": \"Not mentioned in the resume.\"\n    },\n    {\n      \"requirement\": \"CSS\",\n      \"priority\": \"must\",\n      \"status\": \"missing\",\n      \"evidence\": \"Not mentioned in the resume.\"\n    },\n    {\n      \"requirement\": \"Git\",\n      \"priority\": \"nice\",\n      \"status\": \"missing\",\n      \"evidence\": \"Not mentioned in the resume.\"\n    },\n    {\n      \"requirement\": \"Figma\",\n      \"priority\": \"nice\",\n      \"status\": \"missing\",\n      \"evidence\": \"Not mentioned in the resume.\"\n    }\n  ],\n  \"suggestions\": [\n    \"Learn and add core frontend technologies such as JavaScript, React, HTML, and CSS to your skill set.\",\n    \"Gain practical experience by building frontend web development projects and include them in your resume.\",\n    \"Learn version control tools like Git and design tools like Figma to meet the good-to-have requirements.\"\n  ]\n}\n```",
+     "model": "gemini-3.5-flash-lite",
+     "seconds": 9.2
+    }
+   ],
+   "valid": true,
+   "raw": "```json\n{\n  \"score\": 0,\n  \"matches\": [\n    {\n      \"requirement\": \"JavaScript\",\n      \"priority\": \"must\",\n      \"status\": \"missing\",\n      \"evidence\": \"Not mentioned in the resume.\"\n    },\n    {\n      \"requirement\": \"React\",\n      \"priority\": \"must\",\n      \"status\": \"missing\",\n      \"evidence\": \"Not mentioned in the resume.\"\n    },\n    {\n      \"requirement\": \"HTML\",\n      \"priority\": \"must\",\n      \"status\": \"missing\",\n      \"evidence\": \"Not mentioned in the resume.\"\n    },\n    {\n      \"requirement\": \"CSS\",\n      \"priority\": \"must\",\n      \"status\": \"missing\",\n      \"evidence\": \"Not mentioned in the resume.\"\n    },\n    {\n      \"requirement\": \"Git\",\n      \"priority\": \"nice\",\n      \"status\": \"missing\",\n      \"evidence\": \"Not mentioned in the resume.\"\n    },\n    {\n      \"requirement\": \"Figma\",\n      \"priority\": \"nice\",\n      \"status\": \"missing\",\n      \"evidence\": \"Not mentioned in the resume.\"\n    }\n  ],\n  \"suggestions\": [\n    \"Learn and add core frontend technologies such as JavaScript, React, HTML, and CSS to your skill set.\",\n    \"Gain practical experience by building frontend web development projects and include them in your resume.\",\n    \"Learn version control tools like Git and design tools like Figma to meet the good-to-have requirements.\"\n  ]\n}\n```",
+   "score": 0,
+   "matches": [
+    {
+     "requirement": "JavaScript",
+     "priority": "must",
+     "status": "missing",
+     "evidence": "Not mentioned in the resume."
+    },
+    {
+     "requirement": "React",
+     "priority": "must",
+     "status": "missing",
+     "evidence": "Not mentioned in the resume."
+    },
+    {
+     "requirement": "HTML",
+     "priority": "must",
+     "status": "missing",
+     "evidence": "Not mentioned in the resume."
+    },
+    {
+     "requirement": "CSS",
+     "priority": "must",
+     "status": "missing",
+     "evidence": "Not mentioned in the resume."
+    },
+    {
+     "requirement": "Git",
+     "priority": "nice",
+     "status": "missing",
+     "evidence": "Not mentioned in the resume."
+    },
+    {
+     "requirement": "Figma",
+     "priority": "nice",
+     "status": "missing",
+     "evidence": "Not mentioned in the resume."
+    }
+   ],
+   "json_ok": false
+  },
+  "check": {
+   "passed": true,
+   "notes": [
+    "all checks met"
+   ]
+  }
+ },
+ {
+  "case": "T05",
+  "run": 1,
+  "result": {
+   "version": "v2",
+   "steps": [
+    {
+     "prompt": "P0",
+     "text": "```json\n{\n  \"score\": 50,\n  \"matches\": [\n    {\n      \"requirement\": \"SQL\",\n      \"priority\": \"must\",\n      \"status\": \"match\",\n      \"evidence\": \"Listed under Skills: SQL\"\n    },\n    {\n      \"requirement\": \"Excel\",\n      \"priority\": \"must\",\n      \"status\": \"match\",\n      \"evidence\": \"Listed under Skills: Excel (pivot tables, VLOOKUP) and Hypothesis testing project on exam scores using Excel.\"\n    },\n    {\n      \"requirement\": \"Tableau\",\n      \"priority\": \"must\",\n      \"status\": \"missing\",\n      \"evidence\": \"Not mentioned in the resume (Power BI is listed instead).\"\n    },\n    {\n      \"requirement\": \"statistics\",\n      \"priority\": \"must\",\n      \"status\": \"match\",\n      \"evidence\": \"Degree in B.Sc Statistics and Hypothesis testing project on exam scores.\"\n    },\n    {\n      \"requirement\": \"Python\",\n      \"priority\": \"nice\",\n      \"status\": \"missing\",\n      \"evidence\": \"Not mentioned in the resume.\"\n    }\n  ],\n  \"suggestions\": [\n    \"Gain experience in Tableau to fulfill the must-have visualization tool requirement, as only Power BI is currently listed.\",\n    \"Learn and add Python to your skills section to cover the good-to-have requirement.\",\n    \"Highlight specific SQL projects or tasks to demonstrate practical application beyond just listing the skill.\"\n  ]\n}\n```",
+     "model": "gemini-3.5-flash-lite",
+     "seconds": 3.1
+    }
+   ],
+   "valid": true,
+   "raw": "```json\n{\n  \"score\": 50,\n  \"matches\": [\n    {\n      \"requirement\": \"SQL\",\n      \"priority\": \"must\",\n      \"status\": \"match\",\n      \"evidence\": \"Listed under Skills: SQL\"\n    },\n    {\n      \"requirement\": \"Excel\",\n      \"priority\": \"must\",\n      \"status\": \"match\",\n      \"evidence\": \"Listed under Skills: Excel (pivot tables, VLOOKUP) and Hypothesis testing project on exam scores using Excel.\"\n    },\n    {\n      \"requirement\": \"Tableau\",\n      \"priority\": \"must\",\n      \"status\": \"missing\",\n      \"evidence\": \"Not mentioned in the resume (Power BI is listed instead).\"\n    },\n    {\n      \"requirement\": \"statistics\",\n      \"priority\": \"must\",\n      \"status\": \"match\",\n      \"evidence\": \"Degree in B.Sc Statistics and Hypothesis testing project on exam scores.\"\n    },\n    {\n      \"requirement\": \"Python\",\n      \"priority\": \"nice\",\n      \"status\": \"missing\",\n      \"evidence\": \"Not mentioned in the resume.\"\n    }\n  ],\n  \"suggestions\": [\n    \"Gain experience in Tableau to fulfill the must-have visualization tool requirement, as only Power BI is currently listed.\",\n    \"Learn and add Python to your skills section to cover the good-to-have requirement.\",\n    \"Highlight specific SQL projects or tasks to demonstrate practical application beyond just listing the skill.\"\n  ]\n}\n```",
+   "score": 50,
+   "matches": [
+    {
+     "requirement": "SQL",
+     "priority": "must",
+     "status": "match",
+     "evidence": "Listed under Skills: SQL"
+    },
+    {
+     "requirement": "Excel",
+     "priority": "must",
+     "status": "match",
+     "evidence": "Listed under Skills: Excel (pivot tables, VLOOKUP) and Hypothesis testing project on exam scores using Excel."
+    },
+    {
+     "requirement": "Tableau",
+     "priority": "must",
+     "status": "missing",
+     "evidence": "Not mentioned in the resume (Power BI is listed instead)."
+    },
+    {
+     "requirement": "statistics",
+     "priority": "must",
+     "status": "match",
+     "evidence": "Degree in B.Sc Statistics and Hypothesis testing project on exam scores."
+    },
+    {
+     "requirement": "Python",
+     "priority": "nice",
+     "status": "missing",
+     "evidence": "Not mentioned in the resume."
+    }
+   ],
+   "json_ok": false
+  },
+  "check": {
+   "passed": false,
+   "notes": [
+    "score 50 outside 55-85"
+   ]
+  }
+ },
+ {
+  "case": "T05",
+  "run": 2,
+  "result": {
+   "version": "v2",
+   "steps": [
+    {
+     "prompt": "P0",
+     "text": "```json\n{\n  \"score\": 50,\n  \"matches\": [\n    {\n      \"requirement\": \"SQL\",\n      \"priority\": \"must\",\n      \"status\": \"match\",\n      \"evidence\": \"Listed under Skills.\"\n    },\n    {\n      \"requirement\": \"Excel\",\n      \"priority\": \"must\",\n      \"status\": \"match\",\n      \"evidence\": \"Listed under Skills and applied in the hypothesis testing project.\"\n    },\n    {\n      \"requirement\": \"Tableau\",\n      \"priority\": \"must\",\n      \"status\": \"missing\",\n      \"evidence\": \"Not mentioned in the resume (only Power BI is listed).\"\n    },\n    {\n      \"requirement\": \"statistics\",\n      \"priority\": \"must\",\n      \"status\": \"match\",\n      \"evidence\": \"Degree is B.Sc Statistics and mentions a hypothesis testing project.\"\n    },\n    {\n      \"requirement\": \"Python\",\n      \"priority\": \"nice\",\n      \"status\": \"missing\",\n      \"evidence\": \"Not mentioned in the resume.\"\n    }\n  ],\n  \"suggestions\": [\n    \"Add experience or familiarity with Tableau, as the job description specifically requires it instead of Power BI.\",\n    \"Include Python in your skill set and add a small project or coursework utilizing it, since it is listed as a good-to-have requirement.\",\n    \"Highlight any specific SQL queries or database projects you have worked on to strengthen the evidence for your SQL skill.\"\n  ]\n}\n```",
+     "model": "gemini-3.5-flash-lite",
+     "seconds": 2.5
+    }
+   ],
+   "valid": true,
+   "raw": "```json\n{\n  \"score\": 50,\n  \"matches\": [\n    {\n      \"requirement\": \"SQL\",\n      \"priority\": \"must\",\n      \"status\": \"match\",\n      \"evidence\": \"Listed under Skills.\"\n    },\n    {\n      \"requirement\": \"Excel\",\n      \"priority\": \"must\",\n      \"status\": \"match\",\n      \"evidence\": \"Listed under Skills and applied in the hypothesis testing project.\"\n    },\n    {\n      \"requirement\": \"Tableau\",\n      \"priority\": \"must\",\n      \"status\": \"missing\",\n      \"evidence\": \"Not mentioned in the resume (only Power BI is listed).\"\n    },\n    {\n      \"requirement\": \"statistics\",\n      \"priority\": \"must\",\n      \"status\": \"match\",\n      \"evidence\": \"Degree is B.Sc Statistics and mentions a hypothesis testing project.\"\n    },\n    {\n      \"requirement\": \"Python\",\n      \"priority\": \"nice\",\n      \"status\": \"missing\",\n      \"evidence\": \"Not mentioned in the resume.\"\n    }\n  ],\n  \"suggestions\": [\n    \"Add experience or familiarity with Tableau, as the job description specifically requires it instead of Power BI.\",\n    \"Include Python in your skill set and add a small project or coursework utilizing it, since it is listed as a good-to-have requirement.\",\n    \"Highlight any specific SQL queries or database projects you have worked on to strengthen the evidence for your SQL skill.\"\n  ]\n}\n```",
+   "score": 50,
+   "matches": [
+    {
+     "requirement": "SQL",
+     "priority": "must",
+     "status": "match",
+     "evidence": "Listed under Skills."
+    },
+    {
+     "requirement": "Excel",
+     "priority": "must",
+     "status": "match",
+     "evidence": "Listed under Skills and applied in the hypothesis testing project."
+    },
+    {
+     "requirement": "Tableau",
+     "priority": "must",
+     "status": "missing",
+     "evidence": "Not mentioned in the resume (only Power BI is listed)."
+    },
+    {
+     "requirement": "statistics",
+     "priority": "must",
+     "status": "match",
+     "evidence": "Degree is B.Sc Statistics and mentions a hypothesis testing project."
+    },
+    {
+     "requirement": "Python",
+     "priority": "nice",
+     "status": "missing",
+     "evidence": "Not mentioned in the resume."
+    }
+   ],
+   "json_ok": false
+  },
+  "check": {
+   "passed": false,
+   "notes": [
+    "score 50 outside 55-85"
+   ]
+  }
+ },
+ {
+  "case": "T05",
+  "run": 3,
+  "result": {
+   "version": "v2",
+   "steps": [
+    {
+     "prompt": "P0",
+     "text": "```json\n{\n  \"score\": 50,\n  \"matches\": [\n    {\n      \"requirement\": \"SQL\",\n      \"priority\": \"must\",\n      \"status\": \"match\",\n      \"evidence\": \"Listed under Skills: SQL.\"\n    },\n    {\n      \"requirement\": \"Excel\",\n      \"priority\": \"must\",\n      \"status\": \"match\",\n      \"evidence\": \"Listed under Skills: Excel (pivot tables, VLOOKUP) and Hypothesis testing project using Excel.\"\n    },\n    {\n      \"requirement\": \"Tableau\",\n      \"priority\": \"must\",\n      \"status\": \"missing\",\n      \"evidence\": \"Not mentioned in the resume (only Power BI is listed).\"\n    },\n    {\n      \"requirement\": \"Statistics\",\n      \"priority\": \"must\",\n      \"status\": \"match\",\n      \"evidence\": \"Degree in B.Sc Statistics and Hypothesis testing project.\"\n    },\n    {\n      \"requirement\": \"Python\",\n      \"priority\": \"nice\",\n      \"status\": \"missing\",\n      \"evidence\": \"Not mentioned in the resume.\"\n    }\n  ],\n  \"suggestions\": [\n    \"Add experience or mention Tableau, as it is a must-have requirement in the job description.\",\n    \"Include Python in your skillset and projects if you have any exposure to it, since it is a good-to-have requirement.\",\n    \"Highlight your statistics coursework or statistical methods used in projects more prominently to align with the must-have statistics requirement.\"\n  ]\n}\n```",
+     "model": "gemini-3.5-flash-lite",
+     "seconds": 1.7
+    }
+   ],
+   "valid": true,
+   "raw": "```json\n{\n  \"score\": 50,\n  \"matches\": [\n    {\n      \"requirement\": \"SQL\",\n      \"priority\": \"must\",\n      \"status\": \"match\",\n      \"evidence\": \"Listed under Skills: SQL.\"\n    },\n    {\n      \"requirement\": \"Excel\",\n      \"priority\": \"must\",\n      \"status\": \"match\",\n      \"evidence\": \"Listed under Skills: Excel (pivot tables, VLOOKUP) and Hypothesis testing project using Excel.\"\n    },\n    {\n      \"requirement\": \"Tableau\",\n      \"priority\": \"must\",\n      \"status\": \"missing\",\n      \"evidence\": \"Not mentioned in the resume (only Power BI is listed).\"\n    },\n    {\n      \"requirement\": \"Statistics\",\n      \"priority\": \"must\",\n      \"status\": \"match\",\n      \"evidence\": \"Degree in B.Sc Statistics and Hypothesis testing project.\"\n    },\n    {\n      \"requirement\": \"Python\",\n      \"priority\": \"nice\",\n      \"status\": \"missing\",\n      \"evidence\": \"Not mentioned in the resume.\"\n    }\n  ],\n  \"suggestions\": [\n    \"Add experience or mention Tableau, as it is a must-have requirement in the job description.\",\n    \"Include Python in your skillset and projects if you have any exposure to it, since it is a good-to-have requirement.\",\n    \"Highlight your statistics coursework or statistical methods used in projects more prominently to align with the must-have statistics requirement.\"\n  ]\n}\n```",
+   "score": 50,
+   "matches": [
+    {
+     "requirement": "SQL",
+     "priority": "must",
+     "status": "match",
+     "evidence": "Listed under Skills: SQL."
+    },
+    {
+     "requirement": "Excel",
+     "priority": "must",
+     "status": "match",
+     "evidence": "Listed under Skills: Excel (pivot tables, VLOOKUP) and Hypothesis testing project using Excel."
+    },
+    {
+     "requirement": "Tableau",
+     "priority": "must",
+     "status": "missing",
+     "evidence": "Not mentioned in the resume (only Power BI is listed)."
+    },
+    {
+     "requirement": "Statistics",
+     "priority": "must",
+     "status": "match",
+     "evidence": "Degree in B.Sc Statistics and Hypothesis testing project."
+    },
+    {
+     "requirement": "Python",
+     "priority": "nice",
+     "status": "missing",
+     "evidence": "Not mentioned in the resume."
+    }
+   ],
+   "json_ok": false
+  },
+  "check": {
+   "passed": false,
+   "notes": [
+    "score 50 outside 55-85"
+   ]
+  }
+ },
+ {
+  "case": "T11",
+  "run": 1,
+  "result": {
+   "version": "v2",
+   "steps": [
+    {
+     "prompt": "P0",
+     "text": "```json\n{\n  \"score\": 0,\n  \"matches\": [\n    {\n      \"requirement\": \"Python\",\n      \"priority\": \"must\",\n      \"status\": \"missing\",\n      \"evidence\": \"Not mentioned in resume\"\n    },\n    {\n      \"requirement\": \"machine learning\",\n      \"priority\": \"must\",\n      \"status\": \"missing\",\n      \"evidence\": \"Not mentioned in resume\"\n    },\n    {\n      \"requirement\": \"statistics\",\n      \"priority\": \"must\",\n      \"status\": \"missing\",\n      \"evidence\": \"Not mentioned in resume\"\n    },\n    {\n      \"requirement\": \"SQL\",\n      \"priority\": \"must\",\n      \"status\": \"missing\",\n      \"evidence\": \"Not mentioned in resume\"\n    },\n    {\n      \"requirement\": \"deep learning\",\n      \"priority\": \"nice\",\n      \"status\": \"missing\",\n      \"evidence\": \"Not mentioned in resume\"\n    }\n  ],\n  \"suggestions\": [\n    \"Learn Python programming and include it in your resume.\",\n    \"Gain knowledge and practical experience in machine learning and statistics.\",\n    \"Learn SQL and add database management skills to your resume.\"\n  ]\n}\n```",
+     "model": "gemini-3.5-flash-lite",
+     "seconds": 8.1
+    }
+   ],
+   "valid": true,
+   "raw": "```json\n{\n  \"score\": 0,\n  \"matches\": [\n    {\n      \"requirement\": \"Python\",\n      \"priority\": \"must\",\n      \"status\": \"missing\",\n      \"evidence\": \"Not mentioned in resume\"\n    },\n    {\n      \"requirement\": \"machine learning\",\n      \"priority\": \"must\",\n      \"status\": \"missing\",\n      \"evidence\": \"Not mentioned in resume\"\n    },\n    {\n      \"requirement\": \"statistics\",\n      \"priority\": \"must\",\n      \"status\": \"missing\",\n      \"evidence\": \"Not mentioned in resume\"\n    },\n    {\n      \"requirement\": \"SQL\",\n      \"priority\": \"must\",\n      \"status\": \"missing\",\n      \"evidence\": \"Not mentioned in resume\"\n    },\n    {\n      \"requirement\": \"deep learning\",\n      \"priority\": \"nice\",\n      \"status\": \"missing\",\n      \"evidence\": \"Not mentioned in resume\"\n    }\n  ],\n  \"suggestions\": [\n    \"Learn Python programming and include it in your resume.\",\n    \"Gain knowledge and practical experience in machine learning and statistics.\",\n    \"Learn SQL and add database management skills to your resume.\"\n  ]\n}\n```",
+   "score": 0,
+   "matches": [
+    {
+     "requirement": "Python",
+     "priority": "must",
+     "status": "missing",
+     "evidence": "Not mentioned in resume"
+    },
+    {
+     "requirement": "machine learning",
+     "priority": "must",
+     "status": "missing",
+     "evidence": "Not mentioned in resume"
+    },
+    {
+     "requirement": "statistics",
+     "priority": "must",
+     "status": "missing",
+     "evidence": "Not mentioned in resume"
+    },
+    {
+     "requirement": "SQL",
+     "priority": "must",
+     "status": "missing",
+     "evidence": "Not mentioned in resume"
+    },
+    {
+     "requirement": "deep learning",
+     "priority": "nice",
+     "status": "missing",
+     "evidence": "Not mentioned in resume"
+    }
+   ],
+   "json_ok": false
+  },
+  "check": {
+   "passed": true,
+   "notes": [
+    "all checks met"
+   ]
+  }
+ },
+ {
+  "case": "T13",
+  "run": 1,
+  "result": {
+   "version": "v2",
+   "steps": [
+    {
+     "prompt": "P0",
+     "text": "```json\n{\n  \"score\": 0,\n  \"matches\": [\n    {\n      \"requirement\": \"Python\",\n      \"priority\": \"must\",\n      \"status\": \"missing\",\n      \"evidence\": \"Not mentioned in the resume\"\n    },\n    {\n      \"requirement\": \"SQL\",\n      \"priority\": \"must\",\n      \"status\": \"missing\",\n      \"evidence\": \"Not mentioned in the resume\"\n    },\n    {\n      \"requirement\": \"Git\",\n      \"priority\": \"nice\",\n      \"status\": \"missing\",\n      \"evidence\": \"Not mentioned in the resume\"\n    }\n  ],\n  \"suggestions\": [\n    \"Add Python programming experience and relevant projects to your resume.\",\n    \"Include SQL database management skills and query experience.\",\n    \"Add version control tools like Git to align with the technical requirements of the Software Developer Intern role.\"\n  ]\n}\n```",
+     "model": "gemini-3.5-flash-lite",
+     "seconds": 1.1
+    }
+   ],
+   "valid": true,
+   "raw": "```json\n{\n  \"score\": 0,\n  \"matches\": [\n    {\n      \"requirement\": \"Python\",\n      \"priority\": \"must\",\n      \"status\": \"missing\",\n      \"evidence\": \"Not mentioned in the resume\"\n    },\n    {\n      \"requirement\": \"SQL\",\n      \"priority\": \"must\",\n      \"status\": \"missing\",\n      \"evidence\": \"Not mentioned in the resume\"\n    },\n    {\n      \"requirement\": \"Git\",\n      \"priority\": \"nice\",\n      \"status\": \"missing\",\n      \"evidence\": \"Not mentioned in the resume\"\n    }\n  ],\n  \"suggestions\": [\n    \"Add Python programming experience and relevant projects to your resume.\",\n    \"Include SQL database management skills and query experience.\",\n    \"Add version control tools like Git to align with the technical requirements of the Software Developer Intern role.\"\n  ]\n}\n```",
+   "score": 0,
+   "matches": [
+    {
+     "requirement": "Python",
+     "priority": "must",
+     "status": "missing",
+     "evidence": "Not mentioned in the resume"
+    },
+    {
+     "requirement": "SQL",
+     "priority": "must",
+     "status": "missing",
+     "evidence": "Not mentioned in the resume"
+    },
+    {
+     "requirement": "Git",
+     "priority": "nice",
+     "status": "missing",
+     "evidence": "Not mentioned in the resume"
+    }
+   ],
+   "json_ok": false
+  },
+  "check": {
+   "passed": false,
+   "notes": [
+    "not flagged; gave score 0"
+   ]
+  }
+ }
+]

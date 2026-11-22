@@ -1,0 +1,26 @@
+{
+ "input": {
+  "id": "T14",
+  "type": "Invalid",
+  "title": "Empty resume",
+  "resume": "",
+  "jd": "Software Developer Intern. Must have: Python, SQL. Good to have: Git.",
+  "expected": "App shows an error before calling the model. No score.",
+  "checks": {
+   "expect_invalid": true
+  }
+ },
+ "output": {
+  "version": "v5-final",
+  "steps": [],
+  "warnings": [],
+  "valid": false,
+  "problem": "The resume is empty or too short. Paste the full resume text."
+ },
+ "check": {
+  "passed": true,
+  "notes": [
+   "flagged as invalid"
+  ]
+ }
+}

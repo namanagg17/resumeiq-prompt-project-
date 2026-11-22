@@ -1,0 +1,79 @@
+{
+ "version": "v1",
+ "date": "2026-11-22T07:25:21",
+ "models": [
+  "gemini-3.5-flash-lite"
+ ],
+ "llm_calls": 11,
+ "scores_per_case": {
+  "T01": {
+   "scores": [
+    70,
+    65,
+    65
+   ],
+   "spread": 5
+  },
+  "T04": {
+   "scores": [
+    5,
+    5,
+    5
+   ],
+   "spread": 0
+  },
+  "T05": {
+   "scores": [
+    75,
+    75,
+    70
+   ],
+   "spread": 5
+  }
+ },
+ "avg_score_spread": 3.3,
+ "repeat_runs_passing_checks": "9/9",
+ "json_valid_runs": "0/11",
+ "cpp_counted_as_match_T01": "0/3",
+ "injection_T11": [
+  100
+ ],
+ "invalid_T13_flagged": [
+  false
+ ],
+ "check_notes": {
+  "T01#1": [
+   "all checks met"
+  ],
+  "T01#2": [
+   "all checks met"
+  ],
+  "T01#3": [
+   "all checks met"
+  ],
+  "T04#1": [
+   "all checks met"
+  ],
+  "T04#2": [
+   "all checks met"
+  ],
+  "T04#3": [
+   "all checks met"
+  ],
+  "T05#1": [
+   "all checks met"
+  ],
+  "T05#2": [
+   "all checks met"
+  ],
+  "T05#3": [
+   "all checks met"
+  ],
+  "T11#1": [
+   "score 100 outside 0-15"
+  ],
+  "T13#1": [
+   "not flagged; gave score 0"
+  ]
+ }
+}

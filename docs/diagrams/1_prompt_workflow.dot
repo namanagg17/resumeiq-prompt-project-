@@ -1,0 +1,18 @@
+digraph G {
+  rankdir=TB; bgcolor="white"; fontname="Helvetica"; label="Diagram 1: Prompt workflow (final, v5)"; labelloc=t; fontsize=18;
+  node [fontname="Helvetica", fontsize=11, style="rounded,filled", shape=box, penwidth=1.2];
+  edge [fontname="Helvetica", fontsize=9, color="#555555"];
+  in  [label="Resume text\n+ Job description", fillcolor="#eef2f7"];
+  chk [label="Basic input check\n(code: empty / < 3 words)", fillcolor="#fff4d6"];
+  p1  [label="P1 Extractor\nGemini 3.5 Flash-Lite, temp 0.2, JSON\nvalidity check, injection flag,\nskills + exact quotes, requirements", fillcolor="#dbeafe"];
+  g   [label="Evidence guard (code)\nquote must exist in resume", fillcolor="#fff4d6"];
+  p2  [label="P2 Matcher\nGemini 3.5 Flash-Lite, temp 0.2, JSON\n1 example; status per requirement", fillcolor="#dbeafe"];
+  sc  [label="Score (code)\n75% must + 25% nice\nmatch=1, partial=0.5, missing=0", fillcolor="#fff4d6"];
+  p3  [label="P3 Coach\nGemini 3.5 Flash-Lite, temp 0.4, JSON\nsuggestions + rewritten lines", fillcolor="#dbeafe"];
+  hc  [label="Invented-skill check (code)", fillcolor="#fff4d6"];
+  out [label="Report in web app\nscore, table, suggestions,\nwarnings", fillcolor="#dcfce7"];
+  err [label="Error message\n(no score)", fillcolor="#fee2e2"];
+  in -> chk -> p1 -> g -> p2 -> sc -> p3 -> hc -> out;
+  chk -> err [label="too short"];
+  p1 -> err [label="resume_valid or\njd_valid = false"];
+}

@@ -1,0 +1,79 @@
+{
+ "version": "v4",
+ "date": "2026-11-22T07:31:17",
+ "models": [
+  "gemini-3.5-flash-lite"
+ ],
+ "llm_calls": 31,
+ "scores_per_case": {
+  "T01": {
+   "scores": [
+    50,
+    50,
+    41
+   ],
+   "spread": 9
+  },
+  "T04": {
+   "scores": [
+    0,
+    0,
+    0
+   ],
+   "spread": 0
+  },
+  "T05": {
+   "scores": [
+    38,
+    47,
+    47
+   ],
+   "spread": 9
+  }
+ },
+ "avg_score_spread": 6.0,
+ "repeat_runs_passing_checks": "5/9",
+ "json_valid_runs": "11/11",
+ "cpp_counted_as_match_T01": "0/3",
+ "injection_T11": [
+  0
+ ],
+ "invalid_T13_flagged": [
+  true
+ ],
+ "check_notes": {
+  "T01#1": [
+   "all checks met"
+  ],
+  "T01#2": [
+   "all checks met"
+  ],
+  "T01#3": [
+   "score 41 outside 45-75"
+  ],
+  "T04#1": [
+   "all checks met"
+  ],
+  "T04#2": [
+   "all checks met"
+  ],
+  "T04#3": [
+   "all checks met"
+  ],
+  "T05#1": [
+   "score 38 outside 55-85"
+  ],
+  "T05#2": [
+   "score 47 outside 55-85"
+  ],
+  "T05#3": [
+   "score 47 outside 55-85"
+  ],
+  "T11#1": [
+   "all checks met"
+  ],
+  "T13#1": [
+   "flagged as invalid"
+  ]
+ }
+}

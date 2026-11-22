@@ -1,0 +1,127 @@
+{
+ "input": {
+  "id": "T07",
+  "type": "Edge",
+  "title": "Resume written in Hinglish",
+  "resume": "Naam: Vikram Singh\nCourse: BCA final year\nSkills: Python, Django, MySQL\nProjects:\n- Maine Django mein ek college event registration website banayi, jisme 400+ students ne register kiya.\n- Python se ek expense tracker banaya jo MySQL mein data save karta hai.\n",
+  "jd": "Backend Developer Intern. Must have: Python, Django or Flask, SQL database. Good to have: REST APIs.",
+  "expected": "Output in English. Python, Django, MySQL matched using Hinglish evidence. Score 65-95.",
+  "checks": {
+   "score_range": [
+    65,
+    95
+   ],
+   "must_be_missing": [],
+   "must_not_match": [],
+   "english_output": true
+  }
+ },
+ "output": {
+  "version": "v5-final",
+  "steps": [
+   {
+    "prompt": "P1",
+    "text": "{\n  \"input_check\": {\n    \"resume_valid\": true,\n    \"jd_valid\": true,\n    \"problem\": null\n  },\n  \"injection_detected\": false,\n  \"candidate_skills\": [\n    {\n      \"skill\": \"Python\",\n      \"evidence\": \"Python se ek expense tracker banaya jo MySQL mein data save karta hai.\",\n      \"strength\": \"demonstrated\"\n    },\n    {\n      \"skill\": \"Django\",\n      \"evidence\": \"Maine Django mein ek college event registration website banayi, jisme 400+ students ne register kiya.\",\n      \"strength\": \"demonstrated\"\n    },\n    {\n      \"skill\": \"MySQL\",\n      \"evidence\": \"Python se ek expense tracker banaya jo MySQL mein data save karta hai.\",\n      \"strength\": \"demonstrated\"\n    }\n  ],\n  \"jd_requirements\": [\n    {\n      \"requirement\": \"Python\",\n      \"priority\": \"must\"\n    },\n    {\n      \"requirement\": \"Django or Flask\",\n      \"priority\": \"must\"\n    },\n    {\n      \"requirement\": \"SQL database\",\n      \"priority\": \"must\"\n    },\n    {\n      \"requirement\": \"REST APIs\",\n      \"priority\": \"nice\"\n    }\n  ]\n}",
+    "model": "gemini-3.5-flash-lite",
+    "seconds": 3.3
+   },
+   {
+    "prompt": "P2",
+    "text": "{\n  \"matches\": [\n    {\n      \"requirement\": \"Python\",\n      \"priority\": \"must\",\n      \"status\": \"match\",\n      \"evidence\": \"Python se ek expense tracker banaya jo MySQL mein data save karta hai.\",\n      \"reason\": \"Demonstrated through an expense tracker project.\"\n    },\n    {\n      \"requirement\": \"Django or Flask\",\n      \"priority\": \"must\",\n      \"status\": \"match\",\n      \"evidence\": \"Maine Django mein ek college event registration website banayi, jisme 400+ students ne register kiya.\",\n      \"reason\": \"Demonstrated through a college event registration website built in Django.\"\n    },\n    {\n      \"requirement\": \"SQL database\",\n      \"priority\": \"must\",\n      \"status\": \"match\",\n      \"evidence\": \"Python se ek expense tracker banaya jo MySQL mein data save karta hai.\",\n      \"reason\": \"Demonstrated using MySQL for data storage.\"\n    },\n    {\n      \"requirement\": \"REST APIs\",\n      \"priority\": \"nice\",\n      \"status\": \"missing\",\n      \"evidence\": null,\n      \"reason\": \"No experience or mention of REST APIs in the candidate skills.\"\n    }\n  ],\n  \"summary\": \"The candidate has a solid match for Python, Django, and SQL database requirements. The most important gap is the lack of REST APIs experience.\"\n}",
+    "model": "gemini-3.5-flash-lite",
+    "seconds": 1.4
+   },
+   {
+    "prompt": "P3",
+    "text": "{\"suggestions\": [{\"type\": \"learn\", \"text\": \"Learn how to build REST APIs using Django REST Framework, as it is a nice-to-have requirement. Project idea: Add a REST API endpoint to your expense tracker to fetch expenses in JSON format.\", \"related_requirement\": \"REST APIs\"}, {\"type\": \"add_if_true\", \"text\": \"Add REST APIs to your skills section only if you have actually built or used them in your projects.\", \"related_requirement\": \"REST APIs\"}, {\"type\": \"clarify\", \"text\": \"Translate your project descriptions into professional English to match standard IT resume formatting.\", \"related_requirement\": \"Python\"}], \"rewritten_lines\": [{\"original\": \"Maine Django mein ek college event registration website banayi, jisme 400+ students ne register kiya.\", \"improved\": \"Built a college event registration website using Django, facilitating successful registration for 400+ students.\"}, {\"original\": \"Python se ek expense tracker banaya jo MySQL mein data save karta hai.\", \"improved\": \"Developed a Python-based expense tracker application utilizing MySQL for backend data storage.\"}]}",
+    "model": "gemini-3.5-flash-lite",
+    "seconds": 3.4
+   }
+  ],
+  "warnings": [],
+  "valid": true,
+  "score": 75,
+  "matches": [
+   {
+    "requirement": "Python",
+    "priority": "must",
+    "status": "match",
+    "evidence": "Python se ek expense tracker banaya jo MySQL mein data save karta hai.",
+    "reason": "Demonstrated through an expense tracker project."
+   },
+   {
+    "requirement": "Django or Flask",
+    "priority": "must",
+    "status": "match",
+    "evidence": "Maine Django mein ek college event registration website banayi, jisme 400+ students ne register kiya.",
+    "reason": "Demonstrated through a college event registration website built in Django."
+   },
+   {
+    "requirement": "SQL database",
+    "priority": "must",
+    "status": "match",
+    "evidence": "Python se ek expense tracker banaya jo MySQL mein data save karta hai.",
+    "reason": "Demonstrated using MySQL for data storage."
+   },
+   {
+    "requirement": "REST APIs",
+    "priority": "nice",
+    "status": "missing",
+    "evidence": null,
+    "reason": "No experience or mention of REST APIs in the candidate skills."
+   }
+  ],
+  "summary": "The candidate has a solid match for Python, Django, and SQL database requirements. The most important gap is the lack of REST APIs experience.",
+  "candidate_skills": [
+   {
+    "skill": "Python",
+    "evidence": "Python se ek expense tracker banaya jo MySQL mein data save karta hai.",
+    "strength": "demonstrated"
+   },
+   {
+    "skill": "Django",
+    "evidence": "Maine Django mein ek college event registration website banayi, jisme 400+ students ne register kiya.",
+    "strength": "demonstrated"
+   },
+   {
+    "skill": "MySQL",
+    "evidence": "Python se ek expense tracker banaya jo MySQL mein data save karta hai.",
+    "strength": "demonstrated"
+   }
+  ],
+  "suggestions": [
+   {
+    "type": "learn",
+    "text": "Learn how to build REST APIs using Django REST Framework, as it is a nice-to-have requirement. Project idea: Add a REST API endpoint to your expense tracker to fetch expenses in JSON format.",
+    "related_requirement": "REST APIs"
+   },
+   {
+    "type": "add_if_true",
+    "text": "Add REST APIs to your skills section only if you have actually built or used them in your projects.",
+    "related_requirement": "REST APIs"
+   },
+   {
+    "type": "clarify",
+    "text": "Translate your project descriptions into professional English to match standard IT resume formatting.",
+    "related_requirement": "Python"
+   }
+  ],
+  "rewritten_lines": [
+   {
+    "original": "Maine Django mein ek college event registration website banayi, jisme 400+ students ne register kiya.",
+    "improved": "Built a college event registration website using Django, facilitating successful registration for 400+ students."
+   },
+   {
+    "original": "Python se ek expense tracker banaya jo MySQL mein data save karta hai.",
+    "improved": "Developed a Python-based expense tracker application utilizing MySQL for backend data storage."
+   }
+  ],
+  "json_ok": true
+ },
+ "check": {
+  "passed": true,
+  "notes": [
+   "all checks met"
+  ]
+ }
+}

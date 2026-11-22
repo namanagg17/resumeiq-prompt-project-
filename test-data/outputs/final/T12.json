@@ -1,0 +1,33 @@
+{
+ "input": {
+  "id": "T12",
+  "type": "Invalid",
+  "title": "Job description is gibberish",
+  "resume": "Alex Sharma\nB.Tech Computer Science, 3rd year\nSkills: Python, C++, SQL\nProjects:\n- Library Management System in Python and SQLite.\n",
+  "jd": "asdf qwerty lorem ipsum 12345 zzz",
+  "expected": "Flags the job description as invalid and gives no score.",
+  "checks": {
+   "expect_invalid": true
+  }
+ },
+ "output": {
+  "version": "v5-final",
+  "steps": [
+   {
+    "prompt": "P1",
+    "text": "{\"input_check\": {\"resume_valid\": true, \"jd_valid\": false, \"problem\": \"The JD text does not describe a job and its requirements, containing only random characters.\"}, \"injection_detected\": false, \"candidate_skills\": [{\"skill\": \"Python\", \"evidence\": \"Library Management System in Python and SQLite.\", \"strength\": \"demonstrated\"}, {\"skill\": \"C++\", \"evidence\": \"Skills: Python, C++, SQL\", \"strength\": \"listed\"}, {\"skill\": \"SQL\", \"evidence\": \"Skills: Python, C++, SQL\", \"strength\": \"listed\"}], \"jd_requirements\": []}",
+    "model": "gemini-3.5-flash-lite",
+    "seconds": 0.9
+   }
+  ],
+  "warnings": [],
+  "valid": false,
+  "problem": "The JD text does not describe a job and its requirements, containing only random characters."
+ },
+ "check": {
+  "passed": true,
+  "notes": [
+   "flagged as invalid"
+  ]
+ }
+}

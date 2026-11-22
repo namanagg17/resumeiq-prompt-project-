@@ -1,0 +1,143 @@
+{
+ "input": {
+  "id": "T06",
+  "type": "Normal",
+  "title": "Cloud student vs DevOps intern",
+  "resume": "Arjun Nair\nB.Tech IT, 3rd year\nCertifications: AWS Certified Cloud Practitioner (2025)\nSkills: Linux, Docker, Bash, AWS EC2 and S3\nProjects:\n- Containerised a Flask app with Docker and deployed it on an EC2 instance.\n",
+  "jd": "DevOps Intern. Must have: Linux, Docker, Kubernetes, CI/CD pipelines (GitHub Actions or Jenkins). Good to have: AWS.",
+  "expected": "Score 40-75. Linux, Docker, AWS matched. Kubernetes and CI/CD missing.",
+  "checks": {
+   "score_range": [
+    40,
+    75
+   ],
+   "must_be_missing": [
+    "kubernetes"
+   ],
+   "must_not_match": [
+    "kubernetes"
+   ]
+  }
+ },
+ "output": {
+  "version": "v5-final",
+  "steps": [
+   {
+    "prompt": "P1",
+    "text": "{\n  \"input_check\": {\n    \"resume_valid\": true,\n    \"jd_valid\": true,\n    \"problem\": null\n  },\n  \"injection_detected\": false,\n  \"candidate_skills\": [\n    {\n      \"skill\": \"Linux\",\n      \"evidence\": \"Skills: Linux, Docker, Bash, AWS EC2 and S3\",\n      \"strength\": \"listed\"\n    },\n    {\n      \"skill\": \"Docker\",\n      \"evidence\": \"Containerised a Flask app with Docker and deployed it on an EC2 instance.\",\n      \"strength\": \"demonstrated\"\n    },\n    {\n      \"skill\": \"Bash\",\n      \"evidence\": \"Skills: Linux, Docker, Bash, AWS EC2 and S3\",\n      \"strength\": \"listed\"\n    },\n    {\n      \"skill\": \"AWS EC2 and S3\",\n      \"evidence\": \"Skills: Linux, Docker, Bash, AWS EC2 and S3\",\n      \"strength\": \"listed\"\n    },\n    {\n      \"skill\": \"AWS\",\n      \"evidence\": \"AWS Certified Cloud Practitioner (2025)\",\n      \"strength\": \"demonstrated\"\n    }\n  ],\n  \"jd_requirements\": [\n    {\n      \"requirement\": \"Linux\",\n      \"priority\": \"must\"\n    },\n    {\n      \"requirement\": \"Docker\",\n      \"priority\": \"must\"\n    },\n    {\n      \"requirement\": \"Kubernetes\",\n      \"priority\": \"must\"\n    },\n    {\n      \"requirement\": \"CI/CD pipelines (GitHub Actions or Jenkins)\",\n      \"priority\": \"must\"\n    },\n    {\n      \"requirement\": \"AWS\",\n      \"priority\": \"nice\"\n    }\n  ]\n}",
+    "model": "gemini-3.5-flash-lite",
+    "seconds": 5.6
+   },
+   {
+    "prompt": "P2",
+    "text": "{\"matches\": [{\"requirement\": \"Linux\", \"priority\": \"must\", \"status\": \"partial\", \"evidence\": \"Skills: Linux, Docker, Bash, AWS EC2 and S3\", \"reason\": \"Listed in skills with no project evidence.\"}, {\"requirement\": \"Docker\", \"priority\": \"must\", \"status\": \"match\", \"evidence\": \"Containerised a Flask app with Docker and deployed it on an EC2 instance.\", \"reason\": \"Demonstrated through project containerization and deployment.\"}, {\"requirement\": \"Kubernetes\", \"priority\": \"must\", \"status\": \"missing\", \"evidence\": null, \"reason\": \"No Kubernetes experience is mentioned.\"}, {\"requirement\": \"CI/CD pipelines (GitHub Actions or Jenkins)\", \"priority\": \"must\", \"status\": \"missing\", \"evidence\": null, \"reason\": \"No CI/CD pipeline experience is shown.\"}, {\"requirement\": \"AWS\", \"priority\": \"nice\", \"status\": \"match\", \"evidence\": \"AWS Certified Cloud Practitioner (2025)\", \"reason\": \"Demonstrated via active AWS certification.\"}], \"summary\": \"The candidate has solid foundational skills in Docker and AWS. The most important gaps are Kubernetes and CI/CD pipelines, which are must-haves for the role.\"}",
+    "model": "gemini-3.5-flash-lite",
+    "seconds": 7.8
+   },
+   {
+    "prompt": "P3",
+    "text": "{\n  \"suggestions\": [\n    {\n      \"type\": \"learn\",\n      \"text\": \"Since Kubernetes is required, build a small project where you deploy your Flask Docker container onto a local Minikube cluster and add it to your resume only after doing so.\",\n      \"related_requirement\": \"Kubernetes\"\n    },\n    {\n      \"type\": \"learn\",\n      \"text\": \"To cover CI/CD pipelines, set up a GitHub Actions workflow to automatically build your Docker image on every push, and add it only if you implement this.\",\n      \"related_requirement\": \"CI/CD pipelines (GitHub Actions or Jenkins)\"\n    },\n    {\n      \"type\": \"clarify\",\n      \"text\": \"Specify which Linux commands or shell scripting tasks you performed in your project to highlight your Linux skills.\",\n      \"related_requirement\": \"Linux\"\n    }\n  ],\n  \"rewritten_lines\": [\n    {\n      \"original\": \"Containerised a Flask app with Docker and deployed it on an EC2 instance.\",\n      \"improved\": \"Containerised a Flask app using Docker and deployed the container on an AWS EC2 instance.\"\n    }\n  ]\n}",
+    "model": "gemini-3.5-flash-lite",
+    "seconds": 2.1
+   }
+  ],
+  "warnings": [],
+  "valid": true,
+  "score": 53,
+  "matches": [
+   {
+    "requirement": "Linux",
+    "priority": "must",
+    "status": "partial",
+    "evidence": "Skills: Linux, Docker, Bash, AWS EC2 and S3",
+    "reason": "Listed in skills with no project evidence."
+   },
+   {
+    "requirement": "Docker",
+    "priority": "must",
+    "status": "match",
+    "evidence": "Containerised a Flask app with Docker and deployed it on an EC2 instance.",
+    "reason": "Demonstrated through project containerization and deployment."
+   },
+   {
+    "requirement": "Kubernetes",
+    "priority": "must",
+    "status": "missing",
+    "evidence": null,
+    "reason": "No Kubernetes experience is mentioned."
+   },
+   {
+    "requirement": "CI/CD pipelines (GitHub Actions or Jenkins)",
+    "priority": "must",
+    "status": "missing",
+    "evidence": null,
+    "reason": "No CI/CD pipeline experience is shown."
+   },
+   {
+    "requirement": "AWS",
+    "priority": "nice",
+    "status": "match",
+    "evidence": "AWS Certified Cloud Practitioner (2025)",
+    "reason": "Demonstrated via active AWS certification."
+   }
+  ],
+  "summary": "The candidate has solid foundational skills in Docker and AWS. The most important gaps are Kubernetes and CI/CD pipelines, which are must-haves for the role.",
+  "candidate_skills": [
+   {
+    "skill": "Linux",
+    "evidence": "Skills: Linux, Docker, Bash, AWS EC2 and S3",
+    "strength": "listed"
+   },
+   {
+    "skill": "Docker",
+    "evidence": "Containerised a Flask app with Docker and deployed it on an EC2 instance.",
+    "strength": "demonstrated"
+   },
+   {
+    "skill": "Bash",
+    "evidence": "Skills: Linux, Docker, Bash, AWS EC2 and S3",
+    "strength": "listed"
+   },
+   {
+    "skill": "AWS EC2 and S3",
+    "evidence": "Skills: Linux, Docker, Bash, AWS EC2 and S3",
+    "strength": "listed"
+   },
+   {
+    "skill": "AWS",
+    "evidence": "AWS Certified Cloud Practitioner (2025)",
+    "strength": "demonstrated"
+   }
+  ],
+  "suggestions": [
+   {
+    "type": "learn",
+    "text": "Since Kubernetes is required, build a small project where you deploy your Flask Docker container onto a local Minikube cluster and add it to your resume only after doing so.",
+    "related_requirement": "Kubernetes"
+   },
+   {
+    "type": "learn",
+    "text": "To cover CI/CD pipelines, set up a GitHub Actions workflow to automatically build your Docker image on every push, and add it only if you implement this.",
+    "related_requirement": "CI/CD pipelines (GitHub Actions or Jenkins)"
+   },
+   {
+    "type": "clarify",
+    "text": "Specify which Linux commands or shell scripting tasks you performed in your project to highlight your Linux skills.",
+    "related_requirement": "Linux"
+   }
+  ],
+  "rewritten_lines": [
+   {
+    "original": "Containerised a Flask app with Docker and deployed it on an EC2 instance.",
+    "improved": "Containerised a Flask app using Docker and deployed the container on an AWS EC2 instance."
+   }
+  ],
+  "json_ok": true
+ },
+ "check": {
+  "passed": true,
+  "notes": [
+   "all checks met"
+  ]
+ }
+}

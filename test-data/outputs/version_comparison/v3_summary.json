@@ -1,0 +1,79 @@
+{
+ "version": "v3",
+ "date": "2026-11-22T07:29:11",
+ "models": [
+  "gemini-3.5-flash-lite"
+ ],
+ "llm_calls": 33,
+ "scores_per_case": {
+  "T01": {
+   "scores": [
+    41,
+    39,
+    39
+   ],
+   "spread": 2
+  },
+  "T04": {
+   "scores": [
+    0,
+    0,
+    0
+   ],
+   "spread": 0
+  },
+  "T05": {
+   "scores": [
+    38,
+    38,
+    38
+   ],
+   "spread": 0
+  }
+ },
+ "avg_score_spread": 0.7,
+ "repeat_runs_passing_checks": "3/9",
+ "json_valid_runs": "11/11",
+ "cpp_counted_as_match_T01": "0/3",
+ "injection_T11": [
+  0
+ ],
+ "invalid_T13_flagged": [
+  false
+ ],
+ "check_notes": {
+  "T01#1": [
+   "score 41 outside 45-75"
+  ],
+  "T01#2": [
+   "score 39 outside 45-75"
+  ],
+  "T01#3": [
+   "score 39 outside 45-75"
+  ],
+  "T04#1": [
+   "all checks met"
+  ],
+  "T04#2": [
+   "all checks met"
+  ],
+  "T04#3": [
+   "all checks met"
+  ],
+  "T05#1": [
+   "score 38 outside 55-85"
+  ],
+  "T05#2": [
+   "score 38 outside 55-85"
+  ],
+  "T05#3": [
+   "score 38 outside 55-85"
+  ],
+  "T11#1": [
+   "all checks met"
+  ],
+  "T13#1": [
+   "not flagged; gave score 0"
+  ]
+ }
+}

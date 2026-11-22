@@ -1,0 +1,33 @@
+{
+ "input": {
+  "id": "T13",
+  "type": "Invalid",
+  "title": "Resume field contains a recipe",
+  "resume": "Masala Chai Recipe\nBoil 1 cup water with crushed ginger and cardamom. Add 2 tsp tea leaves and 1 cup milk. Add sugar and simmer for 3 minutes. Strain and serve hot.\n",
+  "jd": "Software Developer Intern. Must have: Python, SQL. Good to have: Git.",
+  "expected": "Flags the resume as invalid and gives no score.",
+  "checks": {
+   "expect_invalid": true
+  }
+ },
+ "output": {
+  "version": "v5-final",
+  "steps": [
+   {
+    "prompt": "P1",
+    "text": "{\n  \"input_check\": {\n    \"resume_valid\": false,\n    \"jd_valid\": true,\n    \"problem\": \"The resume text is a recipe for Masala Chai, not a resume or CV.\"\n  },\n  \"injection_detected\": false,\n  \"candidate_skills\": [],\n  \"jd_requirements\": [\n    {\n      \"requirement\": \"Python\",\n      \"priority\": \"must\"\n    },\n    {\n      \"requirement\": \"SQL\",\n      \"priority\": \"must\"\n    },\n    {\n      \"requirement\": \"Git\",\n      \"priority\": \"nice\"\n    }\n  ]\n}",
+    "model": "gemini-3.5-flash-lite",
+    "seconds": 1.2
+   }
+  ],
+  "warnings": [],
+  "valid": false,
+  "problem": "The resume text is a recipe for Masala Chai, not a resume or CV."
+ },
+ "check": {
+  "passed": true,
+  "notes": [
+   "flagged as invalid"
+  ]
+ }
+}

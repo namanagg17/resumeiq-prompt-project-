@@ -1,0 +1,167 @@
+{
+ "input": {
+  "id": "T10",
+  "type": "Edge",
+  "title": "Keyword-stuffed resume with no evidence",
+  "resume": "Aman Khan\nSkills: Python, Java, C++, React, Node.js, AWS, Machine Learning, Blockchain, Kubernetes, data structures, algorithms. Expert in all technologies. Fast learner.\n",
+  "jd": "Software Developer Intern. Must have: Python, data structures and algorithms, React. Good to have: AWS.",
+  "expected": "Listed-only skills treated as partial, not full matches. Score 30-60, not high.",
+  "checks": {
+   "score_range": [
+    30,
+    60
+   ],
+   "must_be_missing": [],
+   "must_not_match": []
+  }
+ },
+ "output": {
+  "version": "v5-final",
+  "steps": [
+   {
+    "prompt": "P1",
+    "text": "{\n  \"input_check\": {\n    \"resume_valid\": true,\n    \"jd_valid\": true,\n    \"problem\": null\n  },\n  \"injection_detected\": false,\n  \"candidate_skills\": [\n    {\n      \"skill\": \"Python\",\n      \"evidence\": \"Python\",\n      \"strength\": \"listed\"\n    },\n    {\n      \"skill\": \"Java\",\n      \"evidence\": \"Java\",\n      \"strength\": \"listed\"\n    },\n    {\n      \"skill\": \"C++\",\n      \"evidence\": \"C++\",\n      \"strength\": \"listed\"\n    },\n    {\n      \"skill\": \"React\",\n      \"evidence\": \"React\",\n      \"strength\": \"listed\"\n    },\n    {\n      \"skill\": \"Node.js\",\n      \"evidence\": \"Node.js\",\n      \"strength\": \"listed\"\n    },\n    {\n      \"skill\": \"AWS\",\n      \"evidence\": \"AWS\",\n      \"strength\": \"listed\"\n    },\n    {\n      \"skill\": \"Machine Learning\",\n      \"evidence\": \"Machine Learning\",\n      \"strength\": \"listed\"\n    },\n    {\n      \"skill\": \"Blockchain\",\n      \"evidence\": \"Blockchain\",\n      \"strength\": \"listed\"\n    },\n    {\n      \"skill\": \"Kubernetes\",\n      \"evidence\": \"Kubernetes\",\n      \"strength\": \"listed\"\n    },\n    {\n      \"skill\": \"data structures\",\n      \"evidence\": \"data structures\",\n      \"strength\": \"listed\"\n    },\n    {\n      \"skill\": \"algorithms\",\n      \"evidence\": \"algorithms\",\n      \"strength\": \"listed\"\n    }\n  ],\n  \"jd_requirements\": [\n    {\n      \"requirement\": \"Python\",\n      \"priority\": \"must\"\n    },\n    {\n      \"requirement\": \"data structures and algorithms\",\n      \"priority\": \"must\"\n    },\n    {\n      \"requirement\": \"React\",\n      \"priority\": \"must\"\n    },\n    {\n      \"requirement\": \"AWS\",\n      \"priority\": \"nice\"\n    }\n  ]\n}",
+    "model": "gemini-3.5-flash-lite",
+    "seconds": 3.9
+   },
+   {
+    "prompt": "P2",
+    "text": "{\n  \"matches\": [\n    {\n      \"requirement\": \"Python\",\n      \"priority\": \"must\",\n      \"status\": \"partial\",\n      \"evidence\": \"Python\",\n      \"reason\": \"Listed as a skill with no project experience.\"\n    },\n    {\n      \"requirement\": \"data structures and algorithms\",\n      \"priority\": \"must\",\n      \"status\": \"partial\",\n      \"evidence\": \"data structures\",\n      \"reason\": \"Both data structures and algorithms are listed as skills without project evidence.\"\n    },\n    {\n      \"requirement\": \"React\",\n      \"priority\": \"must\",\n      \"status\": \"partial\",\n      \"evidence\": \"React\",\n      \"reason\": \"Listed as a skill without practical project demonstration.\"\n    },\n    {\n      \"requirement\": \"AWS\",\n      \"priority\": \"nice\",\n      \"status\": \"partial\",\n      \"evidence\": \"AWS\",\n      \"reason\": \"Listed as a skill without project demonstration.\"\n    }\n  ],\n  \"summary\": \"The candidate has listed all the required skills but none of them are demonstrated with project experience. The most important gap is the lack of practical, demonstrated experience in core must-haves like Python, React, and data structures and algorithms.\"\n}",
+    "model": "gemini-3.5-flash-lite",
+    "seconds": 1.1
+   },
+   {
+    "prompt": "P3",
+    "text": "{\"suggestions\": [{\"type\": \"clarify\", \"text\": \"Remove the phrase 'Expert in all technologies' because claiming expertise in so many advanced areas looks unrealistic to recruiters.\", \"related_requirement\": \"Python\"}, {\"type\": \"add_if_true\", \"text\": \"Add a project where you used Python and data structures and algorithms, specifying what problem you solved and performance metrics using placeholders like [X%] if true.\", \"related_requirement\": \"data structures and algorithms\"}, {\"type\": \"add_if_true\", \"text\": \"Add a web development project where you built a frontend using React and a backend using Node.js, mentioning the number of users or features if true.\", \"related_requirement\": \"React\"}, {\"type\": \"learn\", \"text\": \"Since AWS is a nice-to-have requirement without project evidence, build a small project like hosting a static website on AWS S3 or deploying a simple Python app on EC2.\", \"related_requirement\": \"AWS\"}], \"rewritten_lines\": [{\"original\": \"Python, Java, C++, React, Node.js, AWS, Machine Learning, Blockchain, Kubernetes, data structures, algorithms.\", \"improved\": \"Proficient in Python, Java, C++, React, Node.js, AWS, Machine Learning, Blockchain, Kubernetes, data structures, and algorithms.\"}]}",
+    "model": "gemini-3.5-flash-lite",
+    "seconds": 1.2
+   }
+  ],
+  "warnings": [],
+  "valid": true,
+  "score": 50,
+  "matches": [
+   {
+    "requirement": "Python",
+    "priority": "must",
+    "status": "partial",
+    "evidence": "Python",
+    "reason": "Listed as a skill with no project experience."
+   },
+   {
+    "requirement": "data structures and algorithms",
+    "priority": "must",
+    "status": "partial",
+    "evidence": "data structures",
+    "reason": "Both data structures and algorithms are listed as skills without project evidence."
+   },
+   {
+    "requirement": "React",
+    "priority": "must",
+    "status": "partial",
+    "evidence": "React",
+    "reason": "Listed as a skill without practical project demonstration."
+   },
+   {
+    "requirement": "AWS",
+    "priority": "nice",
+    "status": "partial",
+    "evidence": "AWS",
+    "reason": "Listed as a skill without project demonstration."
+   }
+  ],
+  "summary": "The candidate has listed all the required skills but none of them are demonstrated with project experience. The most important gap is the lack of practical, demonstrated experience in core must-haves like Python, React, and data structures and algorithms.",
+  "candidate_skills": [
+   {
+    "skill": "Python",
+    "evidence": "Python",
+    "strength": "listed"
+   },
+   {
+    "skill": "Java",
+    "evidence": "Java",
+    "strength": "listed"
+   },
+   {
+    "skill": "C++",
+    "evidence": "C++",
+    "strength": "listed"
+   },
+   {
+    "skill": "React",
+    "evidence": "React",
+    "strength": "listed"
+   },
+   {
+    "skill": "Node.js",
+    "evidence": "Node.js",
+    "strength": "listed"
+   },
+   {
+    "skill": "AWS",
+    "evidence": "AWS",
+    "strength": "listed"
+   },
+   {
+    "skill": "Machine Learning",
+    "evidence": "Machine Learning",
+    "strength": "listed"
+   },
+   {
+    "skill": "Blockchain",
+    "evidence": "Blockchain",
+    "strength": "listed"
+   },
+   {
+    "skill": "Kubernetes",
+    "evidence": "Kubernetes",
+    "strength": "listed"
+   },
+   {
+    "skill": "data structures",
+    "evidence": "data structures",
+    "strength": "listed"
+   },
+   {
+    "skill": "algorithms",
+    "evidence": "algorithms",
+    "strength": "listed"
+   }
+  ],
+  "suggestions": [
+   {
+    "type": "clarify",
+    "text": "Remove the phrase 'Expert in all technologies' because claiming expertise in so many advanced areas looks unrealistic to recruiters.",
+    "related_requirement": "Python"
+   },
+   {
+    "type": "add_if_true",
+    "text": "Add a project where you used Python and data structures and algorithms, specifying what problem you solved and performance metrics using placeholders like [X%] if true.",
+    "related_requirement": "data structures and algorithms"
+   },
+   {
+    "type": "add_if_true",
+    "text": "Add a web development project where you built a frontend using React and a backend using Node.js, mentioning the number of users or features if true.",
+    "related_requirement": "React"
+   },
+   {
+    "type": "learn",
+    "text": "Since AWS is a nice-to-have requirement without project evidence, build a small project like hosting a static website on AWS S3 or deploying a simple Python app on EC2.",
+    "related_requirement": "AWS"
+   }
+  ],
+  "rewritten_lines": [
+   {
+    "original": "Python, Java, C++, React, Node.js, AWS, Machine Learning, Blockchain, Kubernetes, data structures, algorithms.",
+    "improved": "Proficient in Python, Java, C++, React, Node.js, AWS, Machine Learning, Blockchain, Kubernetes, data structures, and algorithms."
+   }
+  ],
+  "json_ok": true
+ },
+ "check": {
+  "passed": true,
+  "notes": [
+   "all checks met"
+  ]
+ }
+}

@@ -1,0 +1,140 @@
+{
+ "input": {
+  "id": "T09",
+  "type": "Edge",
+  "title": "Fresher vs job asking 3+ years experience",
+  "resume": "Meera Joshi\nB.Tech CSE, 2026 graduate\nSkills: Java, Spring Boot, MySQL, Git\nProjects:\n- Hotel booking REST API in Spring Boot with MySQL and JWT login.\n",
+  "jd": "Backend Engineer. Must have: 3+ years of professional experience with Java, Spring Boot, MySQL. Good to have: Git.",
+  "expected": "Skills matched but the 3+ years experience requirement shown as missing. Score 40-75, not above 80.",
+  "checks": {
+   "score_range": [
+    40,
+    75
+   ],
+   "must_be_missing": [
+    "experience"
+   ],
+   "must_not_match": [
+    "3+ years"
+   ]
+  }
+ },
+ "output": {
+  "version": "v5-final",
+  "steps": [
+   {
+    "prompt": "P1",
+    "text": "{\n  \"input_check\": {\n    \"resume_valid\": true,\n    \"jd_valid\": true,\n    \"problem\": null\n  },\n  \"injection_detected\": false,\n  \"candidate_skills\": [\n    {\n      \"skill\": \"Java\",\n      \"evidence\": \"Java, Spring Boot, MySQL, Git\",\n      \"strength\": \"listed\"\n    },\n    {\n      \"skill\": \"Spring Boot\",\n      \"evidence\": \"Hotel booking REST API in Spring Boot with MySQL and JWT login.\",\n      \"strength\": \"demonstrated\"\n    },\n    {\n      \"skill\": \"MySQL\",\n      \"evidence\": \"Hotel booking REST API in Spring Boot with MySQL and JWT login.\",\n      \"strength\": \"demonstrated\"\n    },\n    {\n      \"skill\": \"Git\",\n      \"evidence\": \"Java, Spring Boot, MySQL, Git\",\n      \"strength\": \"listed\"\n    }\n  ],\n  \"jd_requirements\": [\n    {\n      \"requirement\": \"3+ years of professional experience\",\n      \"priority\": \"must\"\n    },\n    {\n      \"requirement\": \"Java\",\n      \"priority\": \"must\"\n    },\n    {\n      \"requirement\": \"Spring Boot\",\n      \"priority\": \"must\"\n    },\n    {\n      \"requirement\": \"MySQL\",\n      \"priority\": \"must\"\n    },\n    {\n      \"requirement\": \"Git\",\n      \"priority\": \"nice\"\n    }\n  ]\n}",
+    "model": "gemini-3.5-flash-lite",
+    "seconds": 4.3
+   },
+   {
+    "prompt": "P2",
+    "text": "{\"matches\": [{\"requirement\": \"3+ years of professional experience\", \"priority\": \"must\", \"status\": \"missing\", \"evidence\": null, \"reason\": \"No years of professional experience are shown in the resume.\"}, {\"requirement\": \"Java\", \"priority\": \"must\", \"status\": \"partial\", \"evidence\": \"Java, Spring Boot, MySQL, Git\", \"strength\": \"listed\", \"reason\": \"Java is only listed with no project background.\"}, {\"requirement\": \"Spring Boot\", \"priority\": \"must\", \"status\": \"match\", \"evidence\": \"Hotel booking REST API in Spring Boot with MySQL and JWT login.\", \"reason\": \"Demonstrated through a hotel booking REST API project.\"}, {\"requirement\": \"MySQL\", \"priority\": \"must\", \"status\": \"match\", \"evidence\": \"Hotel booking REST API in Spring Boot with MySQL and JWT login.\", \"reason\": \"Demonstrated through a hotel booking REST API project.\"}, {\"requirement\": \"Git\", \"priority\": \"nice\", \"status\": \"partial\", \"evidence\": \"Java, Spring Boot, MySQL, Git\", \"strength\": \"listed\", \"reason\": \"Git is only listed without project usage.\"}], \"summary\": \"The candidate shows strong project work in Spring Boot and MySQL. The most important gap is the lack of demonstrated 3+ years of professional experience.\"}",
+    "model": "gemini-3.5-flash-lite",
+    "seconds": 5.3
+   },
+   {
+    "prompt": "P3",
+    "text": "{\n  \"suggestions\": [\n    {\n      \"type\": \"add_if_true\",\n      \"text\": \"Since you are a 2026 graduate applying for a role asking for 3+ years of professional experience, check if you have completed any relevant internships or long-term freelance work that can be added.\",\n      \"related_requirement\": \"3+ years of professional experience\"\n    },\n    {\n      \"type\": \"clarify\",\n      \"text\": \"Add a metric placeholder like [X] users or [Y] bookings to your hotel booking project to show its scale if true.\",\n      \"related_requirement\": \"Spring Boot\"\n    },\n    {\n      \"type\": \"learn\",\n      \"text\": \"To better match the Git requirement, mention Git commands or repository hosting in your project description if you used version control during development.\",\n      \"related_requirement\": \"Git\"\n    }\n  ],\n  \"rewritten_lines\": [\n    {\n      \"original\": \"- Hotel booking REST API in Spring Boot with MySQL and JWT login.\",\n      \"improved\": \"- Developed a Hotel booking REST API using Spring Boot, MySQL, and JWT login.\"\n    }\n  ]\n}",
+    "model": "gemini-3.5-flash-lite",
+    "seconds": 1.6
+   }
+  ],
+  "warnings": [],
+  "valid": true,
+  "score": 59,
+  "matches": [
+   {
+    "requirement": "3+ years of professional experience",
+    "priority": "must",
+    "status": "missing",
+    "evidence": null,
+    "reason": "No years of professional experience are shown in the resume."
+   },
+   {
+    "requirement": "Java",
+    "priority": "must",
+    "status": "partial",
+    "evidence": "Java, Spring Boot, MySQL, Git",
+    "strength": "listed",
+    "reason": "Java is only listed with no project background."
+   },
+   {
+    "requirement": "Spring Boot",
+    "priority": "must",
+    "status": "match",
+    "evidence": "Hotel booking REST API in Spring Boot with MySQL and JWT login.",
+    "reason": "Demonstrated through a hotel booking REST API project."
+   },
+   {
+    "requirement": "MySQL",
+    "priority": "must",
+    "status": "match",
+    "evidence": "Hotel booking REST API in Spring Boot with MySQL and JWT login.",
+    "reason": "Demonstrated through a hotel booking REST API project."
+   },
+   {
+    "requirement": "Git",
+    "priority": "nice",
+    "status": "partial",
+    "evidence": "Java, Spring Boot, MySQL, Git",
+    "strength": "listed",
+    "reason": "Git is only listed without project usage."
+   }
+  ],
+  "summary": "The candidate shows strong project work in Spring Boot and MySQL. The most important gap is the lack of demonstrated 3+ years of professional experience.",
+  "candidate_skills": [
+   {
+    "skill": "Java",
+    "evidence": "Java, Spring Boot, MySQL, Git",
+    "strength": "listed"
+   },
+   {
+    "skill": "Spring Boot",
+    "evidence": "Hotel booking REST API in Spring Boot with MySQL and JWT login.",
+    "strength": "demonstrated"
+   },
+   {
+    "skill": "MySQL",
+    "evidence": "Hotel booking REST API in Spring Boot with MySQL and JWT login.",
+    "strength": "demonstrated"
+   },
+   {
+    "skill": "Git",
+    "evidence": "Java, Spring Boot, MySQL, Git",
+    "strength": "listed"
+   }
+  ],
+  "suggestions": [
+   {
+    "type": "add_if_true",
+    "text": "Since you are a 2026 graduate applying for a role asking for 3+ years of professional experience, check if you have completed any relevant internships or long-term freelance work that can be added.",
+    "related_requirement": "3+ years of professional experience"
+   },
+   {
+    "type": "clarify",
+    "text": "Add a metric placeholder like [X] users or [Y] bookings to your hotel booking project to show its scale if true.",
+    "related_requirement": "Spring Boot"
+   },
+   {
+    "type": "learn",
+    "text": "To better match the Git requirement, mention Git commands or repository hosting in your project description if you used version control during development.",
+    "related_requirement": "Git"
+   }
+  ],
+  "rewritten_lines": [
+   {
+    "original": "- Hotel booking REST API in Spring Boot with MySQL and JWT login.",
+    "improved": "- Developed a Hotel booking REST API using Spring Boot, MySQL, and JWT login."
+   }
+  ],
+  "json_ok": true
+ },
+ "check": {
+  "passed": true,
+  "notes": [
+   "all checks met"
+  ]
+ }
+}

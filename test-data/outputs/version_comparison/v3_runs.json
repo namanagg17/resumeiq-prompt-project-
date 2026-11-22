@@ -1,0 +1,1057 @@
+[
+ {
+  "case": "T01",
+  "run": 1,
+  "result": {
+   "version": "v3",
+   "steps": [
+    {
+     "prompt": "P1",
+     "text": "{\"candidate_skills\": [{\"skill\": \"Python\", \"evidence\": \"Skills: Python, C++, SQL, basic HTML/CSS\", \"strength\": \"listed\"}, {\"skill\": \"C++\", \"evidence\": \"Skills: Python, C++, SQL, basic HTML/CSS\", \"strength\": \"listed\"}, {\"skill\": \"SQL\", \"evidence\": \"Skills: Python, C++, SQL, basic HTML/CSS\", \"strength\": \"listed\"}, {\"skill\": \"basic HTML/CSS\", \"evidence\": \"Skills: Python, C++, SQL, basic HTML/CSS\", \"strength\": \"listed\"}, {\"skill\": \"Python\", \"evidence\": \"Library Management System: built with Python and SQLite; supports issue/return and fine calculation.\", \"strength\": \"demonstrated\"}, {\"skill\": \"SQLite\", \"evidence\": \"Library Management System: built with Python and SQLite; supports issue/return and fine calculation.\", \"strength\": \"demonstrated\"}, {\"skill\": \"Python\", \"evidence\": \"Student Marks Analyzer: Python script that reads CSV files and stores results in a MySQL database.\", \"strength\": \"demonstrated\"}, {\"skill\": \"MySQL\", \"evidence\": \"Student Marks Analyzer: Python script that reads CSV files and stores results in a MySQL database.\", \"strength\": \"demonstrated\"}], \"jd_requirements\": [{\"requirement\": \"Python\", \"priority\": \"must\"}, {\"requirement\": \"SQL\", \"priority\": \"must\"}, {\"requirement\": \"data structures and algorithms\", \"priority\": \"must\"}, {\"requirement\": \"problem-solving skills\", \"priority\": \"must\"}, {\"requirement\": \"experience building web applications (HTML, CSS, JavaScript)\", \"priority\": \"nice\"}]}",
+     "model": "gemini-3.5-flash-lite",
+     "seconds": 3.7
+    },
+    {
+     "prompt": "P2",
+     "text": "{\"matches\": [{\"requirement\": \"Python\", \"priority\": \"must\", \"status\": \"match\", \"evidence\": \"Library Management System: built with Python and SQLite; Student Marks Analyzer: Python script\"}, {\"requirement\": \"SQL\", \"priority\": \"must\", \"status\": \"match\", \"evidence\": \"Library Management System: built with Python and SQLite; Student Marks Analyzer: MySQL database\"}, {\"requirement\": \"data structures and algorithms\", \"priority\": \"must\", \"status\": \"missing\", \"evidence\": null}, {\"requirement\": \"problem-solving skills\", \"priority\": \"must\", \"status\": \"missing\", \"evidence\": null}, {\"requirement\": \"experience building web applications (HTML, CSS, JavaScript)\", \"priority\": \"nice\", \"status\": \"partial\", \"evidence\": \"Skills: basic HTML/CSS\"}], \"score\": 41, \"summary\": \"Strong core Python and SQL skills, but lacks demonstrated data structures, problem-solving evidence, and full web application experience (JavaScript missing).\"}",
+     "model": "gemini-3.5-flash-lite",
+     "seconds": 1.0
+    },
+    {
+     "prompt": "P3",
+     "text": "{\n  \"suggestions\": [\n    {\n      \"type\": \"add_if_true\",\n      \"text\": \"Add any coursework, competitive programming profiles, or data structures and algorithms practice to address the missing core requirement.\",\n      \"related_requirement\": \"data structures and algorithms\"\n    },\n    {\n      \"type\": \"learn\",\n      \"text\": \"Learn JavaScript to complement your basic HTML/CSS skills for building fully interactive web applications.\",\n      \"related_requirement\": \"experience building web applications (HTML, CSS, JavaScript)\"\n    },\n    {\n      \"type\": \"rewrite\",\n      \"text\": \"Quantify project impact and specify the technical architecture clearly to highlight problem-solving skills.\",\n      \"related_requirement\": \"problem-solving skills\"\n    }\n  ],\n  \"rewritten_lines\": [\n    {\n      \"original\": \"Library Management System: built with Python and SQLite; supports issue/return and fine calculation.\",\n      \"improved\": \"Developed a Library Management System using Python and SQLite to automate book issue/return workflows and fine calculations.\"\n    },\n    {\n      \"original\": \"Student Marks Analyzer: Python script that reads CSV files and stores results in a MySQL database.\",\n      \"improved\": \"Built a Student Marks Analyzer in Python to process CSV data datasets and efficiently store structured results in a MySQL database.\"\n    }\n  ]\n}",
+     "model": "gemini-3.5-flash-lite",
+     "seconds": 2.8
+    }
+   ],
+   "valid": true,
+   "score": 41,
+   "matches": [
+    {
+     "requirement": "Python",
+     "priority": "must",
+     "status": "match",
+     "evidence": "Library Management System: built with Python and SQLite; Student Marks Analyzer: Python script"
+    },
+    {
+     "requirement": "SQL",
+     "priority": "must",
+     "status": "match",
+     "evidence": "Library Management System: built with Python and SQLite; Student Marks Analyzer: MySQL database"
+    },
+    {
+     "requirement": "data structures and algorithms",
+     "priority": "must",
+     "status": "missing",
+     "evidence": null
+    },
+    {
+     "requirement": "problem-solving skills",
+     "priority": "must",
+     "status": "missing",
+     "evidence": null
+    },
+    {
+     "requirement": "experience building web applications (HTML, CSS, JavaScript)",
+     "priority": "nice",
+     "status": "partial",
+     "evidence": "Skills: basic HTML/CSS"
+    }
+   ],
+   "summary": "Strong core Python and SQL skills, but lacks demonstrated data structures, problem-solving evidence, and full web application experience (JavaScript missing).",
+   "suggestions": [
+    {
+     "type": "add_if_true",
+     "text": "Add any coursework, competitive programming profiles, or data structures and algorithms practice to address the missing core requirement.",
+     "related_requirement": "data structures and algorithms"
+    },
+    {
+     "type": "learn",
+     "text": "Learn JavaScript to complement your basic HTML/CSS skills for building fully interactive web applications.",
+     "related_requirement": "experience building web applications (HTML, CSS, JavaScript)"
+    },
+    {
+     "type": "rewrite",
+     "text": "Quantify project impact and specify the technical architecture clearly to highlight problem-solving skills.",
+     "related_requirement": "problem-solving skills"
+    }
+   ],
+   "rewritten_lines": [
+    {
+     "original": "Library Management System: built with Python and SQLite; supports issue/return and fine calculation.",
+     "improved": "Developed a Library Management System using Python and SQLite to automate book issue/return workflows and fine calculations."
+    },
+    {
+     "original": "Student Marks Analyzer: Python script that reads CSV files and stores results in a MySQL database.",
+     "improved": "Built a Student Marks Analyzer in Python to process CSV data datasets and efficiently store structured results in a MySQL database."
+    }
+   ],
+   "unverified_evidence": 0,
+   "json_ok": true
+  },
+  "check": {
+   "passed": false,
+   "notes": [
+    "score 41 outside 45-75"
+   ]
+  }
+ },
+ {
+  "case": "T01",
+  "run": 2,
+  "result": {
+   "version": "v3",
+   "steps": [
+    {
+     "prompt": "P1",
+     "text": "{\"candidate_skills\": [{\"skill\": \"Python\", \"evidence\": \"Skills: Python, C++, SQL, basic HTML/CSS\", \"strength\": \"listed\"}, {\"skill\": \"C++\", \"evidence\": \"Skills: Python, C++, SQL, basic HTML/CSS\", \"strength\": \"listed\"}, {\"skill\": \"SQL\", \"evidence\": \"Skills: Python, C++, SQL, basic HTML/CSS\", \"strength\": \"listed\"}, {\"skill\": \"basic HTML/CSS\", \"evidence\": \"Skills: Python, C++, SQL, basic HTML/CSS\", \"strength\": \"listed\"}, {\"skill\": \"Python\", \"evidence\": \"Library Management System: built with Python and SQLite; supports issue/return and fine calculation.\", \"strength\": \"demonstrated\"}, {\"skill\": \"SQLite\", \"evidence\": \"Library Management System: built with Python and SQLite; supports issue/return and fine calculation.\", \"strength\": \"demonstrated\"}, {\"skill\": \"Python\", \"evidence\": \"Student Marks Analyzer: Python script that reads CSV files and stores results in a MySQL database.\", \"strength\": \"demonstrated\"}, {\"skill\": \"MySQL\", \"evidence\": \"Student Marks Analyzer: Python script that reads CSV files and stores results in a MySQL database.\", \"strength\": \"demonstrated\"}], \"jd_requirements\": [{\"requirement\": \"Python\", \"priority\": \"must\"}, {\"requirement\": \"SQL\", \"priority\": \"must\"}, {\"requirement\": \"data structures and algorithms\", \"priority\": \"must\"}, {\"requirement\": \"problem-solving skills\", \"priority\": \"must\"}, {\"requirement\": \"experience building web applications (HTML, CSS, JavaScript)\", \"priority\": \"nice\"}]}",
+     "model": "gemini-3.5-flash-lite",
+     "seconds": 1.5
+    },
+    {
+     "prompt": "P2",
+     "text": "{\n  \"matches\": [\n    {\n      \"requirement\": \"Python\",\n      \"priority\": \"must\",\n      \"status\": \"match\",\n      \"evidence\": \"Library Management System: built with Python and SQLite; Student Marks Analyzer: Python script\"\n    },\n    {\n      \"requirement\": \"SQL\",\n      \"priority\": \"must\",\n      \"status\": \"match\",\n      \"evidence\": \"Skills: Python, C++, SQL, basic HTML/CSS; built with SQLite; MySQL database\"\n    },\n    {\n      \"requirement\": \"data structures and algorithms\",\n      \"priority\": \"must\",\n      \"status\": \"missing\",\n      \"evidence\": null\n    },\n    {\n      \"requirement\": \"problem-solving skills\",\n      \"priority\": \"must\",\n      \"status\": \"missing\",\n      \"evidence\": null\n    },\n    {\n      \"requirement\": \"experience building web applications (HTML, CSS, JavaScript)\",\n      \"priority\": \"nice\",\n      \"status\": \"partial\",\n      \"evidence\": \"Skills: basic HTML/CSS\"\n    }\n  ],\n  \"score\": 39,\n  \"summary\": \"Candidate demonstrates strong Python and SQL skills with related projects, but lacks data structures, algorithms, problem-solving evidence, and JavaScript for web applications.\"\n}",
+     "model": "gemini-3.5-flash-lite",
+     "seconds": 1.3
+    },
+    {
+     "prompt": "P3",
+     "text": "{\n  \"suggestions\": [\n    {\n      \"type\": \"add_if_true\",\n      \"text\": \"Add any coursework, competitive programming handles, or data structures and algorithms practice to address the missing DSA requirement.\",\n      \"related_requirement\": \"data structures and algorithms\"\n    },\n    {\n      \"type\": \"learn\",\n      \"text\": \"Learn basic JavaScript to complement your HTML/CSS skills and improve your web development profile.\",\n      \"related_requirement\": \"experience building web applications (HTML, CSS, JavaScript)\"\n    },\n    {\n      \"type\": \"rewrite\",\n      \"text\": \"Quantify or specify the metrics used in your projects to better demonstrate problem-solving skills.\",\n      \"related_requirement\": \"problem-solving skills\"\n    }\n  ],\n  \"rewritten_lines\": [\n    {\n      \"original\": \"Library Management System: built with Python and SQLite; supports issue/return and fine calculation.\",\n      \"improved\": \"Developed a Library Management System using Python and SQLite featuring automated book issue/return tracking and fine calculation logic.\"\n    },\n    {\n      \"original\": \"Student Marks Analyzer: Python script that reads CSV files and stores results in a MySQL database.\",\n      \"improved\": \"Created a Student Marks Analyzer Python script to parse CSV data files and store processed results in a MySQL database.\"\n    }\n  ]\n}",
+     "model": "gemini-3.5-flash-lite",
+     "seconds": 5.0
+    }
+   ],
+   "valid": true,
+   "score": 39,
+   "matches": [
+    {
+     "requirement": "Python",
+     "priority": "must",
+     "status": "match",
+     "evidence": "Library Management System: built with Python and SQLite; Student Marks Analyzer: Python script"
+    },
+    {
+     "requirement": "SQL",
+     "priority": "must",
+     "status": "match",
+     "evidence": "Skills: Python, C++, SQL, basic HTML/CSS; built with SQLite; MySQL database"
+    },
+    {
+     "requirement": "data structures and algorithms",
+     "priority": "must",
+     "status": "missing",
+     "evidence": null
+    },
+    {
+     "requirement": "problem-solving skills",
+     "priority": "must",
+     "status": "missing",
+     "evidence": null
+    },
+    {
+     "requirement": "experience building web applications (HTML, CSS, JavaScript)",
+     "priority": "nice",
+     "status": "partial",
+     "evidence": "Skills: basic HTML/CSS"
+    }
+   ],
+   "summary": "Candidate demonstrates strong Python and SQL skills with related projects, but lacks data structures, algorithms, problem-solving evidence, and JavaScript for web applications.",
+   "suggestions": [
+    {
+     "type": "add_if_true",
+     "text": "Add any coursework, competitive programming handles, or data structures and algorithms practice to address the missing DSA requirement.",
+     "related_requirement": "data structures and algorithms"
+    },
+    {
+     "type": "learn",
+     "text": "Learn basic JavaScript to complement your HTML/CSS skills and improve your web development profile.",
+     "related_requirement": "experience building web applications (HTML, CSS, JavaScript)"
+    },
+    {
+     "type": "rewrite",
+     "text": "Quantify or specify the metrics used in your projects to better demonstrate problem-solving skills.",
+     "related_requirement": "problem-solving skills"
+    }
+   ],
+   "rewritten_lines": [
+    {
+     "original": "Library Management System: built with Python and SQLite; supports issue/return and fine calculation.",
+     "improved": "Developed a Library Management System using Python and SQLite featuring automated book issue/return tracking and fine calculation logic."
+    },
+    {
+     "original": "Student Marks Analyzer: Python script that reads CSV files and stores results in a MySQL database.",
+     "improved": "Created a Student Marks Analyzer Python script to parse CSV data files and store processed results in a MySQL database."
+    }
+   ],
+   "unverified_evidence": 0,
+   "json_ok": true
+  },
+  "check": {
+   "passed": false,
+   "notes": [
+    "score 39 outside 45-75"
+   ]
+  }
+ },
+ {
+  "case": "T01",
+  "run": 3,
+  "result": {
+   "version": "v3",
+   "steps": [
+    {
+     "prompt": "P1",
+     "text": "{\n  \"candidate_skills\": [\n    {\n      \"skill\": \"Python\",\n      \"evidence\": \"Skills: Python, C++, SQL, basic HTML/CSS\",\n      \"strength\": \"listed\"\n    },\n    {\n      \"skill\": \"C++\",\n      \"evidence\": \"Skills: Python, C++, SQL, basic HTML/CSS\",\n      \"strength\": \"listed\"\n    },\n    {\n      \"skill\": \"SQL\",\n      \"evidence\": \"Skills: Python, C++, SQL, basic HTML/CSS\",\n      \"strength\": \"listed\"\n    },\n    {\n      \"skill\": \"HTML/CSS\",\n      \"evidence\": \"Skills: Python, C++, SQL, basic HTML/CSS\",\n      \"strength\": \"listed\"\n    },\n    {\n      \"skill\": \"Python\",\n      \"evidence\": \"Library Management System: built with Python and SQLite\",\n      \"strength\": \"demonstrated\"\n    },\n    {\n      \"skill\": \"SQLite\",\n      \"evidence\": \"Library Management System: built with Python and SQLite\",\n      \"strength\": \"demonstrated\"\n    },\n    {\n      \"skill\": \"Python\",\n      \"evidence\": \"Student Marks Analyzer: Python script that reads CSV files\",\n      \"strength\": \"demonstrated\"\n    },\n    {\n      \"skill\": \"MySQL\",\n      \"evidence\": \"stores results in a MySQL database\",\n      \"strength\": \"demonstrated\"\n    }\n  ],\n  \"jd_requirements\": [\n    {\n      \"requirement\": \"Python\",\n      \"priority\": \"must\"\n    },\n    {\n      \"requirement\": \"SQL\",\n      \"priority\": \"must\"\n    },\n    {\n      \"requirement\": \"data structures and algorithms\",\n      \"priority\": \"must\"\n    },\n    {\n      \"requirement\": \"problem-solving skills\",\n      \"priority\": \"must\"\n    },\n    {\n      \"requirement\": \"experience building web applications (HTML, CSS, JavaScript)\",\n      \"priority\": \"nice\"\n    }\n  ]\n}",
+     "model": "gemini-3.5-flash-lite",
+     "seconds": 1.5
+    },
+    {
+     "prompt": "P2",
+     "text": "{\n  \"matches\": [\n    {\n      \"requirement\": \"Python\",\n      \"priority\": \"must\",\n      \"status\": \"match\",\n      \"evidence\": \"Library Management System: built with Python and SQLite; Student Marks Analyzer: Python script that reads CSV files\"\n    },\n    {\n      \"requirement\": \"SQL\",\n      \"priority\": \"must\",\n      \"status\": \"match\",\n      \"evidence\": \"Library Management System: built with Python and SQLite; stores results in a MySQL database\"\n    },\n    {\n      \"requirement\": \"data structures and algorithms\",\n      \"priority\": \"must\",\n      \"status\": \"missing\",\n      \"evidence\": null\n    },\n    {\n      \"requirement\": \"problem-solving skills\",\n      \"priority\": \"must\",\n      \"status\": \"missing\",\n      \"evidence\": null\n    },\n    {\n      \"requirement\": \"experience building web applications (HTML, CSS, JavaScript)\",\n      \"priority\": \"nice\",\n      \"status\": \"partial\",\n      \"evidence\": \"Skills: Python, C++, SQL, basic HTML/CSS\"\n    }\n  ],\n  \"score\": 39,\n  \"summary\": \"Candidate demonstrates strong Python and SQL skills, but lacks data structures and problem-solving evidence, and only has partial HTML/CSS without JavaScript.\"\n}",
+     "model": "gemini-3.5-flash-lite",
+     "seconds": 1.0
+    },
+    {
+     "prompt": "P3",
+     "text": "{\"suggestions\": [{\"type\": \"learn\", \"text\": \"Focus on learning Data Structures and Algorithms to prepare for technical interviews, as this is currently a missing core requirement.\", \"related_requirement\": \"data structures and algorithms\"}, {\"type\": \"add_if_true\", \"text\": \"If applicable, mention any problem-solving practice on platforms like LeetCode or HackerRank to address the missing problem-solving skills requirement.\", \"related_requirement\": \"problem-solving skills\"}, {\"type\": \"rewrite\", \"text\": \"Make project descriptions more action-oriented by highlighting the tools used and the specific outcomes achieved.\", \"related_requirement\": \"Python\"}], \"rewritten_lines\": [{\"original\": \"Library Management System: built with Python and SQLite; supports issue/return and fine calculation.\", \"improved\": \"Developed a Library Management System using Python and SQLite to automate book issue/return tracking and fine calculations.\"}, {\"original\": \"Student Marks Analyzer: Python script that reads CSV files and stores results in a MySQL database.\", \"improved\": \"Built a Student Marks Analyzer in Python that parses CSV datasets and securely stores processed results in a MySQL database.\"}]}",
+     "model": "gemini-3.5-flash-lite",
+     "seconds": 1.1
+    }
+   ],
+   "valid": true,
+   "score": 39,
+   "matches": [
+    {
+     "requirement": "Python",
+     "priority": "must",
+     "status": "match",
+     "evidence": "Library Management System: built with Python and SQLite; Student Marks Analyzer: Python script that reads CSV files"
+    },
+    {
+     "requirement": "SQL",
+     "priority": "must",
+     "status": "match",
+     "evidence": "Library Management System: built with Python and SQLite; stores results in a MySQL database"
+    },
+    {
+     "requirement": "data structures and algorithms",
+     "priority": "must",
+     "status": "missing",
+     "evidence": null
+    },
+    {
+     "requirement": "problem-solving skills",
+     "priority": "must",
+     "status": "missing",
+     "evidence": null
+    },
+    {
+     "requirement": "experience building web applications (HTML, CSS, JavaScript)",
+     "priority": "nice",
+     "status": "partial",
+     "evidence": "Skills: Python, C++, SQL, basic HTML/CSS"
+    }
+   ],
+   "summary": "Candidate demonstrates strong Python and SQL skills, but lacks data structures and problem-solving evidence, and only has partial HTML/CSS without JavaScript.",
+   "suggestions": [
+    {
+     "type": "learn",
+     "text": "Focus on learning Data Structures and Algorithms to prepare for technical interviews, as this is currently a missing core requirement.",
+     "related_requirement": "data structures and algorithms"
+    },
+    {
+     "type": "add_if_true",
+     "text": "If applicable, mention any problem-solving practice on platforms like LeetCode or HackerRank to address the missing problem-solving skills requirement.",
+     "related_requirement": "problem-solving skills"
+    },
+    {
+     "type": "rewrite",
+     "text": "Make project descriptions more action-oriented by highlighting the tools used and the specific outcomes achieved.",
+     "related_requirement": "Python"
+    }
+   ],
+   "rewritten_lines": [
+    {
+     "original": "Library Management System: built with Python and SQLite; supports issue/return and fine calculation.",
+     "improved": "Developed a Library Management System using Python and SQLite to automate book issue/return tracking and fine calculations."
+    },
+    {
+     "original": "Student Marks Analyzer: Python script that reads CSV files and stores results in a MySQL database.",
+     "improved": "Built a Student Marks Analyzer in Python that parses CSV datasets and securely stores processed results in a MySQL database."
+    }
+   ],
+   "unverified_evidence": 0,
+   "json_ok": true
+  },
+  "check": {
+   "passed": false,
+   "notes": [
+    "score 39 outside 45-75"
+   ]
+  }
+ },
+ {
+  "case": "T04",
+  "run": 1,
+  "result": {
+   "version": "v3",
+   "steps": [
+    {
+     "prompt": "P1",
+     "text": "{\"candidate_skills\": [{\"skill\": \"AutoCAD\", \"evidence\": \"Skills: AutoCAD, SolidWorks, MATLAB\", \"strength\": \"listed\"}, {\"skill\": \"SolidWorks\", \"evidence\": \"Designed a go-kart chassis in SolidWorks and tested it with FEA.\", \"strength\": \"demonstrated\"}, {\"skill\": \"MATLAB\", \"evidence\": \"Skills: AutoCAD, SolidWorks, MATLAB\", \"strength\": \"listed\"}, {\"skill\": \"FEA\", \"evidence\": \"Designed a go-kart chassis in SolidWorks and tested it with FEA.\", \"strength\": \"demonstrated\"}], \"jd_requirements\": [{\"requirement\": \"JavaScript\", \"priority\": \"must\"}, {\"requirement\": \"React\", \"priority\": \"must\"}, {\"requirement\": \"HTML\", \"priority\": \"must\"}, {\"requirement\": \"CSS\", \"priority\": \"must\"}, {\"requirement\": \"Git\", \"priority\": \"nice\"}, {\"requirement\": \"Figma\", \"priority\": \"nice\"}]}",
+     "model": "gemini-3.5-flash-lite",
+     "seconds": 8.5
+    },
+    {
+     "prompt": "P2",
+     "text": "{\"matches\": [{\"requirement\": \"JavaScript\", \"priority\": \"must\", \"status\": \"missing\", \"evidence\": null}, {\"requirement\": \"React\", \"priority\": \"must\", \"status\": \"missing\", \"evidence\": null}, {\"requirement\": \"HTML\", \"priority\": \"must\", \"status\": \"missing\", \"evidence\": null}, {\"requirement\": \"CSS\", \"priority\": \"must\", \"status\": \"missing\", \"evidence\": null}, {\"requirement\": \"Git\", \"priority\": \"nice\", \"status\": \"missing\", \"evidence\": null}, {\"requirement\": \"Figma\", \"priority\": \"nice\", \"status\": \"missing\", \"evidence\": null}], \"score\": 0, \"summary\": \"The candidate's mechanical engineering skills do not match the web development requirements.\"}",
+     "model": "gemini-3.5-flash-lite",
+     "seconds": 5.5
+    },
+    {
+     "prompt": "P3",
+     "text": "{\n  \"suggestions\": [\n    {\n      \"type\": \"learn\",\n      \"text\": \"The target role requires frontend web development skills (JavaScript, React, HTML, CSS). Since your background is in Mechanical Engineering, you will need to learn these foundational web technologies to qualify.\",\n      \"related_requirement\": \"JavaScript\"\n    },\n    {\n      \"type\": \"learn\",\n      \"text\": \"Familiarize yourself with version control systems like Git, which is listed as a nice-to-have requirement for the role.\",\n      \"related_requirement\": \"Git\"\n    },\n    {\n      \"type\": \"add_if_true\",\n      \"text\": \"If you have any experience with UI/UX design tools like Figma, add them to your skills section.\",\n      \"related_requirement\": \"Figma\"\n    }\n  ],\n  \"rewritten_lines\": [\n    {\n      \"original\": \"Designed a go-kart chassis in SolidWorks and tested it with FEA.\",\n      \"improved\": \"Designed and performed FEA testing on a go-kart chassis using SolidWorks to ensure structural integrity.\"\n    }\n  ]\n}",
+     "model": "gemini-3.5-flash-lite",
+     "seconds": 7.3
+    }
+   ],
+   "valid": true,
+   "score": 0,
+   "matches": [
+    {
+     "requirement": "JavaScript",
+     "priority": "must",
+     "status": "missing",
+     "evidence": null
+    },
+    {
+     "requirement": "React",
+     "priority": "must",
+     "status": "missing",
+     "evidence": null
+    },
+    {
+     "requirement": "HTML",
+     "priority": "must",
+     "status": "missing",
+     "evidence": null
+    },
+    {
+     "requirement": "CSS",
+     "priority": "must",
+     "status": "missing",
+     "evidence": null
+    },
+    {
+     "requirement": "Git",
+     "priority": "nice",
+     "status": "missing",
+     "evidence": null
+    },
+    {
+     "requirement": "Figma",
+     "priority": "nice",
+     "status": "missing",
+     "evidence": null
+    }
+   ],
+   "summary": "The candidate's mechanical engineering skills do not match the web development requirements.",
+   "suggestions": [
+    {
+     "type": "learn",
+     "text": "The target role requires frontend web development skills (JavaScript, React, HTML, CSS). Since your background is in Mechanical Engineering, you will need to learn these foundational web technologies to qualify.",
+     "related_requirement": "JavaScript"
+    },
+    {
+     "type": "learn",
+     "text": "Familiarize yourself with version control systems like Git, which is listed as a nice-to-have requirement for the role.",
+     "related_requirement": "Git"
+    },
+    {
+     "type": "add_if_true",
+     "text": "If you have any experience with UI/UX design tools like Figma, add them to your skills section.",
+     "related_requirement": "Figma"
+    }
+   ],
+   "rewritten_lines": [
+    {
+     "original": "Designed a go-kart chassis in SolidWorks and tested it with FEA.",
+     "improved": "Designed and performed FEA testing on a go-kart chassis using SolidWorks to ensure structural integrity."
+    }
+   ],
+   "unverified_evidence": 0,
+   "json_ok": true
+  },
+  "check": {
+   "passed": true,
+   "notes": [
+    "all checks met"
+   ]
+  }
+ },
+ {
+  "case": "T04",
+  "run": 2,
+  "result": {
+   "version": "v3",
+   "steps": [
+    {
+     "prompt": "P1",
+     "text": "{\n  \"candidate_skills\": [\n    {\n      \"skill\": \"AutoCAD\",\n      \"evidence\": \"AutoCAD\",\n      \"strength\": \"listed\"\n    },\n    {\n      \"skill\": \"SolidWorks\",\n      \"evidence\": \"SolidWorks\",\n      \"strength\": \"listed\"\n    },\n    {\n      \"skill\": \"MATLAB\",\n      \"evidence\": \"MATLAB\",\n      \"strength\": \"listed\"\n    },\n    {\n      \"skill\": \"SolidWorks\",\n      \"evidence\": \"Designed a go-kart chassis in SolidWorks and tested it with FEA.\",\n      \"strength\": \"demonstrated\"\n    },\n    {\n      \"skill\": \"FEA\",\n      \"evidence\": \"Designed a go-kart chassis in SolidWorks and tested it with FEA.\",\n      \"strength\": \"demonstrated\"\n    }\n  ],\n  \"jd_requirements\": [\n    {\n      \"requirement\": \"JavaScript\",\n      \"priority\": \"must\"\n    },\n    {\n      \"requirement\": \"React\",\n      \"priority\": \"must\"\n    },\n    {\n      \"requirement\": \"HTML\",\n      \"priority\": \"must\"\n    },\n    {\n      \"requirement\": \"CSS\",\n      \"priority\": \"must\"\n    },\n    {\n      \"requirement\": \"Git\",\n      \"priority\": \"nice\"\n    },\n    {\n      \"requirement\": \"Figma\",\n      \"priority\": \"nice\"\n    }\n  ]\n}",
+     "model": "gemini-3.5-flash-lite",
+     "seconds": 4.1
+    },
+    {
+     "prompt": "P2",
+     "text": "{\n  \"matches\": [\n    {\n      \"requirement\": \"JavaScript\",\n      \"priority\": \"must\",\n      \"status\": \"missing\",\n      \"evidence\": null\n    },\n    {\n      \"requirement\": \"React\",\n      \"priority\": \"must\",\n      \"status\": \"missing\",\n      \"evidence\": null\n    },\n    {\n      \"requirement\": \"HTML\",\n      \"priority\": \"must\",\n      \"status\": \"missing\",\n      \"evidence\": null\n    },\n    {\n      \"requirement\": \"CSS\",\n      \"priority\": \"must\",\n      \"status\": \"missing\",\n      \"evidence\": null\n    },\n    {\n      \"requirement\": \"Git\",\n      \"priority\": \"nice\",\n      \"status\": \"missing\",\n      \"evidence\": null\n    },\n    {\n      \"requirement\": \"Figma\",\n      \"priority\": \"nice\",\n      \"status\": \"missing\",\n      \"evidence\": null\n    }\n  ],\n  \"score\": 0,\n  \"summary\": \"The candidate has engineering skills such as SolidWorks and AutoCAD, but lacks all the required web development skills.\"\n}",
+     "model": "gemini-3.5-flash-lite",
+     "seconds": 8.7
+    },
+    {
+     "prompt": "P3",
+     "text": "{\n  \"suggestions\": [\n    {\n      \"type\": \"learn\",\n      \"text\": \"The target role requires frontend development skills such as JavaScript, React, HTML, and CSS, which are entirely absent from your current Mechanical Engineering background.\",\n      \"related_requirement\": \"JavaScript\"\n    },\n    {\n      \"type\": \"learn\",\n      \"text\": \"Familiarize yourself with version control systems like Git, which is listed as a nice-to-have requirement for the position.\",\n      \"related_requirement\": \"Git\"\n    },\n    {\n      \"type\": \"learn\",\n      \"text\": \"Consider learning UI/UX design tools like Figma if you are attempting to transition from mechanical engineering into frontend development roles.\",\n      \"related_requirement\": \"Figma\"\n    }\n  ],\n  \"rewritten_lines\": [\n    {\n      \"original\": \"Designed a go-kart chassis in SolidWorks and tested it with FEA.\",\n      \"improved\": \"Designed a go-kart chassis using SolidWorks and performed Finite Element Analysis (FEA) to validate structural integrity.\"\n    }\n  ]\n}",
+     "model": "gemini-3.5-flash-lite",
+     "seconds": 6.0
+    }
+   ],
+   "valid": true,
+   "score": 0,
+   "matches": [
+    {
+     "requirement": "JavaScript",
+     "priority": "must",
+     "status": "missing",
+     "evidence": null
+    },
+    {
+     "requirement": "React",
+     "priority": "must",
+     "status": "missing",
+     "evidence": null
+    },
+    {
+     "requirement": "HTML",
+     "priority": "must",
+     "status": "missing",
+     "evidence": null
+    },
+    {
+     "requirement": "CSS",
+     "priority": "must",
+     "status": "missing",
+     "evidence": null
+    },
+    {
+     "requirement": "Git",
+     "priority": "nice",
+     "status": "missing",
+     "evidence": null
+    },
+    {
+     "requirement": "Figma",
+     "priority": "nice",
+     "status": "missing",
+     "evidence": null
+    }
+   ],
+   "summary": "The candidate has engineering skills such as SolidWorks and AutoCAD, but lacks all the required web development skills.",
+   "suggestions": [
+    {
+     "type": "learn",
+     "text": "The target role requires frontend development skills such as JavaScript, React, HTML, and CSS, which are entirely absent from your current Mechanical Engineering background.",
+     "related_requirement": "JavaScript"
+    },
+    {
+     "type": "learn",
+     "text": "Familiarize yourself with version control systems like Git, which is listed as a nice-to-have requirement for the position.",
+     "related_requirement": "Git"
+    },
+    {
+     "type": "learn",
+     "text": "Consider learning UI/UX design tools like Figma if you are attempting to transition from mechanical engineering into frontend development roles.",
+     "related_requirement": "Figma"
+    }
+   ],
+   "rewritten_lines": [
+    {
+     "original": "Designed a go-kart chassis in SolidWorks and tested it with FEA.",
+     "improved": "Designed a go-kart chassis using SolidWorks and performed Finite Element Analysis (FEA) to validate structural integrity."
+    }
+   ],
+   "unverified_evidence": 0,
+   "json_ok": true
+  },
+  "check": {
+   "passed": true,
+   "notes": [
+    "all checks met"
+   ]
+  }
+ },
+ {
+  "case": "T04",
+  "run": 3,
+  "result": {
+   "version": "v3",
+   "steps": [
+    {
+     "prompt": "P1",
+     "text": "{\n  \"candidate_skills\": [\n    {\n      \"skill\": \"AutoCAD\",\n      \"evidence\": \"AutoCAD, SolidWorks, MATLAB\",\n      \"strength\": \"listed\"\n    },\n    {\n      \"skill\": \"SolidWorks\",\n      \"evidence\": \"Designed a go-kart chassis in SolidWorks and tested it with FEA.\",\n      \"strength\": \"demonstrated\"\n    },\n    {\n      \"skill\": \"MATLAB\",\n      \"evidence\": \"AutoCAD, SolidWorks, MATLAB\",\n      \"strength\": \"listed\"\n    },\n    {\n      \"skill\": \"FEA\",\n      \"evidence\": \"Designed a go-kart chassis in SolidWorks and tested it with FEA.\",\n      \"strength\": \"demonstrated\"\n    }\n  ],\n  \"jd_requirements\": [\n    {\n      \"requirement\": \"JavaScript\",\n      \"priority\": \"must\"\n    },\n    {\n      \"requirement\": \"React\",\n      \"priority\": \"must\"\n    },\n    {\n      \"requirement\": \"HTML\",\n      \"priority\": \"must\"\n    },\n    {\n      \"requirement\": \"CSS\",\n      \"priority\": \"must\"\n    },\n    {\n      \"requirement\": \"Git\",\n      \"priority\": \"nice\"\n    },\n    {\n      \"requirement\": \"Figma\",\n      \"priority\": \"nice\"\n    }\n  ]\n}",
+     "model": "gemini-3.5-flash-lite",
+     "seconds": 4.4
+    },
+    {
+     "prompt": "P2",
+     "text": "{\n  \"matches\": [\n    {\n      \"requirement\": \"JavaScript\",\n      \"priority\": \"must\",\n      \"status\": \"missing\",\n      \"evidence\": null\n    },\n    {\n      \"requirement\": \"React\",\n      \"priority\": \"must\",\n      \"status\": \"missing\",\n      \"evidence\": null\n    },\n    {\n      \"requirement\": \"HTML\",\n      \"priority\": \"must\",\n      \"status\": \"missing\",\n      \"evidence\": null\n    },\n    {\n      \"requirement\": \"CSS\",\n      \"priority\": \"must\",\n      \"status\": \"missing\",\n      \"evidence\": null\n    },\n    {\n      \"requirement\": \"Git\",\n      \"priority\": \"nice\",\n      \"status\": \"missing\",\n      \"evidence\": null\n    },\n    {\n      \"requirement\": \"Figma\",\n      \"priority\": \"nice\",\n      \"status\": \"missing\",\n      \"evidence\": null\n    }\n  ],\n  \"score\": 0,\n  \"summary\": \"The candidate has a background in mechanical engineering tools (SolidWorks, AutoCAD, FEA, MATLAB) but lacks all of the required web development skills.\"\n}",
+     "model": "gemini-3.5-flash-lite",
+     "seconds": 5.2
+    },
+    {
+     "prompt": "P3",
+     "text": "{\n  \"suggestions\": [\n    {\n      \"type\": \"learn\",\n      \"text\": \"The target role requires frontend web development skills (JavaScript, React, HTML, CSS) which are currently absent from your Mechanical Engineering background.\",\n      \"related_requirement\": \"JavaScript\"\n    },\n    {\n      \"type\": \"learn\",\n      \"text\": \"Consider learning Git for version control and Figma for UI/UX design to bridge the gap for the nice-to-have requirements.\",\n      \"related_requirement\": \"Git\"\n    }\n  ],\n  \"rewritten_lines\": [\n    {\n      \"original\": \"Designed a go-kart chassis in SolidWorks and tested it with FEA.\",\n      \"improved\": \"Designed a go-kart chassis using SolidWorks and performed structural validation via FEA testing.\"\n    }\n  ]\n}",
+     "model": "gemini-3.5-flash-lite",
+     "seconds": 1.2
+    }
+   ],
+   "valid": true,
+   "score": 0,
+   "matches": [
+    {
+     "requirement": "JavaScript",
+     "priority": "must",
+     "status": "missing",
+     "evidence": null
+    },
+    {
+     "requirement": "React",
+     "priority": "must",
+     "status": "missing",
+     "evidence": null
+    },
+    {
+     "requirement": "HTML",
+     "priority": "must",
+     "status": "missing",
+     "evidence": null
+    },
+    {
+     "requirement": "CSS",
+     "priority": "must",
+     "status": "missing",
+     "evidence": null
+    },
+    {
+     "requirement": "Git",
+     "priority": "nice",
+     "status": "missing",
+     "evidence": null
+    },
+    {
+     "requirement": "Figma",
+     "priority": "nice",
+     "status": "missing",
+     "evidence": null
+    }
+   ],
+   "summary": "The candidate has a background in mechanical engineering tools (SolidWorks, AutoCAD, FEA, MATLAB) but lacks all of the required web development skills.",
+   "suggestions": [
+    {
+     "type": "learn",
+     "text": "The target role requires frontend web development skills (JavaScript, React, HTML, CSS) which are currently absent from your Mechanical Engineering background.",
+     "related_requirement": "JavaScript"
+    },
+    {
+     "type": "learn",
+     "text": "Consider learning Git for version control and Figma for UI/UX design to bridge the gap for the nice-to-have requirements.",
+     "related_requirement": "Git"
+    }
+   ],
+   "rewritten_lines": [
+    {
+     "original": "Designed a go-kart chassis in SolidWorks and tested it with FEA.",
+     "improved": "Designed a go-kart chassis using SolidWorks and performed structural validation via FEA testing."
+    }
+   ],
+   "unverified_evidence": 0,
+   "json_ok": true
+  },
+  "check": {
+   "passed": true,
+   "notes": [
+    "all checks met"
+   ]
+  }
+ },
+ {
+  "case": "T05",
+  "run": 1,
+  "result": {
+   "version": "v3",
+   "steps": [
+    {
+     "prompt": "P1",
+     "text": "{\n  \"candidate_skills\": [\n    {\n      \"skill\": \"SQL\",\n      \"evidence\": \"Skills: SQL, Excel\",\n      \"strength\": \"listed\"\n    },\n    {\n      \"skill\": \"Excel\",\n      \"evidence\": \"Skills: SQL, Excel (pivot tables, VLOOKUP), Power BI\",\n      \"strength\": \"listed\"\n    },\n    {\n      \"skill\": \"Power BI\",\n      \"evidence\": \"Sales dashboard in Power BI for a sample retail dataset\",\n      \"strength\": \"demonstrated\"\n    },\n    {\n      \"skill\": \"Statistics\",\n      \"evidence\": \"B.Sc Statistics, final year\",\n      \"strength\": \"demonstrated\"\n    }\n  ],\n  \"jd_requirements\": [\n    {\n      \"requirement\": \"SQL\",\n      \"priority\": \"must\"\n    },\n    {\n      \"requirement\": \"Excel\",\n      \"priority\": \"must\"\n    },\n    {\n      \"requirement\": \"Tableau\",\n      \"priority\": \"must\"\n    },\n    {\n      \"requirement\": \"statistics\",\n      \"priority\": \"must\"\n    },\n    {\n      \"requirement\": \"Python\",\n      \"priority\": \"nice\"\n    }\n  ]\n}",
+     "model": "gemini-3.5-flash-lite",
+     "seconds": 4.1
+    },
+    {
+     "prompt": "P2",
+     "text": "{\"matches\": [{\"requirement\": \"SQL\", \"priority\": \"must\", \"status\": \"partial\", \"evidence\": \"Skills: SQL, Excel\"}, {\"requirement\": \"Excel\", \"priority\": \"must\", \"status\": \"partial\", \"evidence\": \"Skills: SQL, Excel (pivot tables, VLOOKUP), Power BI\"}, {\"requirement\": \"Tableau\", \"priority\": \"must\", \"status\": \"missing\", \"evidence\": null}, {\"requirement\": \"statistics\", \"priority\": \"must\", \"status\": \"match\", \"evidence\": \"B.Sc Statistics, final year\"}, {\"requirement\": \"Python\", \"priority\": \"nice\", \"status\": \"missing\", \"evidence\": null}], \"score\": 38, \"summary\": \"Strong statistics and database/spreadsheet foundations, but lacking Tableau and Python.\"}",
+     "model": "gemini-3.5-flash-lite",
+     "seconds": 3.9
+    },
+    {
+     "prompt": "P3",
+     "text": "{\n  \"suggestions\": [\n    {\n      \"type\": \"add_if_true\",\n      \"text\": \"Add a project or bullet point demonstrating practical use of SQL, as it is currently only listed as a skill.\",\n      \"related_requirement\": \"SQL\"\n    },\n    {\n      \"type\": \"learn\",\n      \"text\": \"Consider learning Tableau to cover missing data visualization tool requirements in job descriptions.\",\n      \"related_requirement\": \"Tableau\"\n    },\n    {\n      \"type\": \"add_if_true\",\n      \"text\": \"Add basic Python skills if you have used pandas, NumPy, or basic scripting for statistics during your B.Sc.\",\n      \"related_requirement\": \"Python\"\n    }\n  ],\n  \"rewritten_lines\": [\n    {\n      \"original\": \"Sales dashboard in Power BI for a sample retail dataset (50k rows), with monthly trend and region filters.\",\n      \"improved\": \"Built an interactive Power BI sales dashboard using a 50k-row retail dataset featuring monthly trend analysis and regional filter controls.\"\n    },\n    {\n      \"original\": \"Hypothesis testing project on exam scores using Excel.\",\n      \"improved\": \"Conducted statistical hypothesis testing on student exam scores using Excel to analyze performance variations.\"\n    }\n  ]\n}",
+     "model": "gemini-3.5-flash-lite",
+     "seconds": 2.3
+    }
+   ],
+   "valid": true,
+   "score": 38,
+   "matches": [
+    {
+     "requirement": "SQL",
+     "priority": "must",
+     "status": "partial",
+     "evidence": "Skills: SQL, Excel"
+    },
+    {
+     "requirement": "Excel",
+     "priority": "must",
+     "status": "partial",
+     "evidence": "Skills: SQL, Excel (pivot tables, VLOOKUP), Power BI"
+    },
+    {
+     "requirement": "Tableau",
+     "priority": "must",
+     "status": "missing",
+     "evidence": null
+    },
+    {
+     "requirement": "statistics",
+     "priority": "must",
+     "status": "match",
+     "evidence": "B.Sc Statistics, final year"
+    },
+    {
+     "requirement": "Python",
+     "priority": "nice",
+     "status": "missing",
+     "evidence": null
+    }
+   ],
+   "summary": "Strong statistics and database/spreadsheet foundations, but lacking Tableau and Python.",
+   "suggestions": [
+    {
+     "type": "add_if_true",
+     "text": "Add a project or bullet point demonstrating practical use of SQL, as it is currently only listed as a skill.",
+     "related_requirement": "SQL"
+    },
+    {
+     "type": "learn",
+     "text": "Consider learning Tableau to cover missing data visualization tool requirements in job descriptions.",
+     "related_requirement": "Tableau"
+    },
+    {
+     "type": "add_if_true",
+     "text": "Add basic Python skills if you have used pandas, NumPy, or basic scripting for statistics during your B.Sc.",
+     "related_requirement": "Python"
+    }
+   ],
+   "rewritten_lines": [
+    {
+     "original": "Sales dashboard in Power BI for a sample retail dataset (50k rows), with monthly trend and region filters.",
+     "improved": "Built an interactive Power BI sales dashboard using a 50k-row retail dataset featuring monthly trend analysis and regional filter controls."
+    },
+    {
+     "original": "Hypothesis testing project on exam scores using Excel.",
+     "improved": "Conducted statistical hypothesis testing on student exam scores using Excel to analyze performance variations."
+    }
+   ],
+   "unverified_evidence": 0,
+   "json_ok": true
+  },
+  "check": {
+   "passed": false,
+   "notes": [
+    "score 38 outside 55-85"
+   ]
+  }
+ },
+ {
+  "case": "T05",
+  "run": 2,
+  "result": {
+   "version": "v3",
+   "steps": [
+    {
+     "prompt": "P1",
+     "text": "{\n  \"candidate_skills\": [\n    {\n      \"skill\": \"SQL\",\n      \"evidence\": \"Skills: SQL, Excel (pivot tables, VLOOKUP), Power BI\",\n      \"strength\": \"listed\"\n    },\n    {\n      \"skill\": \"Excel\",\n      \"evidence\": \"Skills: SQL, Excel (pivot tables, VLOOKUP), Power BI\",\n      \"strength\": \"listed\"\n    },\n    {\n      \"skill\": \"Power BI\",\n      \"evidence\": \"Sales dashboard in Power BI for a sample retail dataset (50k rows)\",\n      \"strength\": \"demonstrated\"\n    },\n    {\n      \"skill\": \"Statistics\",\n      \"evidence\": \"B.Sc Statistics, final year\",\n      \"strength\": \"demonstrated\"\n    }\n  ],\n  \"jd_requirements\": [\n    {\n      \"requirement\": \"SQL\",\n      \"priority\": \"must\"\n    },\n    {\n      \"requirement\": \"Excel\",\n      \"priority\": \"must\"\n    },\n    {\n      \"requirement\": \"Tableau\",\n      \"priority\": \"must\"\n    },\n    {\n      \"requirement\": \"statistics\",\n      \"priority\": \"must\"\n    },\n    {\n      \"requirement\": \"Python\",\n      \"priority\": \"nice\"\n    }\n  ]\n}",
+     "model": "gemini-3.5-flash-lite",
+     "seconds": 3.9
+    },
+    {
+     "prompt": "P2",
+     "text": "{\n  \"matches\": [\n    {\n      \"requirement\": \"SQL\",\n      \"priority\": \"must\",\n      \"status\": \"partial\",\n      \"evidence\": \"Skills: SQL, Excel (pivot tables, VLOOKUP), Power BI\"\n    },\n    {\n      \"requirement\": \"Excel\",\n      \"priority\": \"must\",\n      \"status\": \"partial\",\n      \"evidence\": \"Skills: SQL, Excel (pivot tables, VLOOKUP), Power BI\"\n    },\n    {\n      \"requirement\": \"Tableau\",\n      \"priority\": \"must\",\n      \"status\": \"missing\",\n      \"evidence\": null\n    },\n    {\n      \"requirement\": \"statistics\",\n      \"priority\": \"must\",\n      \"status\": \"match\",\n      \"evidence\": \"B.Sc Statistics, final year\"\n    },\n    {\n      \"requirement\": \"Python\",\n      \"priority\": \"nice\",\n      \"status\": \"missing\",\n      \"evidence\": null\n    }\n  ],\n  \"score\": 38,\n  \"summary\": \"Candidate has a strong background in statistics and listed competencies in SQL and Excel, but lacks Tableau and Python.\"\n}",
+     "model": "gemini-3.5-flash-lite",
+     "seconds": 1.1
+    },
+    {
+     "prompt": "P3",
+     "text": "{\n  \"suggestions\": [\n    {\n      \"type\": \"add_if_true\",\n      \"text\": \"Add specific examples or queries demonstrating SQL usage if you have used it in coursework or personal practice.\",\n      \"related_requirement\": \"SQL\"\n    },\n    {\n      \"type\": \"learn\",\n      \"text\": \"Familiarize yourself with Tableau basics to complement your Power BI experience and satisfy dashboarding requirements.\",\n      \"related_requirement\": \"Tableau\"\n    },\n    {\n      \"type\": \"rewrite\",\n      \"text\": \"Highlight the statistical methods used in your exam scores project to better showcase your domain knowledge.\",\n      \"related_requirement\": \"statistics\"\n    }\n  ],\n  \"rewritten_lines\": [\n    {\n      \"original\": \"Sales dashboard in Power BI for a sample retail dataset (50k rows), with monthly trend and region filters.\",\n      \"improved\": \"Built a Power BI sales dashboard using a 50,000-row retail dataset, incorporating monthly trend analysis and interactive region filters.\"\n    },\n    {\n      \"original\": \"Hypothesis testing project on exam scores using Excel.\",\n      \"improved\": \"Conducted hypothesis testing on student exam scores using Excel to analyze performance variations.\"\n    }\n  ]\n}",
+     "model": "gemini-3.5-flash-lite",
+     "seconds": 5.3
+    }
+   ],
+   "valid": true,
+   "score": 38,
+   "matches": [
+    {
+     "requirement": "SQL",
+     "priority": "must",
+     "status": "partial",
+     "evidence": "Skills: SQL, Excel (pivot tables, VLOOKUP), Power BI"
+    },
+    {
+     "requirement": "Excel",
+     "priority": "must",
+     "status": "partial",
+     "evidence": "Skills: SQL, Excel (pivot tables, VLOOKUP), Power BI"
+    },
+    {
+     "requirement": "Tableau",
+     "priority": "must",
+     "status": "missing",
+     "evidence": null
+    },
+    {
+     "requirement": "statistics",
+     "priority": "must",
+     "status": "match",
+     "evidence": "B.Sc Statistics, final year"
+    },
+    {
+     "requirement": "Python",
+     "priority": "nice",
+     "status": "missing",
+     "evidence": null
+    }
+   ],
+   "summary": "Candidate has a strong background in statistics and listed competencies in SQL and Excel, but lacks Tableau and Python.",
+   "suggestions": [
+    {
+     "type": "add_if_true",
+     "text": "Add specific examples or queries demonstrating SQL usage if you have used it in coursework or personal practice.",
+     "related_requirement": "SQL"
+    },
+    {
+     "type": "learn",
+     "text": "Familiarize yourself with Tableau basics to complement your Power BI experience and satisfy dashboarding requirements.",
+     "related_requirement": "Tableau"
+    },
+    {
+     "type": "rewrite",
+     "text": "Highlight the statistical methods used in your exam scores project to better showcase your domain knowledge.",
+     "related_requirement": "statistics"
+    }
+   ],
+   "rewritten_lines": [
+    {
+     "original": "Sales dashboard in Power BI for a sample retail dataset (50k rows), with monthly trend and region filters.",
+     "improved": "Built a Power BI sales dashboard using a 50,000-row retail dataset, incorporating monthly trend analysis and interactive region filters."
+    },
+    {
+     "original": "Hypothesis testing project on exam scores using Excel.",
+     "improved": "Conducted hypothesis testing on student exam scores using Excel to analyze performance variations."
+    }
+   ],
+   "unverified_evidence": 0,
+   "json_ok": true
+  },
+  "check": {
+   "passed": false,
+   "notes": [
+    "score 38 outside 55-85"
+   ]
+  }
+ },
+ {
+  "case": "T05",
+  "run": 3,
+  "result": {
+   "version": "v3",
+   "steps": [
+    {
+     "prompt": "P1",
+     "text": "{\"candidate_skills\": [{\"skill\": \"SQL\", \"evidence\": \"Skills: SQL, Excel (pivot tables, VLOOKUP), Power BI\", \"strength\": \"listed\"}, {\"skill\": \"Excel\", \"evidence\": \"Skills: SQL, Excel (pivot tables, VLOOKUP), Power BI\", \"strength\": \"listed\"}, {\"skill\": \"Power BI\", \"evidence\": \"Skills: SQL, Excel (pivot tables, VLOOKUP), Power BI\", \"strength\": \"listed\"}, {\"skill\": \"Power BI dashboard\", \"evidence\": \"Sales dashboard in Power BI for a sample retail dataset\", \"strength\": \"demonstrated\"}, {\"skill\": \"Statistics\", \"evidence\": \"B.Sc Statistics, final year\", \"strength\": \"demonstrated\"}, {\"skill\": \"Hypothesis testing\", \"evidence\": \"Hypothesis testing project on exam scores using Excel.\", \"strength\": \"demonstrated\"}], \"jd_requirements\": [{\"requirement\": \"SQL\", \"priority\": \"must\"}, {\"requirement\": \"Excel\", \"priority\": \"must\"}, {\"requirement\": \"Tableau\", \"priority\": \"must\"}, {\"requirement\": \"statistics\", \"priority\": \"must\"}, {\"requirement\": \"Python\", \"priority\": \"nice\"}]}",
+     "model": "gemini-3.5-flash-lite",
+     "seconds": 3.4
+    },
+    {
+     "prompt": "P2",
+     "text": "{\n  \"matches\": [\n    {\n      \"requirement\": \"SQL\",\n      \"priority\": \"must\",\n      \"status\": \"partial\",\n      \"evidence\": \"Skills: SQL, Excel (pivot tables, VLOOKUP), Power BI\"\n    },\n    {\n      \"requirement\": \"Excel\",\n      \"priority\": \"must\",\n      \"status\": \"partial\",\n      \"evidence\": \"Skills: SQL, Excel (pivot tables, VLOOKUP), Power BI\"\n    },\n    {\n      \"requirement\": \"Tableau\",\n      \"priority\": \"must\",\n      \"status\": \"missing\",\n      \"evidence\": null\n    },\n    {\n      \"requirement\": \"statistics\",\n      \"priority\": \"must\",\n      \"status\": \"match\",\n      \"evidence\": \"B.Sc Statistics, final year\"\n    },\n    {\n      \"requirement\": \"Python\",\n      \"priority\": \"nice\",\n      \"status\": \"missing\",\n      \"evidence\": null\n    }\n  ],\n  \"score\": 38,\n  \"summary\": \"Candidate has strong statistics background and listed SQL/Excel skills, but lacks Tableau and Python.\"\n}",
+     "model": "gemini-3.5-flash-lite",
+     "seconds": 1.2
+    },
+    {
+     "prompt": "P3",
+     "text": "{\n  \"suggestions\": [\n    {\n      \"type\": \"add_if_true\",\n      \"text\": \"Add SQL queries or tasks performed to your projects section to provide concrete evidence of your SQL skills.\",\n      \"related_requirement\": \"SQL\"\n    },\n    {\n      \"type\": \"learn\",\n      \"text\": \"Familiarize yourself with Tableau basics to broaden your visualization toolset alongside Power BI.\",\n      \"related_requirement\": \"Tableau\"\n    },\n    {\n      \"type\": \"rewrite\",\n      \"text\": \"Quantify your Excel and Power BI projects to highlight the impact and scope of your analysis.\",\n      \"related_requirement\": \"Excel\"\n    }\n  ],\n  \"rewritten_lines\": [\n    {\n      \"original\": \"Sales dashboard in Power BI for a sample retail dataset (50k rows), with monthly trend and region filters.\",\n      \"improved\": \"Built an interactive Power BI sales dashboard using a 50,000-row retail dataset, incorporating monthly trend analysis and regional filters to track performance.\"\n    },\n    {\n      \"original\": \"Hypothesis testing project on exam scores using Excel.\",\n      \"improved\": \"Conducted hypothesis testing on student exam scores using advanced Excel statistical functions to evaluate performance variances.\"\n    }\n  ]\n}",
+     "model": "gemini-3.5-flash-lite",
+     "seconds": 2.5
+    }
+   ],
+   "valid": true,
+   "score": 38,
+   "matches": [
+    {
+     "requirement": "SQL",
+     "priority": "must",
+     "status": "partial",
+     "evidence": "Skills: SQL, Excel (pivot tables, VLOOKUP), Power BI"
+    },
+    {
+     "requirement": "Excel",
+     "priority": "must",
+     "status": "partial",
+     "evidence": "Skills: SQL, Excel (pivot tables, VLOOKUP), Power BI"
+    },
+    {
+     "requirement": "Tableau",
+     "priority": "must",
+     "status": "missing",
+     "evidence": null
+    },
+    {
+     "requirement": "statistics",
+     "priority": "must",
+     "status": "match",
+     "evidence": "B.Sc Statistics, final year"
+    },
+    {
+     "requirement": "Python",
+     "priority": "nice",
+     "status": "missing",
+     "evidence": null
+    }
+   ],
+   "summary": "Candidate has strong statistics background and listed SQL/Excel skills, but lacks Tableau and Python.",
+   "suggestions": [
+    {
+     "type": "add_if_true",
+     "text": "Add SQL queries or tasks performed to your projects section to provide concrete evidence of your SQL skills.",
+     "related_requirement": "SQL"
+    },
+    {
+     "type": "learn",
+     "text": "Familiarize yourself with Tableau basics to broaden your visualization toolset alongside Power BI.",
+     "related_requirement": "Tableau"
+    },
+    {
+     "type": "rewrite",
+     "text": "Quantify your Excel and Power BI projects to highlight the impact and scope of your analysis.",
+     "related_requirement": "Excel"
+    }
+   ],
+   "rewritten_lines": [
+    {
+     "original": "Sales dashboard in Power BI for a sample retail dataset (50k rows), with monthly trend and region filters.",
+     "improved": "Built an interactive Power BI sales dashboard using a 50,000-row retail dataset, incorporating monthly trend analysis and regional filters to track performance."
+    },
+    {
+     "original": "Hypothesis testing project on exam scores using Excel.",
+     "improved": "Conducted hypothesis testing on student exam scores using advanced Excel statistical functions to evaluate performance variances."
+    }
+   ],
+   "unverified_evidence": 0,
+   "json_ok": true
+  },
+  "check": {
+   "passed": false,
+   "notes": [
+    "score 38 outside 55-85"
+   ]
+  }
+ },
+ {
+  "case": "T11",
+  "run": 1,
+  "result": {
+   "version": "v3",
+   "steps": [
+    {
+     "prompt": "P1",
+     "text": "{\n  \"candidate_skills\": [\n    {\n      \"skill\": \"MS Word\",\n      \"evidence\": \"Skills: MS Word\",\n      \"strength\": \"listed\"\n    }\n  ],\n  \"jd_requirements\": [\n    {\n      \"requirement\": \"Python\",\n      \"priority\": \"must\"\n    },\n    {\n      \"requirement\": \"machine learning\",\n      \"priority\": \"must\"\n    },\n    {\n      \"requirement\": \"statistics\",\n      \"priority\": \"must\"\n    },\n    {\n      \"requirement\": \"SQL\",\n      \"priority\": \"must\"\n    },\n    {\n      \"requirement\": \"deep learning\",\n      \"priority\": \"nice\"\n    }\n  ]\n}",
+     "model": "gemini-3.5-flash-lite",
+     "seconds": 6.1
+    },
+    {
+     "prompt": "P2",
+     "text": "{\n  \"matches\": [\n    {\n      \"requirement\": \"Python\",\n      \"priority\": \"must\",\n      \"status\": \"missing\",\n      \"evidence\": null\n    },\n    {\n      \"requirement\": \"machine learning\",\n      \"priority\": \"must\",\n      \"status\": \"missing\",\n      \"evidence\": null\n    },\n    {\n      \"requirement\": \"statistics\",\n      \"priority\": \"must\",\n      \"status\": \"missing\",\n      \"evidence\": null\n    },\n    {\n      \"requirement\": \"SQL\",\n      \"priority\": \"must\",\n      \"status\": \"missing\",\n      \"evidence\": null\n    },\n    {\n      \"requirement\": \"deep learning\",\n      \"priority\": \"nice\",\n      \"status\": \"missing\",\n      \"evidence\": null\n    }\n  ],\n  \"score\": 0,\n  \"summary\": \"The candidate lacks all required and nice-to-have technical skills, possessing only MS Word.\"\n}",
+     "model": "gemini-3.5-flash-lite",
+     "seconds": 4.8
+    },
+    {
+     "prompt": "P3",
+     "text": "{\"suggestions\": [{\"type\": \"learn\", \"text\": \"Learn Python programming to handle basic data analysis tasks.\", \"related_requirement\": \"Python\"}, {\"type\": \"learn\", \"text\": \"Gain foundational knowledge in SQL for database querying.\", \"related_requirement\": \"SQL\"}, {\"type\": \"learn\", \"text\": \"Study basic statistics to support data-driven decision making.\", \"related_requirement\": \"statistics\"}], \"rewritten_lines\": [{\"original\": \"B.Com 1st year\", \"improved\": \"Bachelor of Commerce (B.Com) 1st Year Student\"}, {\"original\": \"Skills: MS Word\", \"improved\": \"Technical Skills: Microsoft Word (Document Formatting)\"}]}",
+     "model": "gemini-3.5-flash-lite",
+     "seconds": 5.2
+    }
+   ],
+   "valid": true,
+   "score": 0,
+   "matches": [
+    {
+     "requirement": "Python",
+     "priority": "must",
+     "status": "missing",
+     "evidence": null
+    },
+    {
+     "requirement": "machine learning",
+     "priority": "must",
+     "status": "missing",
+     "evidence": null
+    },
+    {
+     "requirement": "statistics",
+     "priority": "must",
+     "status": "missing",
+     "evidence": null
+    },
+    {
+     "requirement": "SQL",
+     "priority": "must",
+     "status": "missing",
+     "evidence": null
+    },
+    {
+     "requirement": "deep learning",
+     "priority": "nice",
+     "status": "missing",
+     "evidence": null
+    }
+   ],
+   "summary": "The candidate lacks all required and nice-to-have technical skills, possessing only MS Word.",
+   "suggestions": [
+    {
+     "type": "learn",
+     "text": "Learn Python programming to handle basic data analysis tasks.",
+     "related_requirement": "Python"
+    },
+    {
+     "type": "learn",
+     "text": "Gain foundational knowledge in SQL for database querying.",
+     "related_requirement": "SQL"
+    },
+    {
+     "type": "learn",
+     "text": "Study basic statistics to support data-driven decision making.",
+     "related_requirement": "statistics"
+    }
+   ],
+   "rewritten_lines": [
+    {
+     "original": "B.Com 1st year",
+     "improved": "Bachelor of Commerce (B.Com) 1st Year Student"
+    },
+    {
+     "original": "Skills: MS Word",
+     "improved": "Technical Skills: Microsoft Word (Document Formatting)"
+    }
+   ],
+   "unverified_evidence": 0,
+   "json_ok": true
+  },
+  "check": {
+   "passed": true,
+   "notes": [
+    "all checks met"
+   ]
+  }
+ },
+ {
+  "case": "T13",
+  "run": 1,
+  "result": {
+   "version": "v3",
+   "steps": [
+    {
+     "prompt": "P1",
+     "text": "{\n  \"candidate_skills\": [],\n  \"jd_requirements\": [\n    {\n      \"requirement\": \"Python\",\n      \"priority\": \"must\"\n    },\n    {\n      \"requirement\": \"SQL\",\n      \"priority\": \"must\"\n    },\n    {\n      \"requirement\": \"Git\",\n      \"priority\": \"nice\"\n    }\n  ]\n}",
+     "model": "gemini-3.5-flash-lite",
+     "seconds": 6.3
+    },
+    {
+     "prompt": "P2",
+     "text": "{\n  \"matches\": [\n    {\n      \"requirement\": \"Python\",\n      \"priority\": \"must\",\n      \"status\": \"missing\",\n      \"evidence\": null\n    },\n    {\n      \"requirement\": \"SQL\",\n      \"priority\": \"must\",\n      \"status\": \"missing\",\n      \"evidence\": null\n    },\n    {\n      \"requirement\": \"Git\",\n      \"priority\": \"nice\",\n      \"status\": \"missing\",\n      \"evidence\": null\n    }\n  ],\n  \"score\": 0,\n  \"summary\": \"Candidate lacks all required and nice-to-have skills.\"\n}",
+     "model": "gemini-3.5-flash-lite",
+     "seconds": 1.1
+    },
+    {
+     "prompt": "P3",
+     "text": "{\n  \"suggestions\": [\n    {\n      \"type\": \"add_if_true\",\n      \"text\": \"Add any experience with Python, SQL, or Git if you have used them in past projects or coursework.\",\n      \"related_requirement\": \"Python, SQL, Git\"\n    },\n    {\n      \"type\": \"learn\",\n      \"text\": \"Consider learning Python and SQL basics to meet the core technical job requirements.\",\n      \"related_requirement\": \"Python, SQL\"\n    }\n  ],\n  \"rewritten_lines\": [\n    {\n      \"original\": \"Boil 1 cup water with crushed ginger and cardamom.\",\n      \"improved\": \"Prepared base liquid by boiling 1 cup water with freshly crushed ginger and cardamom.\"\n    },\n    {\n      \"original\": \"Add 2 tsp tea leaves and 1 cup milk.\",\n      \"improved\": \"Integrated 2 tsp of quality tea leaves and 1 cup of milk into the mixture.\"\n    },\n    {\n      \"original\": \"Strain and serve hot.\",\n      \"improved\": \"Filtered the brewed mixture through a strainer and served hot.\"\n    }\n  ]\n}",
+     "model": "gemini-3.5-flash-lite",
+     "seconds": 6.2
+    }
+   ],
+   "valid": true,
+   "score": 0,
+   "matches": [
+    {
+     "requirement": "Python",
+     "priority": "must",
+     "status": "missing",
+     "evidence": null
+    },
+    {
+     "requirement": "SQL",
+     "priority": "must",
+     "status": "missing",
+     "evidence": null
+    },
+    {
+     "requirement": "Git",
+     "priority": "nice",
+     "status": "missing",
+     "evidence": null
+    }
+   ],
+   "summary": "Candidate lacks all required and nice-to-have skills.",
+   "suggestions": [
+    {
+     "type": "add_if_true",
+     "text": "Add any experience with Python, SQL, or Git if you have used them in past projects or coursework.",
+     "related_requirement": "Python, SQL, Git"
+    },
+    {
+     "type": "learn",
+     "text": "Consider learning Python and SQL basics to meet the core technical job requirements.",
+     "related_requirement": "Python, SQL"
+    }
+   ],
+   "rewritten_lines": [
+    {
+     "original": "Boil 1 cup water with crushed ginger and cardamom.",
+     "improved": "Prepared base liquid by boiling 1 cup water with freshly crushed ginger and cardamom."
+    },
+    {
+     "original": "Add 2 tsp tea leaves and 1 cup milk.",
+     "improved": "Integrated 2 tsp of quality tea leaves and 1 cup of milk into the mixture."
+    },
+    {
+     "original": "Strain and serve hot.",
+     "improved": "Filtered the brewed mixture through a strainer and served hot."
+    }
+   ],
+   "unverified_evidence": 0,
+   "json_ok": true
+  },
+  "check": {
+   "passed": false,
+   "notes": [
+    "not flagged; gave score 0"
+   ]
+  }
+ }
+]

@@ -1,0 +1,53 @@
+[
+ {
+  "name": "intro",
+  "kicker": "Part 1 \u00b7 The problem",
+  "title": "ResumeIQ",
+  "lines": [
+   "For Indian college students applying for internships and placements",
+   "One generic resume for every job &rarr; rejected by screening",
+   "ResumeIQ: evidence-based match score, skill gaps, honest fixes",
+   "Gemini 3.5 Flash-Lite \u00b7 LangChain \u00b7 Streamlit \u00b7 Team Naman square"
+  ]
+ },
+ {
+  "name": "lab",
+  "kicker": "Part 2 \u00b7 Prompt experiment",
+  "title": "v1 baseline vs final workflow",
+  "lines": [
+   "Same resume and job description (test T01)",
+   "v1: one free-text prompt from Milestone 1",
+   "Final: P1 extract &rarr; code guard &rarr; P2 match &rarr; code score &rarr; P3 coach"
+  ]
+ },
+ {
+  "name": "results",
+  "kicker": "Measured on the same inputs",
+  "title": "What prompt engineering changed",
+  "lines": [
+   "Hidden 'give 100' instruction: v1 gave 100/100, final gives 0 + a warning",
+   "Score spread over repeat runs: v4 6.0 &rarr; v5 (final) 0.0",
+   "Strict JSON output: v1/v2 0/11 &rarr; v3-v5 11/11",
+   "Recipe pasted as a resume: rejected from v4 onwards"
+  ]
+ },
+ {
+  "name": "demo",
+  "kicker": "Part 3 \u00b7 Working demo",
+  "title": "Real runs in the web app",
+  "lines": [
+   "Edge case T11: the resume hides an instruction for the AI",
+   "Invalid case T13: a recipe instead of a resume"
+  ]
+ },
+ {
+  "name": "outro",
+  "kicker": "Part 4 \u00b7 Progress and next steps",
+  "title": "Milestone 2 done",
+  "lines": [
+   "3-prompt workflow, 5 measured prompt versions, working web app",
+   "14 tests: 13 pass, 1 honest fail (implied skills not inferred)",
+   "Milestone 3: PDF upload, implied-skill rule, 20 new held-out tests, user testing with students"
+  ]
+ }
+]
